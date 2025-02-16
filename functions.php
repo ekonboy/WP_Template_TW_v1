@@ -48,14 +48,46 @@ add_action( 'after_setup_theme', 'tailpress_setup' );
 /**
  * Enqueue theme assets.
  */
+
+
+ /*
+ *****************************************************************
+ ***************************** TAILWIND *******************************
+ *****************************************************************
+ */ 
+
+function cargar_recursos_tailwind() {
+    // Agregar el archivo CSS compilado
+    wp_enqueue_style('tailwind-css', get_template_directory_uri() . '/resources/css/app.css', array(), null);
+
+    // Agregar el archivo JS compilado
+    wp_enqueue_script('tailwind-js', get_template_directory_uri() . '/resources/js/app.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'cargar_recursos_tailwind');
+
+
 function tailpress_enqueue_scripts() {
 	$theme = wp_get_theme();
 
 	wp_enqueue_style( 'tailpress', tailpress_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
 	wp_enqueue_script( 'tailpress', tailpress_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
 }
-
 add_action( 'wp_enqueue_scripts', 'tailpress_enqueue_scripts' );
+
+
+function cargar_estilos_adicionales() {
+    wp_enqueue_style('iconos-css', get_template_directory_uri() . '/resources/css/icons.css', array(), null, 'all');
+}
+add_action('wp_enqueue_scripts', 'cargar_estilos_adicionales');
+
+
+function cargar_scripts_adicionales() {
+    wp_enqueue_script('scripts-js', get_template_directory_uri() . '/resources/js/scripts.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'cargar_scripts_adicionales');
+
+
+
 
 /**
  * Get asset path.
@@ -137,17 +169,4 @@ add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class'
     endif;
 }
 
-/*
- *****************************************************************
- ***************************** TAILWIND *******************************
- *****************************************************************
- */ 
 
-function cargar_recursos_tailwind() {
-    // Agregar el archivo CSS compilado
-    wp_enqueue_style('tailwind-css', get_template_directory_uri() . '/resources/css/app.css', array(), null);
-
-    // Agregar el archivo JS compilado
-    wp_enqueue_script('tailwind-js', get_template_directory_uri() . '/resources/js/app.js', array(), null, true);
-}
-add_action('wp_enqueue_scripts', 'cargar_recursos_tailwind');

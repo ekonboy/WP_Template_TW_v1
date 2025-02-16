@@ -10,6 +10,7 @@ module.exports = {
         './resources/js/*.js',
         './safelist.txt'
     ],
+    darkMode: 'class',
     theme: {
         container: {
             padding: {
@@ -18,6 +19,11 @@ module.exports = {
                 lg: '0rem'
             },
         },
+        fontFamily: {
+            'body': ["gabii", "sans-serif"],
+            'heading': ["gabii", "sans-serif"],
+            'nioicon': ["Nioicon"]
+          },
         extend: {
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
             fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme))

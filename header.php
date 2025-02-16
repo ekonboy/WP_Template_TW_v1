@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> id="pageroot" class="">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<!-- <php echo get_template_directory_uri() . '/css/app.css'; ?> -->
 
 
-	<?php
-echo '<!-- Verificando carga de Tailwind: ';
-echo get_template_directory_uri() . '/css/app.css';
-echo ' -->';
-?>
+
+
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-white text-gray-900 antialiased bg-white text-black dark:bg-gray-800 dark:text-white transition-all duration-300' ); ?>>
+
+
+
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -71,8 +72,44 @@ echo ' -->';
 				);
 				?>
 			</div>
+
+
+
+
+
+
+
 		</div>
+
 	</header>
+
+
+<script>
+const darkModeInput = document.querySelector('.theme-toggle');
+darkModeInput.addEventListener('click', () => {
+	document.body.classList.toggle('dark');
+	darkModeInput.classList.toggle('dark');
+});
+
+	</script>
+
+
+<li>
+<a class="theme-toggle [&amp;>*]:pointer-events-none relative px-7 py-2.5 flex items-center rounded-[inherit] text-sm leading-5 font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 hover:dark:text-primary-600 transition-all duration-300" href="javascript:void(0)">
+<div class="flex dark:hidden items-center">
+<em class="text-lg leading-none w-7 ni ni-moon"></em>
+<span>Dark Mode</span>
+</div>
+<div class="hidden dark:flex items-center">
+<em class="text-lg leading-none w-7 ni ni-sun"></em>
+<span>Light Mode</span>
+</div>
+<div class="ms-auto relative h-6 w-12 rounded-full border-2 border-gray-200 dark:border-primary-600 bg-white dark:bg-primary-600">
+<div class="absolute start-0.5 dark:start-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-white transition-all duration-300"></div>
+</div>
+</a>
+</li>
+
 
 	<div id="content" class="site-content flex-grow">
 
@@ -95,4 +132,4 @@ echo ' -->';
 		
 		<main>
 
-		     
+   

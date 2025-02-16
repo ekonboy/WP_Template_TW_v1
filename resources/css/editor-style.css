@@ -2,7 +2,7 @@
 @import "tailwindcss/utilities";
 
 body {
-    @apply font-sans;
+    /* @apply gabii; */
 }
 
 .wp-block{
