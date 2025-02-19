@@ -160,13 +160,16 @@ add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class'
  *****************************************************************
  */
 
- function render_flexible_content() {
+function render_flexible_content() {
     if (have_rows('sections')) : 
+        $count = 0; // Inicializa el contador
+
         while (have_rows('sections')) : the_row();
+            $count++; // Incrementa en cada iteración
+            set_query_var('prt_count', $count); // Establece el número de sección
+
             $layout = get_row_layout(); // Obtiene el nombre del layout
             get_template_part("template-parts/sections/{$layout}"); 
         endwhile;
     endif;
 }
-
-

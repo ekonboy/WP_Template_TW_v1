@@ -32,8 +32,8 @@ module.exports = {
             'xs': '480px',
             'sm': '600px',
             'md': '782px',
-            'lg': tailpress.theme('settings.layout.contentSize', theme),
-            'xl': tailpress.theme('settings.layout.wideSize', theme),
+            'lg': tailpress.theme('settings.layout.contentSize', theme),//1024
+            'xl': tailpress.theme('settings.layout.wideSize', theme),//1280
             '2xl': '1440px'
         }
     },

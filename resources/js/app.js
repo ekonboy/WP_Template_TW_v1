@@ -6,3 +6,8 @@ window.addEventListener('load', function () {
             main_navigation.classList.toggle('hidden');
       });
 });
+
+// function toggle() {
+//       const button = document.getElementById('toggle-button');
+//       button.classList.toggle('translate-x-6'); 
+//   }
