@@ -24,12 +24,16 @@ $content_year = get_sub_field('content_year');
 $empresa = get_sub_field('empresa');
 ?>
 
+<style>
+    
+</style>
+
 
 <section class="simpletext-content flex justify-center flex-col md:flex-row especialdesktop <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
 
 <?php if ($ancla): ?><div id="<?php echo $ancla ;?>"></div><?php endif; ?>
-    <?php if ($content_year): ?><div class="icon-box"><?php echo $content_year ;?></div><?php endif; ?>
-    <div class="container" style="display: flex;flex-direction: column;flex-wrap: wrap;max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
+    <?php if ($content_year): ?><div class="boxmobilecircle icon-box headlineyear"><?php echo $content_year ;?></div><?php endif; ?>
+    <div class="container boxmobile" style="display: flex;flex-direction: column;flex-wrap: wrap;max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
 
     <h1 class="lg:text-5xl text-[30px] mb-4" style="<?php echo $titulo_centrado ? 'text-align: center;' : ''; ?>">
                 <?php echo !empty($heading) ? esc_html($heading) : ''; ?>

@@ -1,12 +1,12 @@
 <?php
-
 /**
- * skillscontent Content section
+ * filtros Content section
  *
  * @package      gabii WordPress Starter
  * @author       SQUAD WEB.
  * @since        1.0.0
  */
+
 
 // Obtener el índice de la sección
 $count = get_query_var('prt_count');
@@ -14,10 +14,11 @@ $count = get_query_var('prt_count');
 // Variables de ACF (mejor usar get_sub_field())
 $skillsname = get_sub_field('skillsname');
 $background_color = get_sub_field('background_color');
+$background_imagen = get_sub_field('background_imagen');
 ?>
 
 
-<section class="skillscontent <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>">
+<section class="filtros <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>">
     <div class="containe22r flex flex-wrap gap-4 justify-center">
 
         <?php
@@ -25,31 +26,16 @@ $background_color = get_sub_field('background_color');
 
             while (have_rows('skillsname')) : the_row();
                 $tituloskill = get_sub_field('tituloskill');
-                $skill = get_sub_field('skill');
         ?>
-               <!-- <button
+               <button
                 class="w-[150px] h-[50px] text-sm font-medium rounded-full border border-gray-700 dark:border-gray-300 
                     bg-white dark:bg-gray-900 text-gray-800 dark:text-white 
                     hover:bg-gray-600 dark:hover:bg-gray-800 hover:text-gray-200
                     flex items-center justify-center transition-colors duration-200 mb-4
                     sm:w-[180px] sm:h-[60px] sm:text-base
                     md:w-[200px] md:h-[70px] md:text-lg"
-                aria-label="JavaScript Button"> -->
-                <button class="w-[150px] h-[50px] text-[24px] font-medium rounded-full border border-gray-700 dark:border-gray-300 
-    bg-white dark:bg-gray-900 text-gray-800 dark:text-white 
-    hover:bg-gray-600 dark:hover:bg-gray-800 hover:text-gray-200
-    flex items-center justify-center gap-[14px] transition-colors duration-200 mb-6
-    sm:w-[180px] sm:h-[60px] sm:text-base
-    md:w-[200px] md:h-[70px] md:text-lg" aria-label="skills Button">
-
-    <!-- Button content -->
-
-
-        <span style="font-size: 26px;"><?php if ($skill): ?> <?php echo $skill; ?> <?php endif; ?></span>
-        <?php if ($tituloskill): ?> <?php echo esc_html($tituloskill); ?><?php endif; ?>
-                
-                    
-                
+                aria-label="JavaScript Button">
+                <?php echo $tituloskill; ?>
             </button>
 
         <?php

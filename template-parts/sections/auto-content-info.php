@@ -121,13 +121,13 @@ $accordion_contents = array(
 ?>
 
 
-<!-- <section class="content-info <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
+<section class="content-info <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
     <div class="flex flex-col items-center justify-center text-center py-8">
-        <h1 class="lg:text-5xl mb-4 verde"><?php echo $heading; ?></h1>
+        <h1 class="lg:text-5xl text-3xl mb-4 verde"><?php echo $heading; ?></h1>
         <p class="mt-4 text-lg text-gray-600"><?php echo $description; ?></p>
     </div>
 
-    <div class="grid grid-cols-4 gap-4 p-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
 
         <?php
         // Iterar para generar las 20 tarjetas
@@ -162,4 +162,4 @@ $accordion_contents = array(
         ?>
 
     </div>
-</section> -->
+</section>

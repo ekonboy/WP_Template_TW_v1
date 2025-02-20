@@ -38,7 +38,7 @@ $girado = get_sub_field('girado');
                 <div class="flex flex-wrap sm:flex-nowrap w-full" id="tresinverse">
                     <div class="w-full sm:w-[300px] h-[100px] bg-[#d0ff71] relative" id="cincoinverse"></div>
                     <div class="w-full sm:w-[300px] h-[100px] bg-[#d0ff71] flex items-center p-3 sm:p-5 gap-3 justify-center sm:justify-start" id="quatroinverse">
-                        <img src="<?php echo esc_url($imagencontent); ?>" alt="gbii web developer" class="w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full object-cover border border-white" style="max-width: 100%; height: auto;">
+                        <img src="<?php echo esc_url($imagencontent); ?>" alt="gbii web developer" class="w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full object-cover border border-white" style="max-width: 100%; height: auto;transform: scaleX(-1);background-color: white;">
                         <div class="text-right">
                             <p class="text-black text-[16px] sm:text-[18px] font-bold"> <?php echo esc_attr($author_content); ?></p>
                             <p class="text-black text-[12px] sm:text-[14px]"> <?php echo esc_attr($author_title); ?></p>

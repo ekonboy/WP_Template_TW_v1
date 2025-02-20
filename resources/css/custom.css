@@ -127,9 +127,9 @@ body {
 
 .icon-box {
     background: #353535;
-    width: 60px;
+    /* width: 60px;
     min-width: 60px;
-    height: 60px;
+    height: 60px; */
     border-radius: 50%;
     margin-right: 2rem;
     display: flex;
@@ -241,18 +241,266 @@ footer img {
 }
 
 #cincoinverse {
-
     border-radius: 0 0 50px 50px;
 }
 
+.boxmobile {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.boxmobile.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+
+.boxmobilecircle {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.boxmobilecircle.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*area map */
+.area-master {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+      top: 639px;
+      left: -2px;
+      color: black;
+  }
+  .area-skills {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 475px;
+    left: -2px;
+      color: black;
+  }
+  .area-logros {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 324px;
+    left: 222px;
+      color:#fff;
+  }
+  .gitcontent svg {
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;width: 100%;
+}
+/*circulos movimieto area map */
+
+.headline {
+    border-radius: 50px;
+    transition: all 0.3s ease-out; 
+    border-radius: 30px;
+    transition: all 0.3s ease-out;
+    font-size: 14px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    margin-left: 24px;
+    animation: ripple-dark 1s linear infinite;
+    -webkit-transition: .5s ease-out; 
+  }
+
+
+
+
+  @-webkit-keyframes ripple-dark {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255, 100, 50, 0.1), 0 0 0 10px rgba(255, 100, 50, 0.1), 0 0 0 20px rgba(255, 100, 50, 0.1);
+      box-shadow: 0 0 0 0 rgba(255, 100, 50, 0.1), 0 0 0 10px rgba(255, 100, 50, 1), 0 0 0 20px rgba(255, 100, 50, 0.1);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 10px rgba(255, 100, 50, 0.1), 0 0 0 20px rgba(255, 100, 50, 0.1), 0 0 0 30px rgba(255, 100, 50, 0);
+      box-shadow: 0 0 0 10px rgba(255, 100, 50, 0.1), 0 0 0 20px rgba(255, 100, 50, 1), 0 0 0 30px rgba(255, 100, 50, 0);
+    }
+  }
+  
+  @keyframes ripple-dark {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255, 100, 50, 0.1), 0 0 0 10px rgba(255, 100, 50, 0.1), 0 0 0 20px rgba(255, 100, 50, 0.1);
+      box-shadow: 0 0 0 0 rgba(255, 100, 50, 0.1), 0 0 0 10px rgba(255, 100, 50, 1), 0 0 0 20px rgba(255, 100, 50, 1);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 10px rgba(255, 100, 50, 0.1), 0 0 0 20px rgba(255, 100, 50, 0.1), 0 0 0 30px rgba(255, 100, 50, 0);
+      box-shadow: 0 0 0 10px rgba(255, 100, 50, 0.1), 0 0 0 20px rgba(255, 100, 50, 0.5), 0 0 0 30px rgba(255, 100, 50, 0);
+    }
+  }
+
+
+  
+  .headlineyear {
+    border-radius: 50px;
+    transition: all 0.3s ease-out; /* Corrige la propiedad de transición */
+    height: 50px;
+    width: 50px;
+    animation: ripple-lightyear 1s linear infinite; /* Usa la animación correcta */
+    -webkit-transition: .5s ease-out; /* Corrige la propiedad de transición */
+}
+
+/* Define la animación ripple-lightyear */
+@-webkit-keyframes ripple-lightyear {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(211, 211, 211, 0.2), 0 0 0 10px rgba(211, 211, 211, 0.1), 0 0 0 20px rgba(211, 211, 211, 0.1);
+      box-shadow: 0 0 0 0 rgba(211, 211, 211, 0.2), 0 0 0 10px rgba(211, 211, 211, 0.1), 0 0 0 20px rgba(211, 211, 211, 0.1);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 10px rgba(211, 211, 211, 0.2), 0 0 0 20px rgba(211, 211, 211, 0.3), 0 0 0 30px rgba(211, 211, 211, 0);
+      box-shadow: 0 0 0 10px rgba(211, 211, 211, 0.2), 0 0 0 20px rgba(211, 211, 211, 0.3), 0 0 0 30px rgba(211, 211, 211, 0);
+    }
+}
+
+/* Define la animación ripple-lightyear para navegadores sin soporte webkit */
+@keyframes ripple-lightyear {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(211, 211, 211, 0.2), 0 0 0 10px rgba(211, 211, 211, 0.1), 0 0 0 20px rgba(211, 211, 211, 0.1);
+      box-shadow: 0 0 0 0 rgba(211, 211, 211, 0.2), 0 0 0 10px rgba(211, 211, 211, 0.1), 0 0 0 20px rgba(211, 211, 211, 0.1);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 10px rgba(211, 211, 211, 0.2), 0 0 0 20px rgba(211, 211, 211, 0.3), 0 0 0 30px rgba(211, 211, 211, 0);
+      box-shadow: 0 0 0 10px rgba(211, 211, 211, 0.2), 0 0 0 20px rgba(211, 211, 211, 0.3), 0 0 0 30px rgba(211, 211, 211, 0);
+    }
+}
+
+  
+  
+/* end area map*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hiddenmenu {
+    display: none;
+}
+.headermenu  {
+transition: transform 0.3s ease-in-out;}
+
+
+.headermenu.hidden {
+    transform: translateY(-170%);
+}
+
+
+
+
 
 /* M E D I A  Q U E R Y S */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 2500px) {
     .especialdesktop {
         display: flex;
         flex-direction: row;
     }
+    .headermenu  {
+        transition: all 0.3s ease; /* Transición suave */
+        border-radius: 50px;
+        padding: 20px 50px;
+        margin-top: 20px;
+        width: 70%;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+
+        
+        
+    }
+    .headermenu.scrolled {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%; /* Ocupa el 100% del ancho de la pantalla */
+        /* background-color: aliceblue; */
+        background: linear-gradient(to top, aliceblue 0%, rgba(255, 255, 255, 0.8) 100%);
+        color: black;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional para resaltar el menú */
+        padding: 20px 50px; /* Puedes reducir el padding cuando se hace fixed */
+        width: 40%;
+        margin: 50px auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+    
+    
 }
+
+
+@media (min-width: 1024px) and (max-width: 1950px) {
+    .headermenu  {
+        transition: all 0.3s ease; /* Transición suave */
+        border-radius: 50px;
+        padding: 20px 50px;
+        margin-top: 20px;
+        width: 70%;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    .headermenu.scrolled {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%; /* Ocupa el 100% del ancho de la pantalla */
+        /* background-color: aliceblue; */
+        background: linear-gradient(to top, aliceblue 0%, rgba(255, 255, 255, 0.8) 100%);
+        color: black;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional para resaltar el menú */
+        padding: 20px 50px; /* Puedes reducir el padding cuando se hace fixed */
+        width: 50%;
+        margin: 50px auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 
 /* M E D I A  Q U E R Y S  M O B I L E S */
 @media only screen and (max-width: 768px) {
@@ -274,4 +522,11 @@ footer img {
     #cincoinverse, #seisinverse {
         display: none;
     }
+    div#primary-menu {
+        color: #0e0f11;
+        background-color: #d0ff71;
+    }
+
+
+
 }

@@ -20,7 +20,7 @@
 
         <header>
             <div class="mx-auto container">
-                <div class="lg:flex lg:justify-between lg:items-center border-b py-6">
+                <div class="headermenu lg:flex lg:justify-bet22ween lg:items-center border-b py-6">
                     <!-- Logo y Toggle del Menú -->
                     <div class="flex justify-between items-center">
                         <div>
@@ -35,6 +35,23 @@
                                 </p>
                             <?php } ?>
                         </div>
+
+                        <ul class="lg:flex lg:-mx-4">
+                            <li>
+                                <a class="theme-toggle [&amp;>*]:pointer-events-none relative px-7 py-2.5 flex items-center rounded-[inherit] text-sm leading-5 font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 hover:dark:text-primary-600 transition-all duration-300" href="javascript:void(0)" onclick="toggle()">
+                                    <div class="flex dark:hidden items-center">
+                                        <em class="text-lg leading-none w-7 ni ni-moon"></em>
+                                    </div>
+                                    <div class="hidden dark:flex items-center">
+                                        <em class="text-lg leading-none w-7 ni ni-sun"></em>
+                                    </div>
+                                    <div class="ms-auto relative h-6 w-12 rounded-full border-2 border-gray-200 dark:border-primary-600 bg-white dark:bg-primary-600">
+                                        <div class="absolute start-0.5 dark:start-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-[#18b69b] transition-all duration-300" id="toggle-button"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
 
                         <div class="lg:hidden">
                             <a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
@@ -53,11 +70,12 @@
 
                     <!-- Menú y Toggle de Modo Oscuro -->
                     <div class="lg:flex lg:items-center">
+                        
                         <?php
                         wp_nav_menu(
                             array(
                                 'container_id'    => 'primary-menu',
-                                'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+                                'container_class' => 'hiddenmenu bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
                                 'menu_class'      => 'lg:flex lg:-mx-4',
                                 'theme_location'  => 'primary',
                                 'li_class'        => 'lg:mx-4',
@@ -65,35 +83,14 @@
                             )
                         );
                         ?>
-
-                        <!-- Toggle de Modo Oscuro -->
-                        <!-- <ul class="lg:flex lg:-mx-4">
-                            <li>
-                                <a class="theme-toggle [&amp;>*]:pointer-events-none relative px-7 py-2.5 flex items-center rounded-[inherit] text-sm leading-5 font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 hover:dark:text-primary-600 transition-all duration-300" href="javascript:void(0)" onclick="toggle()">
-                                    <div class="flex dark:hidden items-center">
-                                        <em class="text-lg leading-none w-7 ni ni-moon"></em>
-                                    </div>
-                                    <div class="hidden dark:flex items-center">
-                                        <em class="text-lg leading-none w-7 ni ni-sun"></em>
-                                    </div>
-                                    <div class="ms-auto relative h-6 w-12 rounded-full border-2 border-gray-200 dark:border-primary-600 bg-white dark:bg-primary-600">
-                                        <div class="absolute start-0.5 dark:start-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-[#18b69b] transition-all duration-300" id="toggle-button"></div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul> -->
                     </div>
                 </div>
             </div>
         </header>
 
 
-
-
         <div id="content" class="site-content flex-grow">
-
             <?php if (is_front_page()) { ?>
-                <!-- Start introduction -->
                 <div class="container mx-auto">
                     <div class="px-4 py-4 my-4">
                         <div class="mx-auto max-w-screen-md">
@@ -104,7 +101,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- End introduction -->
             <?php } ?>
 
             <?php do_action('tailpress_content_start'); ?>

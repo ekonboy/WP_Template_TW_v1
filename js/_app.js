@@ -33,91 +33,18 @@ __webpack_require__.r(__webpack_exports__);
   \*****************************/
 /***/ (() => {
 
-//gabii v1.0
+// Navigation toggle
+window.addEventListener('load', function () {
+  var main_navigation = document.querySelector('#primary-menu');
+  document.querySelector('#primary-menu-toggle').addEventListener('click', function (e) {
+    e.preventDefault();
+    main_navigation.classList.toggle('hidden');
+  });
+});
 function toggle() {
   var button = document.getElementById('toggle-button');
   button.classList.toggle('translate-x-6');
 }
-window.addEventListener("scroll", function () {
-  var menu = document.querySelector(".headermenu");
-  if (window.scrollY > 50) {
-    menu.classList.add("scrolled");
-  } else {
-    menu.classList.remove("scrolled");
-  }
-});
-document.addEventListener("DOMContentLoaded", function () {
-  // Variables para el menú
-  var lastScrollY = window.scrollY;
-  var scrollDownCount = 0; // Contador de scrolls hacia abajo
-  var threshold = 10; // Número de scrolls antes de ocultar el menú
-  var menu = document.querySelector(".headermenu");
-  var isHidden = false; // Controla si el menú está oculto
-
-  // Función para el toggle del menú
-  var toggleButton = document.querySelector('#primary-menu-toggle');
-  if (toggleButton) {
-    toggleButton.addEventListener('click', function (e) {
-      e.preventDefault();
-      var main_navigation = document.querySelector('#primary-menu');
-      main_navigation.classList.toggle('hiddenmenu');
-      document.getElementById('primary-menu').classList.toggle('open');
-      // menu.classList.add("hiddenmenu");
-    });
-  }
-
-  // Función para el scroll del menú y las animaciones
-  window.addEventListener("scroll", function () {
-    var currentScrollY = window.scrollY;
-
-    // Comportamiento del menú (desaparece al hacer scroll hacia abajo)
-    if (currentScrollY > lastScrollY) {
-      // Scroll hacia abajo
-      scrollDownCount++;
-      if (scrollDownCount >= threshold && !isHidden) {
-        menu.classList.add("hidden");
-        isHidden = true; // Evita que siga ejecutando la acción en cada scroll
-      }
-    } else {
-      // Scroll hacia arriba → Mostrar menú y resetear contador
-      menu.classList.remove("hidden");
-      scrollDownCount = 0; // Reinicia el contador cuando sube
-      isHidden = false;
-    }
-
-    // Animación de los elementos .boxmobile
-    var boxes = document.querySelectorAll(".boxmobile");
-    boxes.forEach(function (boxmobile) {
-      var rect = boxmobile.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.8) {
-        boxmobile.classList.add("show");
-      } else {
-        boxmobile.classList.remove("show");
-      }
-    });
-
-    // Animación de los elementos .boxmobilecircle
-    var elements = document.querySelectorAll(".boxmobilecircle");
-    elements.forEach(function (element) {
-      var rect = element.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        // Aparece un poco antes de llegar al final
-        element.classList.add("visible");
-      } else {
-        element.classList.remove("visible");
-      }
-    });
-    lastScrollY = currentScrollY;
-  });
-
-  // Función para el toggle del botón
-  var button = document.getElementById('toggle-button');
-  if (button) {
-    button.addEventListener('click', function () {
-      button.classList.toggle('translate-x-6');
-    });
-  }
-});
 
 /***/ })
 
