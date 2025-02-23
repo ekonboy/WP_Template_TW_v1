@@ -24,3 +24,33 @@
     font-style: normal;
     font-display: swap;
   }
+  @font-face {
+    font-family: 'Blimone';
+    src: url('../fonts/Blimone-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'hubot-sans';
+  src: url('../fonts/hubot-sans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'mona-sans';
+  src: url('../fonts/mona-sans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Obviously';
+  src: url('../fonts/Obviously.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

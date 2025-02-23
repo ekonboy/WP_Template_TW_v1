@@ -17,6 +17,7 @@ $content = get_sub_field('content');
 
 // Variables de estilo
 $background_color = get_sub_field('background_color');
+$colordefondopuntos = get_sub_field('colordefondopuntos');
 $ancho_total_texto = get_sub_field('ancho_total_texto');
 $texto_centrado = get_sub_field('texto_centrado'); //text-align: justify;
 
@@ -34,17 +35,19 @@ if ($cargar_scripts == '1') { ?>
 ?>
 
 
-<section class="texto-imagen  <?php echo esc_attr('section-' . $count); ?>" style="display: flex; justify-content: space-around; background-color: <?php echo esc_attr($background_color); ?>;">
+
+
+<section class="texto-imagen  <?php echo esc_attr($colordefondopuntos == '1') ? 'colordefondopuntos' : '' ; ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex; justify-content: space-around; background-color: <?php echo esc_attr($background_color); ?>";>
     <div class="container flex flex-col md:flex-row especialmobileimagen" style="display: flex; flex-direction: <?php echo get_sub_field('girado') ? 'row-reverse' : ''; ?>; align-items: center; max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
 
         <!-- Columna 1: Heading y Content -->
         <div style="flex: 1;">
             <?php if ($heading): ?>
-                <h1 class="lg:text-5xl text-[30px] mb-4"><?php echo esc_html($heading); ?></h1>
+                <h1 class="after:left-0 font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 text-2xl lg:text-3xl after:-bottom-3 text-slate-600 dark:text-white dark:after:bg-[#d0ff71] mb-4"><?php echo esc_html($heading); ?></h1>
             <?php endif; ?>
 
             <?php if ($content): ?>
-                <span class="lg:text-[18px] text-[16px] <?php echo get_sub_field('texto_centrado') ? 'texto-justificado' : ''; ?>">
+                <span class="lg:text-[18px] text-[16px] text-white <?php echo get_sub_field('texto_centrado') ? 'texto-justificado' : ''; ?>">
                     <?php echo wp_kses_post($content); ?>
                 </span>
             <?php endif; ?>
@@ -59,3 +62,5 @@ if ($cargar_scripts == '1') { ?>
 
     </div>
 </section>
+
+
