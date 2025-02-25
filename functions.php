@@ -154,6 +154,18 @@ add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class'
 
 
 
+//añadir menu contacto
+function add_contact_button_to_menu($items, $args) {
+    if ($args->theme_location == 'primary') {
+        $items .= '<li class="menu-item menu-item-type-custom menu-item-object-custom lg:mx-4">
+            <button data-target="#ModalContactForm" class="modal-toggle">Contacto</button>
+        </li>';
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'add_contact_button_to_menu', 10, 2);
+
+
 /* custom */
 
 /*

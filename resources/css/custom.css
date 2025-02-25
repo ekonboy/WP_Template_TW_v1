@@ -415,75 +415,127 @@ transition: transform 0.3s ease-in-out;}
 }
 
 
-/*TOGGLE SWITCH */
-
-/* .switcher-container {
+/*TOGGLE SWITCH menu ancla*/
+.switcher-container {
     position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
+    background-color: #000;
     border-radius: 50px;
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 565px;
-    height: 50px;
-    margin-bottom: 20px;
-  }
+    /* border: 2px solid #b6b3b3; */
+    width: 370px;
+    height: 36px;
+    overflow: hidden;
+}
+        .switcher-option {
+            flex: 1;
+            color: white;
+            /* padding: 15px; */
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            background: none;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
 
-  .switcher-option {
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 27%;
-    text-align: center;
-    position: relative;
-  }
-
-  .switcher-option:hover {
-    background-color: #ddd;
-  }
-
-  .switcher-option.active {
-    background-color: #357ae8;
-    color: white;
-  }
-
-  .active-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 33.33%;
-    height: 100%;
-    background-color: #357ae8;
-    border-radius: 30px;
-    transition: left 0.3s ease;
-  }
-
-  .switcher-content {
-    width: 300px;
-    height: 200px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: white;
-    text-align: center;
-    font-size: 18px;
-    display: none;
-  }
-
-  .show {
-    display: block;
-  } */
+        .active-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 33.3%;
+            height: 100%;
+            background: linear-gradient(to right, #1321AC, #881ABD);
+            border-radius: 50px;
+            transition: left 0.3s ease-in-out;
+            z-index: 1;
+        }
+        .switcher-content {
+            width: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .show {
+            display: block;
+            opacity: 1;
+        }
+.ni-external,
+.ni-arrow-right-fill-c,
+    .ni-plus-medi-fill,
+.ni-flag,
+.ni-call-alt-fill {font-size: 18px;}
   /*final toggle switch */
 
 
 
+/*burbujas*/
+.speech-bubbledefault {
+    width: 800px;
+    height: 320px;
+    background: #C8FF66;
+    border-radius: 40px;
+    position: relative;
+    padding: 50px;
+    text-align: left;
+    font-size: 16px;
+    color: black;
+    transition: transform 0.7s ease-in-out;
+    position: absolute;
+    clip-path: path("M0,64Q0,0 64,0L736,0Q800,0 800,64L800,256Q800,320 736,320H416Q352,320 320,288Q288,256 256,256H64Q0,256 0,192Z");
+}
+
+.speech-bubble {
+    width: 800px;
+    height: 320px;
+    background: #C8FF66;
+    border-radius: 40px;
+    position: relative;
+    padding: 50px;
+    text-align: left;
+    font-size: 16px;
+    color: black;
+    transition: transform 0.7s ease-in-out;
+    position: absolute;
+    clip-path: path("M0,64Q0,0 64,0L736,0Q800,0 800,64L800,256Q800,320 736,320H416Q352,320 320,288Q288,256 256,256H64Q0,256 0,192Z");
+}
+
+
+.movespeech-bubble {
+    animation: flyAway 0.7s ease-in-out forwards;
+}
+
+@keyframes flyAway {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-250px, -800px) rotate(-30deg);
+        opacity: 0;
+    }
+}
+
+@keyframes flyAwayDefault {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(250px, -800px) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+.movespeech-bubbledefault {
+    animation: flyAwayDefault 0.7s ease-in-out forwards;
+}
+/*final burbujas*/
 
 
 
@@ -497,7 +549,7 @@ transition: transform 0.3s ease-in-out;}
 .bg-astro-dark-900\/55 {
     background-color: #0609138c;
 }
-img.w-full.h-auto {
+img.w-full.h-auto.herohome {
     position: relative;
     top: -700px;
     z-index: -1;

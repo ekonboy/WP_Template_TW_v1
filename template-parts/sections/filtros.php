@@ -11,7 +11,7 @@
 // Obtener el índice de la sección
 $count = get_query_var('prt_count');
 
-// Variables de ACF (mejor usar get_sub_field())
+// repeter field
 $skillsname = get_sub_field('skillsname');
 $background_color = get_sub_field('background_color');
 $background_imagen = get_sub_field('background_imagen');

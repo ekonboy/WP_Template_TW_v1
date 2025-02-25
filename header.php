@@ -69,7 +69,7 @@
                     </div>
 
                     <!-- Menú y Toggle de Modo Oscuro -->
-                    <div class="lg:flex lg:items-center">
+                    <!-- <div class="lg:flex lg:items-center">
 
                         <?php
                         wp_nav_menu(
@@ -82,11 +82,49 @@
                                 'fallback_cb'     => false,
                             )
                         );
+
                         ?>
+                             <ul id="menu-menumain" class="lg:flex lg:-mx-4">
+            <li id="" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1025 lg:mx-4">
+            <button data-target="#ModalContactForm" class="modal-toggle">Contacto</button>
+        </li>
+
+</ul>
+
+                    </div> -->
+
+                    <div class="lg:flex lg:items-center">
+                        <?php
+                        // Argumentos para wp_nav_menu
+                        $menu_args = array(
+                            'container_id'    => 'primary-menu',
+                            'container_class' => 'hiddenmenu bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+                            'menu_class'      => 'lg:flex lg:-mx-4', // Aseguramos que el menú use las mismas clases
+                            'theme_location'  => 'primary',
+                            'li_class'        => 'lg:mx-4',
+                            'fallback_cb'     => false,
+                        );
+
+                        // Llamada a wp_nav_menu
+                        wp_nav_menu($menu_args);
+                        ?>
+
                     </div>
+
+
+
                 </div>
             </div>
         </header>
+
+
+
+
+
+
+
+
+
 
 
         <div id="content" class="site-content flex-grow">
@@ -98,65 +136,68 @@
 
 
                             <div class="mt-16 mb-8 md:mt-20 lg:mt-24 px-4 sm:px-8 mx-auto w-full sm:max-w-screen-md flex flex-col items-center justify-center gap-5 md:gap-6 lg:gap-8"> <a href="#!" class="h-9 group w-fit flex items-center justify-center gap-0 bg-astro-dark-900/55 rounded-full">
-                                    <div class="px-3 h-full w-fit flex items-center gap-2 bg-gradient-to-tr from-[#1321AC] to-[#881ABD] rounded-full"> <span class="text-sm text-white font-light">gabii 5.0</span> <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-white block sm:hidden" viewBox="0 0 24 24">
+                                    <div class="px-3 h-full w-fit flex items-center gap-2 bg-gradient-to-tr from-[#1321AC] to-[#881ABD] rounded-full">
+                                        <span class="text-sm text-white font-light">gabii 5.0</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-white block sm:hidden" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"></path>
-                                        </svg> </div>
-                                    <div class="hidden sm:flex px-3 h-full w-fit items-center justify-center gap-2"> <span class="text-sm text-astro-gray-100 group-hover:underline font-light">Available now!</span> <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-astro-gray-100" viewBox="0 0 24 24">
+                                        </svg>
+                                    </div>
+                                    <div class="hidden sm:flex px-3 h-full w-fit items-center justify-center gap-2">
+                                        <span class="text-sm text-astro-gray-100 group-hover:underline font-light">Available now!</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-astro-gray-100" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"></path>
-                                        </svg> </div>
+                                        </svg>
+                                    </div>
                                 </a>
                                 <div class="flex flex-col items-center">
                                     <h1 class="text-balance mb-4 text-center text-3xl/[1.1] font-bold font-heading sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] no-after">
                                         Experiencia en optimización, SEO, desarrollo escalable y diseño responsive
                                     </h1>
-                                   
+
                                 </div>
 
                                 <div class="grid grid-rows-2 gap-2">
-    <div data-code-block="" class="px-4 py-2 bg-astro-dark-900/55 rounded-xl">
-        <div class="group h-full flex items-center">
-            <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 relative block w-3 -rotate-90 text-astro-gray-200 " aria-hidden="true">
-                <path d="M1 1L11 11L21 1" stroke="currentColor" stroke-width="2"></path>
-            </svg>
-  
-
-            <code id="merchant-id-1" data-code="" class="flex-1 font-mono font-light text-sm text-astro-gray-200 mr-2 merchant-data">
-        npm create gabii@latest
-    </code>
-            <div class="relative">
-                
-
-                <button onclick="copyToClipboard()" class="block mr-1 transition hover:scale-110 active:scale-100 active:transition-colors text-astro-gray-200 group-hover:text-astro-gray-100 copy-btn" title="Copy to clipboard">
-        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.006-1zM5.002 8L5 20h10V8zM9 6h8v10h2V4H9z"></path>
-        </svg>
-    </button>
-
-               
-
-                <div id="copied-message" class="copied-message" data-visible="false">
-        Copied!
-    </div>
-
-            
-            </div>
-        </div>
-    </div>
-</div>
-<style>
- 
+                                    <div data-code-block="" class="px-4 py-2 bg-astro-dark-900/55 rounded-xl">
+                                        <div class="group h-full flex items-center">
+                                            <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 relative block w-3 -rotate-90 text-astro-gray-200 " aria-hidden="true">
+                                                <path d="M1 1L11 11L21 1" stroke="currentColor" stroke-width="2"></path>
+                                            </svg>
 
 
-        .copied-message {
-            color: green;
-            font-weight: bold;
-            display: none;
-            margin-top: 10px;
-        }
-    </style>
-<script>
+                                            <code id="merchant-id-1" data-code="" class="flex-1 font-mono font-light text-sm text-astro-gray-200 mr-2 merchant-data">
+                                                npm create gabii@latest
+                                            </code>
+                                            <div class="relative">
 
-    </script>
+
+                                                <button onclick="copyToClipboard()" class="block mr-1 transition hover:scale-110 active:scale-100 active:transition-colors text-astro-gray-200 group-hover:text-astro-gray-100 copy-btn" title="Copy to clipboard">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.006-1zM5.002 8L5 20h10V8zM9 6h8v10h2V4H9z"></path>
+                                                    </svg>
+                                                </button>
+
+
+
+                                                <div id="copied-message" class="copied-message" data-visible="false">
+                                                    Copied!
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <style>
+                                    .copied-message {
+                                        color: green;
+                                        font-weight: bold;
+                                        display: none;
+                                        margin-top: 10px;
+                                    }
+                                </style>
+                                <script>
+
+                                </script>
                             </div>
 
 
@@ -174,7 +215,7 @@
                             </div>
                             </p>
                         </div>
-                        <img src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="Hero" class="w-full h-auto">
+                        <img src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese" class="w-full h-auto herohome">
                     </div>
                 </div>
             <?php } ?>
@@ -182,5 +223,3 @@
             <?php do_action('tailpress_content_start'); ?>
 
             <main>
-
-

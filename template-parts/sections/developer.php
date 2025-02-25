@@ -11,18 +11,104 @@
 // Obtener el índice de la sección
 $count = get_query_var('prt_count');
 $content = get_sub_field('content');
-
-// Variables de estilo
 $background_color = get_sub_field('background_color');
 $ancho_total_texto = get_sub_field('ancho_total_texto');
 $imagencontent = get_sub_field('imagencontent');
 $content_onlymobile = get_sub_field('content_onlymobile');
-
 ?>
- <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
 
-<section class="developer block <?php echo esc_attr( $content_onlymobile == 1 ? 'md:hidden' : '' ); ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-content: space-between;justify-content: center;background-color: <?php echo esc_attr($background_color); ?>">
-    <div class="container" style="padding: 15px;display: flex;flex-direction: column;align-content: space-around;flex-wrap: wrap;justify-content: center;">
+<style>
+    .green-div,
+    .red-div {
+        /* width: 100vw; 
+            height: 100vh;  */
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+        text-align: center;
+        transition: opacity 0.5s ease;
+        z-index: 1;
+        display: flex;
+    }
+
+    /* .green-div {
+        background-color: green;
+    } */
+
+    .red-div {
+
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .green-div p,
+    .red-div p {
+        font-size: 50px;
+        color: white;
+        margin: 100px 0 20px 0;
+    }
+
+    .circle,
+    .circle2 {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        visibility: hidden;
+        transition: all 0.5s ease-out;
+        z-index: 5;
+    }
+
+    .circle {
+        background-color: #C8FF66;
+    }
+
+    .circle2 {
+        background-color: #d0ff71;
+    }
+
+    .expanded {
+        visibility: visible;
+        width: max(120vw, 120vh);
+        height: max(120vw, 120vh);
+    }
+
+    .gabii_template_bubble {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 480px;
+        position: relative;
+    }
+
+    .bubbletext {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+
+
+
+    .bubblebutton {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+</style>
+
+
+<section class="developer block <?php echo esc_attr($content_onlymobile == 1 ? 'md:hidden' : ''); ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex;flex-direction: column;flex-wrap: nowrap;align-content: space-between;justify-content: center;background-color: <?php echo esc_attr($background_color); ?>">
+    <div class="container22" style="">
 
         <?php if ($imagencontent): ?>
             <div style="flex: 1; padding: 20px; display: flex; justify-content: center; align-items: center;">
@@ -31,85 +117,6 @@ $content_onlymobile = get_sub_field('content_onlymobile');
 
             </div>
         <?php endif; ?>
-   
-
-        <style>
-.switcher-container {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000000;
-    border-radius: 50px;
-    border: 2px solid #b6b3b3;
-    width: 565px;
-    height: 60px;
-    margin-bottom: 20px;
-}
-
-.switcher-option {
-    color: white;
-    padding: 22px 20px;
-    border: none;
-    border-radius: 37px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 33.3%;
-    text-align: center;
-    position: relative;
-    display: flex
-;
-    flex-direction: row;
-    justify-content: center;
-    gap: 9px;
-}
-
-    .switcher-option:hover {
-      /* background-color: #ddd; */
-    }
-
-    .switcher-option.active {
-    color: white;
-    font-weight: 700;
-}
-
-    /* Estilo para el fondo azul */
-    .active-background {
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 34.33%;
-    height: 109%;
-    border-radius: 50px;
-    
-    transition: left 0.3s ease;
-    border: 4px solid red;
-}
-
-    .switcher-content {
-      width: 540px;
-      height: 200px;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background-color: white;
-      text-align: center;
-      font-size: 18px;
-      display: none;
-    }
-
-    /* Mostrar contenido cuando se activa */
-    .show {
-      display: block;
-    }
-
-    .ni-plus-medi-fill,
-.ni-flag,
-.ni-call-alt-fill {font-size: 24px;}
-        </style>
-
-
 
         <?php if ($content): ?>
             <?php echo $content = get_sub_field('content');
@@ -117,29 +124,89 @@ $content_onlymobile = get_sub_field('content_onlymobile');
         <?php endif; ?>
 
 
-          <!-- Contenedor del toggle -->
-  <div class="switcher-container">
-    <!-- Fondo azul que se moverá al hacer clic -->
-    <div id="active-background" class="active-background"></div>
+        <div class="green-div" id="greenDiv">
 
-    <button id="option1-btn" class="switcher-option active"><em class="ni ni-plus-medi-fill"></em>Formación</button>
-    <button id="option2-btn" class="switcher-option"><em class="ni ni-flag"></em>Idiomas</button>
-    <button id="option3-btn" class="switcher-option"><em class="ni ni-call-alt-fill"></em> Contacto</button>
-  </div>
+            <div class="gabii_template_bubble">
+                <div class="bubbletext">
+                    <b>111 Formación Complementaria</b><br>
+                    - Curso de NODE.JS, aplicaciones para API diciembre 2021.<br>
+                    - Curso analítica y plan de marketing digital, CEAM, noviembre 2021.<br>
+                    - Formación de DOCKER y GITHUB en Barcelona Activa, agosto 2021.<br>
+                    - Formación online de Mobirise en Barcelona Activa, 2021.<br>
+                    - Formación de API REST online en Barcelona Activa, 2020.<br>
+                </div>
+                <button class="bubblebutton text-white px-5 py-2 items-center bg-gradient-to-tr from-[#1321AC] to-[#881ABD] rounded-full" onclick="toggleView()">Haz clic aquí</button>
+            </div>
 
-  <!-- Contenido que cambia con cada opción -->
-  <div id="option1-content" class="switcher-content show">
-    <h2>Contenido de Opción 1</h2>
-    <p>Este es el contenido de la primera opción.</p>
-  </div>
-  <div id="option2-content" class="switcher-content">
-    <h2>Contenido de Opción 2</h2>
-    <p>Este es el contenido de la segunda opción.</p>
-  </div>
-  <div id="option3-content" class="switcher-content">
-    <h2>Contenido de Opción 3</h2>
-    <p>Este es el contenido de la tercera opción.</p>
-  </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="red-div" id="redDiv">
+        <div class="gabii_template_bubble">
+            <div class="bubbletext">
+                <b>333 Formación Complementaria</b><br>
+                - Curso de NODE.JS, aplicaciones para API diciembre 2021.<br>
+                - Curso analítica y plan de marketing digital, CEAM, noviembre 2021.<br>
+                - Formación de DOCKER y GITHUB en Barcelona Activa, agosto 2021.<br>
+                - Formación online de Mobirise en Barcelona Activa, 2021.<br>
+                - Formación de API REST online en Barcelona Activa, 2020.<br>
+            </div>
+            <button class="bubblebutton text-white px-5 py-2 items-center bg-gradient-to-tr from-[#1321AC] to-[#881ABD] rounded-full" onclick="toggleView()">Haz clic aquí</button>
+        </div>
+
+    </div>
+
+    <!-- Círculos -->
+    <div class="circle" id="circle"></div>
+    <div class="circle2" id="circle2"></div>
+
+
+    <script>
+        let isGreen = true; // Estado inicial
+
+        function toggleView() {
+            const circle = isGreen ? document.getElementById('circle') : document.getElementById('circle2');
+            const greenDiv = document.getElementById('greenDiv');
+            const redDiv = document.getElementById('redDiv');
+
+            circle.style.visibility = 'visible';
+            circle.classList.add('expanded');
+
+            setTimeout(() => {
+                circle.style.visibility = 'hidden';
+                circle.classList.remove('expanded');
+
+                switch (isGreen) {
+                    case true:
+                        greenDiv.style.opacity = "0";
+                        greenDiv.style.pointerEvents = "none";
+
+                        redDiv.style.opacity = "1";
+                        redDiv.style.pointerEvents = "auto";
+
+                        greenDiv.classList.add('hidden'); // Añade la clase hidden
+                        redDiv.classList.remove('hidden'); // Elimina la clase hidden
+                        break;
+                    case false:
+                        redDiv.style.opacity = "0";
+                        redDiv.style.pointerEvents = "none";
+
+                        greenDiv.style.opacity = "1";
+                        greenDiv.style.pointerEvents = "auto";
+
+                        redDiv.classList.add('hidden'); // Añade la clase hidden
+                        greenDiv.classList.remove('hidden'); // Elimina la clase hidden
+
+                        break;
+                }
+
+                isGreen = !isGreen; // Cambiar estado
+            }, 500);
+        }
+    </script>
 
     </div>
 </section>

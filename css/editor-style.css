@@ -228,9 +228,6 @@
 .top-6 {
     top: 1.5rem
 }
-.top-\[calc\(100\%\+8px\)\] {
-    top: calc(100% + 8px)
-}
 .top-auto {
     top: auto
 }
@@ -254,6 +251,9 @@
 }
 .z-\[1070\] {
     z-index: 1070
+}
+.z-\[5000\] {
+    z-index: 5000
 }
 .order-2 {
     order: 2
@@ -914,6 +914,9 @@
 .w-\[40px\] {
     width: 40px
 }
+.w-\[450px\] {
+    width: 450px
+}
 .w-auto {
     width: auto
 }
@@ -1022,6 +1025,10 @@
 }
 .-translate-y-1 {
     --tw-translate-y: -0.25rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+.-translate-y-\[30px\] {
+    --tw-translate-y: -30px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 .translate-x-0 {
@@ -1296,9 +1303,6 @@
 .whitespace-nowrap {
     white-space: nowrap
 }
-.text-wrap {
-    text-wrap: wrap
-}
 .text-balance {
     text-wrap: balance
 }
@@ -1332,6 +1336,10 @@
 .rounded-b {
     border-bottom-right-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem
+}
+.rounded-b-\[inherit\] {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit
 }
 .rounded-b-md {
     border-bottom-right-radius: 0.375rem;
@@ -1410,6 +1418,10 @@
 }
 .\!border-transparent {
     border-color: transparent !important
+}
+.border-\[\#0e0f11\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(14 15 17 / var(--tw-border-opacity, 1))
 }
 .border-blue-100 {
     --tw-border-opacity: 1;
@@ -1577,6 +1589,10 @@
     --tw-bg-opacity: 1 !important;
     background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1)) !important
 }
+.bg-\[\#0e0f11\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(14 15 17 / var(--tw-bg-opacity, 1))
+}
 .bg-\[\#1321AC\] {
     --tw-bg-opacity: 1;
     background-color: rgb(19 33 172 / var(--tw-bg-opacity, 1))
@@ -1596,9 +1612,6 @@
 .bg-black {
     --tw-bg-opacity: 1;
     background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
-}
-.bg-black\/50 {
-    background-color: rgb(0 0 0 / 0.5)
 }
 .bg-blue-100 {
     --tw-bg-opacity: 1;
@@ -2432,6 +2445,17 @@
     --tw-text-opacity: 1 !important;
     color: rgb(148 163 184 / var(--tw-text-opacity, 1)) !important
 }
+.text-\[\#0e0f11\] {
+    --tw-text-opacity: 1;
+    color: rgb(14 15 17 / var(--tw-text-opacity, 1))
+}
+.text-\[\#d0ff71\] {
+    --tw-text-opacity: 1;
+    color: rgb(208 255 113 / var(--tw-text-opacity, 1))
+}
+.text-\[slate-700\] {
+    color: slate-700
+}
 .text-black {
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity, 1))
@@ -2960,6 +2984,9 @@ body {
     content: var(--tw-content);
     opacity: 0
 }
+.last\:mb-0:last-child {
+    margin-bottom: 0px
+}
 .last\:pe-0:last-child {
     padding-inline-end: 0px
 }
@@ -3003,8 +3030,15 @@ body {
 .group:hover .group-hover\:underline {
     text-decoration-line: underline
 }
-.data-\[visible\=true\]\:opacity-100[data-visible="true"] {
-    opacity: 1
+.group.show .group-\[\.show\]\:translate-y-0 {
+    --tw-translate-y: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+.group.show .group-\[\.show\]\:delay-0 {
+    transition-delay: 0s
+}
+.group.show .group-\[\.show\]\:duration-300 {
+    transition-duration: 300ms
 }
 .dark\:block:is(.dark *) {
     display: block
@@ -3118,9 +3152,6 @@ body {
     .sm\:w-\[50px\] {
         width: 50px
     }
-    .sm\:max-w-5xl {
-        max-width: 64rem
-    }
     .sm\:max-w-\[24ch\] {
         max-width: 24ch
     }
@@ -3154,6 +3185,10 @@ body {
     }
     .sm\:p-\[20px\] {
         padding: 20px
+    }
+    .sm\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem
     }
     .sm\:px-8 {
         padding-left: 2rem;
@@ -3208,10 +3243,6 @@ body {
     .md\:gap-6 {
         gap: 1.5rem
     }
-    .md\:px-8 {
-        padding-left: 2rem;
-        padding-right: 2rem
-    }
     .md\:pe-6 {
         padding-inline-end: 1.5rem
     }
@@ -3261,6 +3292,12 @@ body {
     }
     .lg\:w-11 {
         width: 2.75rem
+    }
+    .lg\:w-5\/12 {
+        width: 41.666667%
+    }
+    .lg\:w-7\/12 {
+        width: 58.333333%
     }
     .lg\:grid-cols-4 {
         grid-template-columns: repeat(4, minmax(0, 1fr))
@@ -3323,8 +3360,14 @@ body {
     content: var(--tw-content);
     opacity: 1
 }
+.\[\&\.show\]\:visible.show {
+    visibility: visible
+}
 .\[\&\.show\]\:block.show {
     display: block
+}
+.\[\&\.show\]\:opacity-100.show {
+    opacity: 1
 }
 .\[\&\:not\(\:last-child\)\]\:pb-7:not(:last-child) {
     padding-bottom: 1.75rem

@@ -14,77 +14,6 @@ function toggle() {
   });
 
 
-    // function copyToClipboard() {
-    //     const text = document.getElementById("merchant-id-1").textContent;
-    //     navigator.clipboard.writeText(text).then(() => {
-    //         const message = document.getElementById("copied-message");
-    //         message.style.display = "block";
-  
-    //         setTimeout(() => {
-    //             message.style.display = "none";
-    //         }, 2000);
-    //     }).catch(err => console.error("Error al copiar:", err));
-    // }
-
-    // Obtener los botones y los contenidos
-    const option1Btn = document.getElementById('option1-btn');
-    const option2Btn = document.getElementById('option2-btn');
-    const option3Btn = document.getElementById('option3-btn');
-
-    const option1Content = document.getElementById('option1-content');
-    const option2Content = document.getElementById('option2-content');
-    const option3Content = document.getElementById('option3-content');
-
-    const activeBackground = document.getElementById('active-background');
-
-    // Función para mostrar el contenido correspondiente y activar el botón
-    function showContent(option) {
-      // Ocultar todos los contenidos
-      option1Content.classList.remove('show');
-      option2Content.classList.remove('show');
-      option3Content.classList.remove('show');
-
-      // Quitar la clase 'active' de todos los botones
-      option1Btn.classList.remove('active');
-      option2Btn.classList.remove('active');
-      option3Btn.classList.remove('active');
-
-      // Mover el fondo azul
-    //   activeBackground.style.left = `${(option - 1) * 33.33}%`;
-
-      if (option === 1) {
-        activeBackground.style.left = "-0.8%"; // Ajusta el valor de left aquí
-      } else if (option === 2) {
-        activeBackground.style.left = "33.33%"; // Para la opción 2
-      } else if (option === 3) {
-        activeBackground.style.left = "66.4%"; // Para la opción 3
-      }
-
-
-
-      // Mostrar el contenido correspondiente a la opción seleccionada
-      if (option === 1) {
-        option1Content.classList.add('show');
-        option1Btn.classList.add('active');
-      } else if (option === 2) {
-        option2Content.classList.add('show');
-        option2Btn.classList.add('active');
-      } else if (option === 3) {
-        option3Content.classList.add('show');
-        option3Btn.classList.add('active');
-      }
-    }
-
-    // Asignar eventos a los botones
-    option1Btn.addEventListener('click', () => showContent(1));
-    option2Btn.addEventListener('click', () => showContent(2));
-    option3Btn.addEventListener('click', () => showContent(3));
-
-    // Mostrar la opción 1 por defecto
-    showContent(1);
-
-
-
 
     function copyToClipboard() {
         if (navigator.clipboard) {
@@ -101,9 +30,6 @@ function toggle() {
             console.error("La API Clipboard no está disponible.");
         }
     }
-
-
-
 
 
 
@@ -172,6 +98,11 @@ function toggle() {
         lastScrollY = currentScrollY;
     });
 
+
+
+
+
+
     // Función para el toggle del botón
     const button = document.getElementById('toggle-button');
     if (button) {
@@ -181,9 +112,52 @@ function toggle() {
     }
 
 
+
+
+    // Función para el cambio de contenido en el switcher
+
+    const buttonsswitch = document.querySelectorAll(".switcher-option");
+    const activeBackground = document.getElementById("active-background");
+    const switcherContents = document.querySelectorAll(".switcher-content");
+    
+    if (buttonsswitch.length > 0 && activeBackground && switcherContents.length > 0) {
+        function showContent(index) {
+            // Cambiar la clase active en los botones
+            buttonsswitch.forEach((btn, i) => {
+                btn.classList.toggle("active", i === index);
+            });
+            
+            // Mover el fondo activo
+            activeBackground.style.left = `${(index / buttonsswitch.length) * 100}%`;
+    
+            // Mostrar el contenido correspondiente y ocultar los demás
+            switcherContents.forEach((content, i) => {
+                content.classList.toggle("show", i === index);
+            });
+        }
+    
+        // Añadir los event listeners a cada botón
+        buttonsswitch.forEach((buttonswitch, index) => {
+            buttonswitch.addEventListener("click", () => showContent(index));
+        });
+    
+        // Inicializar con el contenido de la opción 1 visible
+        showContent(1); // Cambié a 1 porque el segundo botón tiene la clase 'active' inicial
+    } else {
+        console.error("Faltan botones, fondo activo o contenido.");
+    }
+    
   
+    
+   
 
 
+  
+    
+  
+    
+  
+    
 
 
 });
