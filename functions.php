@@ -187,3 +187,4 @@ function render_flexible_content() {
         endwhile;
     endif;
 }
+

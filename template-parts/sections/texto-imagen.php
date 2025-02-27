@@ -13,18 +13,17 @@ $count = get_query_var('prt_count');
 
 // Variables de ACF (mejor usar get_sub_field())
 $heading = get_sub_field('heading');
-$content = get_sub_field('content');
-
-// Variables de estilo
+$content_tituloespecial = get_sub_field('content_tituloespecial');
+$content_especial = get_sub_field('content_especial');
 $background_color = get_sub_field('background_color');
 $colordefondopuntos = get_sub_field('colordefondopuntos');
 $ancho_total_texto = get_sub_field('ancho_total_texto');
+$ancho_total_texto_gap = get_sub_field('ancho_total_texto_gap');
 $texto_centrado = get_sub_field('texto_centrado'); //text-align: justify;
-
 $imagencontent = get_sub_field('imagencontent');
+$imagencontent_svg = get_sub_field('imagencontent_svg');
 $girado = get_sub_field('girado');
 $cargar_scripts = get_sub_field('cargar_scripts');
-
 
 if ($cargar_scripts == '1') { ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,34 +32,47 @@ if ($cargar_scripts == '1') { ?>
 <?php
 }
 ?>
-
-
-
-
 <section class="texto-imagen  <?php echo esc_attr($colordefondopuntos == '1') ? 'colordefondopuntos' : '' ; ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex; justify-content: space-around; background-color: <?php echo esc_attr($background_color); ?>";>
-    <div class="container flex flex-col md:flex-row especialmobileimagen" style="display: flex; flex-direction: <?php echo get_sub_field('girado') ? 'row-reverse' : ''; ?>; align-items: center; max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
-
-        <!-- Columna 1: Heading y Content -->
+    <div class="container flex flex-col md:flex-row especialmobileimagen" style="display: flex; flex-direction: <?php echo get_sub_field('girado') ? 'row-reverse' : ''; ?>; align-items: center; max-width: <?php echo esc_attr($ancho_total_texto); ?>px;gap: <?php echo esc_attr($ancho_total_texto_gap); ?>px">
         <div style="flex: 1;">
             <?php if ($heading): ?>
-                <h1 class="after:left-0 font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 text-2xl lg:text-3xl after:-bottom-3 text-slate-600 dark:text-white dark:after:bg-[#d0ff71] mb-4"><?php echo esc_html($heading); ?></h1>
+                <h1 class="after:left-0 font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 text-2xl lg:text-3xl after:-bottom-3 text-slate-600 dark:text-white dark:after:bg-[#d0ff71] mb-8"><?php echo esc_html($heading); ?></h1>
             <?php endif; ?>
 
-            <?php if ($content): ?>
+            <?php if ($content_tituloespecial): ?>
                 <span class="lg:text-[18px] text-[16px] text-white <?php echo get_sub_field('texto_centrado') ? 'texto-justificado' : ''; ?>">
-                    <?php echo wp_kses_post($content); ?>
+                    <?php echo wp_kses_post($content_tituloespecial); ?>
                 </span>
+            <?php endif; ?>
+
+        <?php if ($content_especial): ?>
+                <div class="solo-grande lg:text-[18px] text-[16px] lg:w-[calc(80%-20px)] <?php echo get_sub_field('texto_centrado') ? 'texto-justificado' : ''; ?>">
+                    <?php echo wp_kses_post($content_especial); ?>
+                </div>
             <?php endif; ?>
         </div>
 
         <!-- Columna 2: Imagen -->
+        <!-- <div style="flex: 1; padding: 20px 0; display: flex; justify-content: center; align-items: center;">
+            <php if ($imagencontent): ?>
+                <img src="<php echo esc_url($imagencontent); ?>" alt="Imagen" style="max-width: 100%; height: auto;">
+            <php endif; ?>
+        </div> -->
+
+<!-- Columna 2: Imagen -->
         <div style="flex: 1; padding: 20px 0; display: flex; justify-content: center; align-items: center;">
             <?php if ($imagencontent): ?>
                 <img src="<?php echo esc_url($imagencontent); ?>" alt="Imagen" style="max-width: 100%; height: auto;">
+            <?php else: ?>
+                <div class="<?php echo esc_html($imagencontent_svg); ?>"></div>
             <?php endif; ?>
         </div>
 
+
+
+
+
+
     </div>
+
 </section>
-
-

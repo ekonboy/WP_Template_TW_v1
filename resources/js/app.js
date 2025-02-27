@@ -142,17 +142,66 @@ function toggle() {
         });
     
         // Inicializar con el contenido de la opción 1 visible
-        showContent(1); // Cambié a 1 porque el segundo botón tiene la clase 'active' inicial
+        showContent(0); // Cambié a 1 porque el segundo botón tiene la clase 'active' inicial
     } else {
         console.error("Faltan botones, fondo activo o contenido.");
     }
     
   
     
-   
+   //toogle de globo_extra.php
+   let isGreen = true; // Estado inicial
 
+   function toggleView() {
+       const circle = isGreen ? document.getElementById('circle') : document.getElementById('circle2');
+       const greenDiv = document.getElementById('greenDiv');
+       const redDiv = document.getElementById('redDiv');
 
-  
+       circle.style.visibility = 'visible';
+       circle.classList.add('expanded');
+
+       redDiv.style.pointerEvents = "none";
+
+       setTimeout(() => {
+           circle.style.visibility = 'hidden';
+           circle.classList.remove('expanded');
+
+           switch (isGreen) {
+               case true:
+                   greenDiv.style.opacity = "0";
+                   greenDiv.style.pointerEvents = "none";
+                   greenDiv.style.display = "none";  // Ocultar greenDiv y eliminar su espacio
+
+                   redDiv.style.opacity = "1";
+                   redDiv.style.pointerEvents = "auto";
+                   redDiv.style.display = "block";  // Asegurarse de que redDiv se muestre
+
+                   greenDiv.classList.add('hidden'); // Añadir la clase hidden
+                   redDiv.classList.remove('hidden'); // Eliminar la clase hidden
+                   break;
+               case false:
+                   redDiv.style.opacity = "0";
+                   redDiv.style.pointerEvents = "none";
+                   redDiv.style.display = "none";  // Ocultar redDiv y eliminar su espacio
+
+                   greenDiv.style.opacity = "1";
+                   greenDiv.style.pointerEvents = "auto";
+                   greenDiv.style.display = "block";  // Asegurarse de que greenDiv se muestre
+
+                   redDiv.classList.add('hidden'); // Añadir la clase hidden
+                   greenDiv.classList.remove('hidden'); // Eliminar la clase hidden
+
+                   break;
+           }
+
+           isGreen = !isGreen; // Cambiar estado
+       }, 500);
+   }
+
+   document.querySelectorAll('.bubblebutton').forEach(button => {
+    button.addEventListener('click', toggleView);
+});
+
     
   
     

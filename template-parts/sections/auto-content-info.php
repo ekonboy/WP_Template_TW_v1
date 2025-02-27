@@ -91,13 +91,13 @@ $creator = array(
 
 // Array con 20 contenidos ficticios
 $accordion_contents = array(
-    "Everything I build goes on gabii. Makes server management too easy 👌 ❤️",
-    "gabii has saved us hundreds of hours of precious development time and I couldn’t imagine running our business without it.",
+    "Everything I build goes with gabii. Makes server management too easy 👌 ❤️",
+    "gabii has saved us hundreds of hours of precious development time and I couldn’t imagine running our business without it. There is no other way to get set up quickly as with gabii. They have thought of everything!",
     "I've used gabii since its launch, and I've honestly never thought about switching anywhere else.",
     "Using gabii is an absolute no brainer. It has every thing a Laravel dev needs to host their applications!",
     "I would not want to manage servers and deployments any other way again.",
     "Been using gabii for almost 2 years. I just wonder why I didn't start earlier.",
-    "I always recommend that people use gabii to host Laravel and other PHP frameworks, like Craft CMS or WordPress. There is no other way to get set up quickly as with gabii. They have thought of everything!",
+    "I always recommend that people use gabii to host Laravel and other PHP frameworks, like Craft CMS or WordPress. ",
     "Changer in server management. It gave us the confidence to move from crappy shared hosting to reliable, quality servers. Using gabii feels like having a server specialist in our team. Proud to be a day-one customer! 👍",
     "The feature rich deployment tool you need for every day operations. Worth every penny 🤟",
     "I never thought managing servers could be this easy. gabii is a game changer!",
@@ -105,61 +105,59 @@ $accordion_contents = array(
     "Before gabii, we spent hours configuring servers. Now, it takes minutes and we can concentrate on building awesome features.",
     "Antes de gabii, pasábamos horas configurando servidores. Ahora, solo toma minutos y podemos concentrarnos en construir increíbles características.",
     "With gabii, I no longer worry about the complexity of server management. It just works seamlessly.",
-    "Con gabii, ya no me preocupo por la complejidad de la gestión de servidores. Simplemente funciona sin problemas.",
+    "Cwith gabii, ya no me preocupo por la complejidad de la gestión de servidores. Simplemente funciona sin problemas.",
     "If you’re serious about Laravel, gabii is a must-have. It simplifies every aspect of server management and deployment.",
     "Si eres serio con Laravel, gabii es imprescindible. Simplifica todos los aspectos de la gestión de servidores y despliegue.",
     "I’ve been using gabii for months and it’s still one of the best investments I’ve made for my development workflow.",
     "He estado usando gabii durante meses y sigue siendo una de las mejores inversiones que he hecho para mi flujo de trabajo de desarrollo.",
     "Deploying with ❤️gabii❤️ is so easy, I now spend more time coding than managing servers!",
-    "¡Desplegar con gabii es tan fácil que ahora paso más tiempo programando que gestionando servidores!",
+    "¡Desplegar cwith gabii es tan fácil que ahora paso más tiempo programando que gestionando servidores!",
     "Managing servers with gabii is a breeze. I can now deploy new features in just a few clicks.",
-    "Gestionar servidores con gabii es pan comido. Ahora puedo desplegar nuevas características con solo unos pocos clics.",
+    "Gestionar servidores cwith gabii es pan comido. Ahora puedo desplegar nuevas características con solo unos pocos clics.",
     "gabii helped us automate our server deployment process, making it fast, reliable, and cost-effective.",
     "gabii nos ayudó a automatizar nuestro proceso de despliegue de servidores, haciéndolo rápido, confiable y rentable."
 );
 
 ?>
 
-
 <section class="content-info <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
     <div class="flex flex-col items-center justify-center text-center py-8 px-4">
-        <h1 class="<?php echo $titulo_centrado ? 'after:left-1/2 after:translate-x-[-50%]' : 'after:left-0'; ?> font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 text-2xl lg:text-3xl mb-8 after:-bottom-3 text-slate-600 dark:after:bg-[#d0ff71] dark:text-white mb-4"><?php echo $heading; ?></h1>
+
+        <h1 class="<?php echo $titulo_centrado ? 'after:left-1/2 after:translate-x-[-50%]' : 'after:left-0'; ?> font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 text-2xl lg:text-3xl mb-8 after:-bottom-3 text-slate-600 dark:after:bg-[#d0ff71] dark:text-white"><?php echo $heading; ?></h1>
         <p class="mt-4 text-lg text-gray-600"><?php echo $description; ?></p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
+    <div class="flex justify-center items-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-4 w-[1280px]">
 
-        <?php
-        // Iterar para generar las 20 tarjetas
-        for ($i = 0; $i < 20; $i++) :
-            $accordion_content = $accordion_contents[$i];
-            $accordion_heading = $accordion_headings[$i];
-            $randomImageIndex = array_rand($imagenes);
-        ?>
+            <?php
+            for ($i = 0; $i < 18; $i++) :
+                $accordion_content = $accordion_contents[$i];
+                $accordion_heading = $accordion_headings[$i];
+                $randomImageIndex = array_rand($imagenes);
+                $extraClassDegradado = ($i >= 15) ? 'extraclassdegradado' : '';
+            ?>
 
-            <div class="flex flex-col rounded-xl bg-[#a5a8ad] px-6 py-7 w-full min-h-[100px]">
-                <div class="-mt-0.5 flex px-0.5 xl:-mt-2">
-                    <div class="mr-4">
-
-                        <div class="h-16 w-16 rounded-full overflow-hidden border-2 border-white">
-                            <img class="object-cover h-full w-full"
-                                srcset="<?php echo $imagenes[$randomImageIndex]; ?>"
-                                src=""
-                                loading="lazy" alt="we're the best" width="64" height="64">
+                <div class="grid grid-cols-1 gap-5">
+                    <div class="flex flex-col rounded-xl bg-[#a5a8ad] px-6 py-7 <?php echo $extraClassDegradado; ?>">
+                        <div class="-mt-0.5 flex px-0.5 xl:-mt-2">
+                            <div class="mr-4">
+                                <img class="h-10 w-10 rounded-full border-2 border-white lg:h-11 lg:w-11 xl:h-12 xl:w-12" srcset="<?php echo $imagenes[$randomImageIndex]; ?>" src="<?php echo $imagenes[$randomImageIndex]; ?>" loading="lazy" alt="we're the best" width="48" height="48">
+                            </div>
+                            <div class="flex flex-col justify-center text-sm">
+                                <span class="text-gray-900 font-semibold"><?php echo $accordion_heading; ?></span>
+                                <span class="text-[#d0ff71]"><?php echo $creator[array_rand($creator)]; ?>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-gray-900 text-xs">
+                            <?php echo $accordion_content; ?>
                         </div>
                     </div>
-                    <div class="flex flex-col justify-center text-sm flex-grow">
-                        <span class="text-gray-900"><?php echo $accordion_heading; ?></span>
-                        <span class="text-gray-500"><?php echo $creator[array_rand($creator)]; ?></span>
-                        <span class="text-gray-900 mt-2"><?php echo $accordion_content; ?></span>
-                    </div>
-
                 </div>
-            </div>
-
-        <?php
-        endfor;
-        ?>
-
+            <?php
+            endfor;
+            ?>
+        </div>
     </div>
 </section>

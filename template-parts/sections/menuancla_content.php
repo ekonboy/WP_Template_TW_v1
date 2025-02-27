@@ -19,9 +19,9 @@ $imagencontent = get_sub_field('imagencontent');
    
 </style>
 
-<section class="menuancla block <?php echo esc_attr($content_onlymobile == 1 ? 'md:hidden' : ''); ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-content: space-between;justify-content: center;height: 500px;background-color: <?php echo esc_attr($background_color); ?>">
+<section class="menuancla block <?php echo esc_attr($content_onlymobile == 1 ? 'md:hidden' : ''); ?> <?php echo esc_attr('section-' . $count); ?>" style="height: 360px;background-color: <?php echo esc_attr($background_color); ?>">
     <span id="<?php echo $ancla; ?>"><span>
-            <div class="container" style="padding: 15px;display: flex;flex-direction: column;align-content: space-around;flex-wrap: wrap;justify-content: center;">
+            <div class="flex flex-row md:flex-col flex-wrap content-around ">
 
                 <div class="switcher-container bg-astro-dark-900/55" style="margin: 0 auto;">
                     <div id="active-background" class="active-background"></div>
@@ -63,22 +63,27 @@ $imagencontent = get_sub_field('imagencontent');
 
 
                 <div id="option1-content" class="switcher-content show">
-
                     <div class="speech-bubbledefault">
                         <b>Formación Reglada</b><br />
-                        DAI, Desarrollo de Aplicaciones Informáticas. (Grado superior, 2 años. Finalizado en 2008).<br />
-                        Técnico en Edificación y Obra Civil. (Grado superior, 2 años. Finalizado en 2001).
+                        - DAI, Desarrollo de Aplicaciones Informáticas. (Grado superior, 2 años. Finalizado en 2008).<br />
+                        - Técnico en Edificación y Obra Civil. (Grado superior, 2 años. Finalizado en 2001).
                     </div>
-
-
                     <div class="speech-bubble">
                         <b>Formación Reglada</b><br />
-                        DAI, Desarrollo de Aplicaciones Informáticas. (Grado superior, 2 años. Finalizado en 2008).<br />
-                        Técnico en Edificación y Obra Civil. (Grado superior, 2 años. Finalizado en 2001).
+                        - DAI, Desarrollo de Aplicaciones Informáticas. (Grado superior, 2 años. Finalizado en 2008).<br />
+                        - Técnico en Edificación y Obra Civil. (Grado superior, 2 años. Finalizado en 2001).
                     </div>
                 </div>
 
                 <div id="option2-content" class="switcher-content">
+                <div class="speech-bubbledefault">
+                        <b>Formación Complementaria</b><br />
+                        - Curso de NODE.JS, aplicaciones para API Diciembre 2021.<br />
+                        - Curso analítica y plan de marketing digital, CEAM, noviembre 2021.<br />
+                        - Formación de Docker y Github en Barcelona Activa, agosto 2021.<br />
+                        - Formación online de Mobirise en Barcelona Activa, 2021.<br /><br />
+                        <b>Catalán y castellano: nativo. Inglés: nivel B2. 😊</b><br />
+                    </div>
                     <div class="speech-bubble">
                         <b>Formación Complementaria</b><br />
                         - Curso de NODE.JS, aplicaciones para API diciembre 2021.<br />
@@ -87,48 +92,39 @@ $imagencontent = get_sub_field('imagencontent');
                         - Formación online de Mobirise en Barcelona Activa, 2021.<br />
                         - Formación de API REST online en Barcelona Activa, 2020.<br />
                     </div>
-                    <div class="speech-bubbledefault">
-                        <b>Formación Complementaria</b><br />
-                        - Curso de NODE.JS, aplicaciones para API Diciembre 2021.<br />
-                        - Curso analítica y plan de marketing digital, CEAM, noviembre 2021.<br />
-                        - Formación de Docker y Github en Barcelona Activa, agosto 2021.<br />
-                        - Formación online de Mobirise en Barcelona Activa, 2021.<br />
-                        - Formación de API REST online en Barcelona Activa, 2020.<br />
-                    </div>
+
                 </div>
 
-                <img src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="Hero" class="w-full h-auto" style="width: 800px;height: 100%;position: relative;top: -200px;z-index: -1;">
+                <img src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="web developer WP" class="w-full h-auto" style="width: 800px;height: 100%;position: relative;top: -450px;z-index: -1;">
             </div>
 
 
             <script>
+            //elimina flyaway
+            function moverDiv() {
+                document.querySelectorAll(".speech-bubble").forEach(el => {
+                    el.classList.remove("movespeech-bubbledefault");
+                    void el.offsetWidth;
+                    el.classList.add("movespeech-bubble");
+                });
+            }
 
-  
-    //elimina flyaway
-    function moverDiv() {
-        document.querySelectorAll(".speech-bubble").forEach(el => {
-            el.classList.remove("movespeech-bubbledefault");
-            void el.offsetWidth;
-            el.classList.add("movespeech-bubble");
-        });
-    }
+            function moverDiv2() {
+                document.querySelectorAll(".speech-bubble").forEach(el => {
+                    el.classList.remove("movespeech-bubbledefault");
+                    void el.offsetWidth;
+                    el.classList.add("movespeech-bubbledefault");
+                });
+            }
 
-    function moverDiv2() {
-        document.querySelectorAll(".speech-bubble").forEach(el => {
-            el.classList.remove("movespeech-bubbledefault");
-            void el.offsetWidth;
-            el.classList.add("movespeech-bubbledefault");
-        });
-    }
-
-    function handleButtonClick(button) {
-        var action = button.getAttribute('data-action');
-        if (action === 'moverDiv') {
-            moverDiv();
-        } else if (action === 'moverDiv2') {
-            moverDiv2();
-        }
-    }
+            function handleButtonClick(button) {
+                var action = button.getAttribute('data-action');
+                if (action === 'moverDiv') {
+                    moverDiv();
+                } else if (action === 'moverDiv2') {
+                    moverDiv2();
+                }
+            }
             </script> 
             
 

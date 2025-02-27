@@ -79,7 +79,7 @@ body {
 
 /* T E M P L A T E S*/
 .texto-imagen {
-    padding: 40px 0;
+    padding: 75px 0;
 }
 
 .tabs-content {
@@ -87,11 +87,11 @@ body {
 }
 
 .content-destacado {
-    padding: 40px 0;
+    padding: 75px 0;
 }
 
 .simpletext-content {
-    padding: 40px 0;
+    padding: 100px 0;
 }
 
 .skillscontent {
@@ -103,9 +103,6 @@ body {
 
 .icon-box {
     background: #353535;
-    /* width: 60px;
-    min-width: 60px;
-    height: 60px; */
     border-radius: 50%;
     margin-right: 2rem;
     display: flex;
@@ -145,6 +142,10 @@ footer img {
 }
 
 /* Add your custom styles here */
+.extraclassdegradado {
+    -webkit-mask-image: linear-gradient(to bottom, #a5a8ad 10%, rgba(31, 41, 55, 0) 100%);
+    mask-image: linear-gradient(to bottom, #a5a8ad 10%, rgba(31, 41, 55, 0) 100%);
+}
 .colordefondopuntos {
     background: 
     radial-gradient(circle, #373434 1px, transparent 1px) 0 0,
@@ -415,6 +416,88 @@ transition: transform 0.3s ease-in-out;}
 }
 
 
+
+
+
+.bold-effect {
+    font-size: 100px;
+    position: relative;
+    display: inline-block;
+}
+
+.bold-effect::before {
+    content: attr(data-letter); /* Copiar el contenido del texto */
+    position: absolute;
+    left: 2px; /* Ajusta la distancia para que se vea tocando */
+    top: 0;
+    color: black;
+    font-weight: bold; /* Asegura que la copia sea negrita */
+}
+
+
+
+
+
+
+
+
+/*logo wp que gira*/
+.circle-container {
+    width: 300px; /* Tamaño del círculo */
+    height: 300px;
+    border-radius: 50%;
+    background: #2e3643;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    opacity: 0.8; 
+    right: 15px;
+    z-index: 9;
+    bottom: 0.5rem;
+}
+
+.text-circle {
+    position: relative;
+    width: 150px; /* Tamaño del círculo interior igual al principal */
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s linear;
+    transform-origin: center;
+}
+
+.text-circle span {
+    position: absolute;
+    color: #d0ff71; /* Asegura que el texto sea blanco */
+    font-size: 20px; /* Aumento del tamaño del texto para que sea visible */
+    font-weight: bold;
+    text-transform: uppercase;
+    left: 50%;
+    top: 50%;
+    transform-origin: 0 0;
+    transform: translate(-50%, -50%); /* Asegura que el texto se centre correctamente */
+    letter-spacing: 2px;
+}
+
+.logo-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+  .logo-container .wplogo {
+    font-size: 135px;
+    width: 135px;
+  height: 135px; 
+  }
+  /* / logo wp que gira*/
+
+
 /*TOGGLE SWITCH menu ancla*/
 .switcher-container {
     position: relative;
@@ -451,8 +534,8 @@ transition: transform 0.3s ease-in-out;}
             z-index: 1;
         }
         .switcher-content {
-            width: 40px;
-            padding: 20px;
+            /* width: 10px; */
+            padding: 10px;
             border-radius: 8px;
             text-align: center;
             font-size: 18px;
@@ -475,7 +558,7 @@ transition: transform 0.3s ease-in-out;}
 
 
 /*burbujas*/
-.speech-bubbledefault {
+/* .speech-bubbledefault {
     width: 800px;
     height: 320px;
     background: #C8FF66;
@@ -488,9 +571,9 @@ transition: transform 0.3s ease-in-out;}
     transition: transform 0.7s ease-in-out;
     position: absolute;
     clip-path: path("M0,64Q0,0 64,0L736,0Q800,0 800,64L800,256Q800,320 736,320H416Q352,320 320,288Q288,256 256,256H64Q0,256 0,192Z");
-}
+} */
 
-.speech-bubble {
+.speech-bubble, .speech-bubbledefault {
     width: 800px;
     height: 320px;
     background: #C8FF66;
@@ -539,7 +622,84 @@ transition: transform 0.3s ease-in-out;}
 
 
 
+/*globo extra*/
+.green-div,
+.red-div {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    display: flex;
+}
 
+.red-div {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.green-div p,
+.red-div p {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+
+.circle,
+.circle2 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    transition: all 0.5s ease-out;
+    z-index: 5;
+}
+
+.circle {
+    background-color: #C8FF66;
+}
+
+.circle2 {
+    background-color: #d0ff71;
+}
+
+.expanded {
+    visibility: visible;
+    width: max(120vw, 120vh);
+    height: max(120vw, 120vh);
+}
+
+.gabii_template_bubble {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 480px;
+    position: relative;
+}
+
+.bubbletext {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 50px;
+}
+
+.bubblebutton {
+    position: absolute;
+    bottom: 83px;
+    right: 108px;
+}
+
+.hidden {
+    display: none !important;
+}
+/* final globo extra/*
 
 
 
@@ -550,9 +710,13 @@ transition: transform 0.3s ease-in-out;}
     background-color: #0609138c;
 }
 img.w-full.h-auto.herohome {
-    position: relative;
+    position: absolute;
     top: -700px;
     z-index: -1;
+    margin: 0 auto;
+    left: 0;
+    --tw-blur: blur(16px);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .blur-lg {
@@ -613,6 +777,8 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
 
 
+
+
 /* M E D I A  Q U E R Y S */
 @media only screen and (min-width: 2500px) {
     .especialdesktop {
@@ -627,18 +793,14 @@ img, svg, video, canvas, audio, iframe, embed, object {
         width: 70%;
         margin: 0 auto;
         flex-direction: row;
-        justify-content: space-between;
-
-        
-        
+        justify-content: space-between; 
     }
     .headermenu.scrolled {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        width: 100%; /* Ocupa el 100% del ancho de la pantalla */
-        /* background-color: aliceblue; */
+        width: 100%; 
         background: linear-gradient(to top, aliceblue 0%, rgba(255, 255, 255, 0.8) 100%);
         color: black;
         z-index: 1000;
@@ -657,6 +819,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
 
 @media (min-width: 1024px) and (max-width: 1950px) {
+    .solo-grande {display: block;}
     .headermenu  {
         transition: all 0.3s ease; /* Transición suave */
         border-radius: 50px;
@@ -688,8 +851,27 @@ img, svg, video, canvas, audio, iframe, embed, object {
 }
 
 
+
+
+
+
 /* M E D I A  Q U E R Y S  M O B I L E S */
 @media only screen and (max-width: 768px) {
+    .circle-container {display: none;}
+
+    .grid .extraclassdegradado:last-child {
+        -webkit-mask-image: linear-gradient(to top, #1f2937 0%, #a5a8ad 100%);
+        mask-image: linear-gradient(to top, #1f2937 0%, #a5a8ad 100%);
+    }
+    footer img {
+        bottom: 140px;
+        left: 20%;
+        transform: translateX(-50%);
+        opacity: 0.5;
+        z-index: 0;
+        width: 53%;
+    }
+    .solo-grande {display: none;}
     .especialmobileimagen {
         display: flex;
         flex-direction: column !important;
@@ -718,6 +900,24 @@ img, svg, video, canvas, audio, iframe, embed, object {
         background-color: #d0ff71;
     }
 
+    .gabii_template_bubble {
+        width: 350px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjMxOCIgdmlld0JveD0iMCAwIDM1MCAzMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMzUwIDYyQzM1MCAxOS4zMzMzIDMxMS42NjcgMC41IDI5MyAwLjVINDlDMzAuMzMzMyAwLjUgMCAxOS4zMzMzIDAgNjJWMjU0QzAgMjk2LjY2NyAzMi4zMzMzIDMxOCA1MSAzMThIMTU5QzE3Ny42NjcgMzE4IDE5Ni42NjcgMzA4LjgzMyAyMDYgMjg3LjVDMjE1LjMzMyAyNjYuMTY3IDIzNC4xNjcgMjU0IDI0My41IDI1NEgzMDNDMzIxLjY2NyAyNTQgMzUwIDIzMi42NjcgMzUwIDE5MFY2MloiIGZpbGw9IiNDOEZGNjYiLz4NCjwvc3ZnPg0K);
+    }
+
+    .speech-bubbledefault, .speech-bubble {
+        display: inline-block; 
+        width: 350px; 
+        height: auto;/*320*/
+        position: relative;
+        clip-path: none!important;
+        /* background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjMxOCIgdmlld0JveD0iMCAwIDM1MCAzMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMzUwIDYyQzM1MCAxOS4zMzMzIDMxMS42NjcgMC41IDI5MyAwLjVINDlDMzAuMzMzMyAwLjUgMCAxOS4zMzMzIDAgNjJWMjU0QzAgMjk2LjY2NyAzMi4zMzMzIDMxOCA1MSAzMThIMTU5QzE3Ny42NjcgMzE4IDE5Ni42NjcgMzA4LjgzMyAyMDYgMjg3LjVDMjE1LjMzMyAyNjYuMTY3IDIzNC4xNjcgMjU0IDI0My41IDI1NEgzMDNDMzIxLjY2NyAyNTQgMzUwIDIzMi42NjcgMzUwIDE5MFY2MloiIGZpbGw9IiNDOEZGNjYiLz4NCjwvc3ZnPg0K); */
+    }
+    
+     
+
+    .speech-bubble {display: none}
 
 
 }
+

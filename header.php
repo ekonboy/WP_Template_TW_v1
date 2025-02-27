@@ -137,21 +137,21 @@
 
                             <div class="mt-16 mb-8 md:mt-20 lg:mt-24 px-4 sm:px-8 mx-auto w-full sm:max-w-screen-md flex flex-col items-center justify-center gap-5 md:gap-6 lg:gap-8"> <a href="#!" class="h-9 group w-fit flex items-center justify-center gap-0 bg-astro-dark-900/55 rounded-full">
                                     <div class="px-3 h-full w-fit flex items-center gap-2 bg-gradient-to-tr from-[#1321AC] to-[#881ABD] rounded-full">
-                                        <span class="text-sm text-white font-light">gabii 5.0</span>
+                                        <span class="text-sm text-white font-light">gabii cv</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-white block sm:hidden" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"></path>
                                         </svg>
                                     </div>
-                                    <div class="hidden sm:flex px-3 h-full w-fit items-center justify-center gap-2">
-                                        <span class="text-sm text-astro-gray-100 group-hover:underline font-light">Available now!</span>
+                                    <div class="px-3 h-full w-fit items-center justify-center gap-2 flex">
+                                        <span class="text-sm text-astro-gray-100 group-hover:underline font-light">Download now!</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-astro-gray-100" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"></path>
                                         </svg>
                                     </div>
                                 </a>
                                 <div class="flex flex-col items-center">
-                                    <h1 class="text-balance mb-4 text-center text-3xl/[1.1] font-bold font-heading sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] no-after">
-                                        Experiencia en optimización, SEO, desarrollo escalable y diseño responsive
+                                    <h1 class="text-balance mb-4 text-center text-3xl/[1.1] font-bold sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] no-after font-[Obviously]">
+                                       Experiencia en optimización, SEO, desarrollo escalable y diseño responsive
                                     </h1>
 
                                 </div>
@@ -204,14 +204,15 @@
                             <div class="landing-section gap-4 sm:gap-8">
                                 <p class="font-light text-balance mb-4">Algunos de mis clientes donde he prestado servicios:</p>
 
-                                <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 px-4">
-                                    <i class="payretailerslogo"></i>
-                                    <i class="pacificologo"></i>
-                                    <i class="paypagalogo"></i>
-                                    <i class="kuadylogo"></i>
-                                    <i class="upflogo"></i>
-                                    <i class="canalslogo"></i>
-                                </div>
+                                <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 sm:gap-x-6 sm:gap-y-6 px-1 sm:px-4">
+    <i class="payretailerslogo"></i>
+    <i class="pacificologo"></i>
+    <i class="paypagalogo"></i>
+    <i class="kuadylogo"></i>
+    <i class="upflogo"></i>
+    <i class="canalslogo"></i>
+</div>
+
                             </div>
                             </p>
                         </div>
