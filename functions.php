@@ -170,7 +170,7 @@ add_filter('wp_nav_menu_items', 'add_contact_button_to_menu', 10, 2);
 
 /*
  *****************************************************************
- ***************************** ACF *******************************
+ ***************************** A C F *******************************
  *****************************************************************
  */
 
@@ -187,4 +187,35 @@ function render_flexible_content() {
         endwhile;
     endif;
 }
+
+/*
+ *****************************************************************
+ ***************************** F O R M U L A R I O  *******************************
+ *****************************************************************
+ */
+function procesar_formulario() {
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $email = isset($_POST["email"]) ? sanitize_email($_POST["email"]) : "";
+        $name = isset($_POST["name"]) ? sanitize_text_field($_POST["name"]) : "";
+        $department = isset($_POST["department"]) ? sanitize_text_field($_POST["department"]) : "";
+
+        if (!empty($email) && !empty($name)) {
+            $to = "destinatario@tudominio.com"; // Cambia esto por tu correo
+            $subject = "Nuevo mensaje de contacto";
+            $message = "Nombre: $name\nCorreo: $email\nDepartamento: $department";
+            $headers = "From: $email\r\nReply-To: $email\r\n";
+
+            if (wp_mail($to, $subject, $message, $headers)) {
+                echo json_encode(["success" => true]);
+            } else {
+                echo json_encode(["success" => false]);
+            }
+        } else {
+            echo json_encode(["success" => false]);
+        }
+    }
+}
+add_action('admin_post_procesar_formulario', 'procesar_formulario'); // Para usuarios logueados
+add_action('admin_post_nopriv_procesar_formulario', 'procesar_formulario'); // Para usuarios no logueados
+
 

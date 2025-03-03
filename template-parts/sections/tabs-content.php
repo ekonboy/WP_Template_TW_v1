@@ -10,20 +10,14 @@
 
 // Obtener el índice de la sección
 $count = get_query_var('prt_count');
-
-// Variables de ACF (mejor usar get_sub_field())
+$activatedcontent = get_sub_field('activatedcontent');
 $heading = get_sub_field('heading');
 $heading2 = get_sub_field('heading2');
-
-
 ?>
 
-
+<div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
 <section class="tabs-content <?php echo esc_attr('section-' . $count); ?>" style="">
     <div class="container">
-
-
-
 
 
         <div class="[&:not(:last-child)]:pb-7 lg:[&:not(:last-child)]:pb-14">
@@ -64,3 +58,4 @@ $heading2 = get_sub_field('heading2');
         </div><!-- block -->
     </div>
 </section>
+</div>

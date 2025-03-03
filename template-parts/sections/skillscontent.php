@@ -10,11 +10,12 @@
 
 // Obtener el índice de la sección
 $count = get_query_var('prt_count');
+$activatedcontent = get_sub_field('activatedcontent');
 $skillsname = get_sub_field('skillsname');
 $background_color = get_sub_field('background_color');
 ?>
 
-
+<div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
 <section class="skillscontent <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>">
     <div class="containe22r flex flex-wrap gap-4 justify-center">
 
@@ -40,3 +41,4 @@ $background_color = get_sub_field('background_color');
         ?>
     </div>
 </section>
+</div>

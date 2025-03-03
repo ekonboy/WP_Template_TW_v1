@@ -10,6 +10,7 @@
 
 // Obtener el índice de la sección
 $count = get_query_var('prt_count');
+$activatedcontent = get_sub_field('activatedcontent');
 $content_uno = get_sub_field('content_uno');
 $content_dos = get_sub_field('content_dos');
 $background_color = get_sub_field('background_color');
@@ -30,6 +31,7 @@ $content_onlymobile = get_sub_field('content_onlymobile');
     .solodesktop {display: none!important;}
 }
 </style>
+<div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
 <section class="globo_extra block <?php echo esc_attr($content_onlymobile == '1' ? 'solodesktop' : ''); ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex;flex-direction: column;flex-wrap: nowrap;align-content: space-between;justify-content: center;background-color: <?php echo esc_attr($background_color); ?>">
     <div class="boxmobile">
         <?php if ($content_uno): ?>
@@ -65,3 +67,4 @@ $content_onlymobile = get_sub_field('content_onlymobile');
 
     </div>
 </section>
+    </div>

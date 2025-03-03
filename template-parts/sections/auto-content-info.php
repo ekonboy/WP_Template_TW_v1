@@ -10,15 +10,15 @@
 
 // Obtener el índice de la sección
 $count = get_query_var('prt_count');
+$activatedcontent = get_sub_field('activatedcontent');
 
-// Variables de ACF (mejor usar get_sub_field())
 $heading = get_sub_field('heading');
 $description = get_sub_field('description');
-// $creator = get_sub_field('creator');
-
 $background_color = get_sub_field('background_color');
 $ancho_total_texto = get_sub_field('ancho_total_texto');
 $titulo_centrado = get_sub_field('titulo_centrado');
+$activatedcontent = get_sub_field('activatedcontent');
+
 
 $imagenes = [
     "https://randomuser.me/api/portraits/men/1.jpg",
@@ -119,7 +119,7 @@ $accordion_contents = array(
 );
 
 ?>
-
+<div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
 <section class="content-info <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
     <div class="flex flex-col items-center justify-center text-center py-8 px-4">
 
@@ -161,3 +161,4 @@ $accordion_contents = array(
         </div>
     </div>
 </section>
+</div><!--activated-->

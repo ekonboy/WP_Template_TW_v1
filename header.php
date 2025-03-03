@@ -22,17 +22,17 @@
             <div class="mx-auto container">
                 <div class="headermenu lg:flex lg:justify-bet22ween lg:items-center border-b py-6">
                     <!-- Logo y Toggle del Menú -->
-                    <div class="flex justify-between items-center">
-                        <div>
+                    <div class="flex  items-center" style="width: 25%;">
+                        <div style="width:16%">
                             <?php if (has_custom_logo()) { ?>
                                 <?php the_custom_logo(); ?>
                             <?php } else { ?>
                                 <a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
                                     <?php echo get_bloginfo('name'); ?>
                                 </a>
-                                <p class="text-sm font-light text-gray-600">
-                                    <?php echo get_bloginfo('description'); ?>
-                                </p>
+                                <!-- <p class="text-sm font-light text-gray-600">
+                                    <php echo get_bloginfo('description'); ?>
+                                </p> -->
                             <?php } ?>
                         </div>
 
@@ -68,30 +68,8 @@
                         </div>
                     </div>
 
-                    <!-- Menú y Toggle de Modo Oscuro -->
-                    <!-- <div class="lg:flex lg:items-center">
 
-                        <?php
-                        wp_nav_menu(
-                            array(
-                                'container_id'    => 'primary-menu',
-                                'container_class' => 'hiddenmenu bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
-                                'menu_class'      => 'lg:flex lg:-mx-4',
-                                'theme_location'  => 'primary',
-                                'li_class'        => 'lg:mx-4',
-                                'fallback_cb'     => false,
-                            )
-                        );
 
-                        ?>
-                             <ul id="menu-menumain" class="lg:flex lg:-mx-4">
-            <li id="" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1025 lg:mx-4">
-            <button data-target="#ModalContactForm" class="modal-toggle">Contacto</button>
-        </li>
-
-</ul>
-
-                    </div> -->
 
                     <div class="lg:flex lg:items-center">
                         <?php
@@ -151,7 +129,7 @@
                                 </a>
                                 <div class="flex flex-col items-center">
                                     <h1 class="text-balance mb-4 text-center text-3xl/[1.1] font-bold sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] no-after font-[Obviously]">
-                                       Experiencia en optimización, SEO, desarrollo escalable y diseño responsive
+                                        Experiencia en optimización, SEO, desarrollo escalable y diseño responsive
                                     </h1>
 
                                 </div>
@@ -205,13 +183,13 @@
                                 <p class="font-light text-balance mb-4">Algunos de mis clientes donde he prestado servicios:</p>
 
                                 <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 sm:gap-x-6 sm:gap-y-6 px-1 sm:px-4">
-    <i class="payretailerslogo"></i>
-    <i class="pacificologo"></i>
-    <i class="paypagalogo"></i>
-    <i class="kuadylogo"></i>
-    <i class="upflogo"></i>
-    <i class="canalslogo"></i>
-</div>
+                                    <i class="payretailerslogo"></i>
+                                    <i class="pacificologo"></i>
+                                    <i class="paypagalogo"></i>
+                                    <i class="kuadylogo"></i>
+                                    <i class="upflogo"></i>
+                                    <i class="canalslogo"></i>
+                                </div>
 
                             </div>
                             </p>

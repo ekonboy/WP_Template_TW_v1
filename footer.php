@@ -127,7 +127,7 @@
 
 
 			<div class="text-2xl mt-2 md:text-4xl md:mt-4  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-[#0e0f11]">
-				<em class="ni ni-laravel"></em>
+				<a href="https://portal.vistarapida.es" target="_blank"><em class="ni ni-laravel"></em></a>
 				<em class="ni ni-css3-fill"></em>
 				<em class="ni ni-js"></em>
 				<em class="ni ni-php"></em>
@@ -146,6 +146,12 @@
 
   </script>
 
+<div class="circle-container">
+      <div class="text-circle"></div>
+      <div class="logo-container">
+        <i class="wplogo"></i> <!-- Icono como texto, o reemplaza con un icono si tienes -->
+      </div>
+    </div>
 
 </footer>
 

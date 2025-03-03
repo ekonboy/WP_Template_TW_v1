@@ -37,7 +37,7 @@ function toggle() {
 
     // Variables para el menú
     let lastScrollY = window.scrollY;
-    let scrollDownCount = 0; // Contador de scrolls hacia abajo
+    let scrollDownCount = 0; // Contador de scrolls hacia abajo 
     const threshold = 10; // Número de scrolls antes de ocultar el menú
     const menu = document.querySelector(".headermenu");
     let isHidden = false; // Controla si el menú está oculto
@@ -115,7 +115,6 @@ function toggle() {
 
 
     // Función para el cambio de contenido en el switcher
-
     const buttonsswitch = document.querySelectorAll(".switcher-option");
     const activeBackground = document.getElementById("active-background");
     const switcherContents = document.querySelectorAll(".switcher-content");
@@ -126,9 +125,13 @@ function toggle() {
             buttonsswitch.forEach((btn, i) => {
                 btn.classList.toggle("active", i === index);
             });
-            
+    
+            // Obtener el ancho del primer botón (asumiendo que todos tienen el mismo ancho)
+            const buttonWidth = buttonsswitch[0].offsetWidth;
+    
             // Mover el fondo activo
-            activeBackground.style.left = `${(index / buttonsswitch.length) * 100}%`;
+            activeBackground.style.width = `${buttonWidth}px`; // Ajustamos el ancho del fondo
+            activeBackground.style.left = `${buttonWidth * index}px`; // Ajustamos la posición del fondo
     
             // Mostrar el contenido correspondiente y ocultar los demás
             switcherContents.forEach((content, i) => {
@@ -142,12 +145,24 @@ function toggle() {
         });
     
         // Inicializar con el contenido de la opción 1 visible
-        showContent(0); // Cambié a 1 porque el segundo botón tiene la clase 'active' inicial
+        showContent(0); // Cambié a 0 porque queremos que el primer botón esté activo al principio
     } else {
-        console.error("Faltan botones, fondo activo o contenido.");
+        //console.error("Faltan botones, fondo activo o contenido.");
     }
     
-  
+
+    // C U R R I C U L U M
+
+
+
+    
+
+    
+
+
+
+
+
     
    //toogle de globo_extra.php
    let isGreen = true; // Estado inicial
@@ -176,8 +191,8 @@ function toggle() {
                    redDiv.style.pointerEvents = "auto";
                    redDiv.style.display = "block";  // Asegurarse de que redDiv se muestre
 
-                   greenDiv.classList.add('hidden'); // Añadir la clase hidden
-                   redDiv.classList.remove('hidden'); // Eliminar la clase hidden
+                   greenDiv.classList.add('hiddengloboextra'); // Añadir la clase hidden
+                   redDiv.classList.remove('hiddengloboextra'); // Eliminar la clase hidden
                    break;
                case false:
                    redDiv.style.opacity = "0";
@@ -188,8 +203,8 @@ function toggle() {
                    greenDiv.style.pointerEvents = "auto";
                    greenDiv.style.display = "block";  // Asegurarse de que greenDiv se muestre
 
-                   redDiv.classList.add('hidden'); // Añadir la clase hidden
-                   greenDiv.classList.remove('hidden'); // Eliminar la clase hidden
+                   redDiv.classList.add('hiddengloboextra'); // Añadir la clase hidden
+                   greenDiv.classList.remove('hiddengloboextra'); // Eliminar la clase hidden
 
                    break;
            }
@@ -206,7 +221,26 @@ function toggle() {
   
     
   
-    
+    //  boton que gira
+    //  FULL STACK DEVELOPER - W O R D P R E S S - © 2025 - 
+    const text = "F U L L S T A C K D E V E L O P E R - W O R D P R E S S - ";
+    const container = document.querySelector(".text-circle");
+
+    // Generar las letras en círculo
+    for (let i = 0; i < text.length; i++) {
+        let span = document.createElement("span");
+        span.innerText = text[i];
+        let angle = (360 / text.length) * i;
+        span.style.transform = `rotate(${angle}deg) translate(0, -120px)`; // Ajustamos la posición de las letras
+        container.appendChild(span);
+    }
+
+    let rotation = 0;
+
+    window.addEventListener("wheel", (event) => {
+        rotation += event.deltaY > 0 ? 10 : -10; // Girar en función del scroll
+        container.style.transform = `rotate(${rotation}deg)`; // Girar el texto sobre su eje
+    });
 
 
 });

@@ -14,7 +14,7 @@ $count = get_query_var('prt_count');
 // Variables de ACF (mejor usar get_sub_field())
 $heading = get_sub_field('heading');
 $description = get_sub_field('description');
-
+$activatedcontent = get_sub_field('activatedcontent');
 
 
 $background_color = get_sub_field('background_color');
@@ -51,11 +51,9 @@ $imagenes = [
 
 
 
-<!-- accordions -> nombre del repeater -->
-<!-- accordion_heading dentro del repeater el campo a mostrar -->
 
-<!-- style="max-width: <php echo esc_attr($ancho_total_texto); ?>px;" -->
 
+<div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
 
 <section class="content-info <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
     <div class="flex flex-col items-center justify-center text-center py-8">
@@ -88,4 +86,4 @@ $imagenes = [
         ?>
     </div>
 </section>
-
+</div>
