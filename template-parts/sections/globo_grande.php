@@ -8,46 +8,30 @@
  * @since        1.0.0
  */
 
-// Obtener el índice de la sección
 $count = get_query_var('prt_count');
 $activatedcontent = get_sub_field('activatedcontent');
 $ancho_total_texto = get_sub_field('ancho_total_texto');
 $globo_girado = get_sub_field('globo_girado');
 $globo_grande = get_sub_field('globo_grande');
-
-// Variables de ACF 1
 $heading = get_sub_field('heading');
 $author_content = get_sub_field('author_content');
 $author_title = get_sub_field('author_title');
 $imagencontent = get_sub_field('imagencontent');
-
 $heading_grande = get_sub_field('heading_grande');
 $author_content_grande = get_sub_field('author_content_grande');
 $author_title_grande = get_sub_field('author_title_grande');
 $imagencontent_grande = get_sub_field('imagencontent_grande');
-
 ?>
-
-<style>
-
-
-</style>
 
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
 <?php if ($globo_grande == '1') { ?>
-    <section class="globo_grande  flex justify-center flex-col sm:flex-row    <?php echo esc_attr('section-' . $count); ?> <?php echo ($globo_girado == '1') ? 'globogirado' : '' ?>" style="">
-
-
- 
-
+    <section class="globo_grande flex justify-center flex-col sm:flex-row <?php echo esc_attr('section-' . $count); ?> <?php echo ($globo_girado == '1') ? 'globogirado' : '' ?>">
 
         <div class="container logros boxmobilecircle" style="max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
-
             <div class="speech-bubbledefault">
-                <div class="w-full h-[200px] flex items-center justify-center text-black  text-[22px] sm:text-[36px] leading-[29px] md:leading-[36px] p-4 sm:p-[20px] text-end">
+                <div class="w-full h-[200px] flex items-center justify-center text-black p-4 lg:p-[20px] text-end responsive-textglobo">
                     <?php echo esc_attr($heading_grande); ?>
                 </div>
-
                 <div class="text-right flex items-center justify-end">
                     <div class="flex flex-col items-end mr-4">
                         <p class="text-black text-[16px] sm:text-[18px] font-bold"> <?php echo esc_attr($author_content_grande); ?></p>
@@ -55,18 +39,14 @@ $imagencontent_grande = get_sub_field('imagencontent_grande');
                     </div>
                     <img src="<?php echo esc_url($imagencontent_grande); ?>" alt="gabii web developer" class="w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full object-cover border border-white" style="max-width: 10%; height: auto;">
                 </div>
-
             </div>
         </div>
 
-
-
-        
-<!--girado-->
+        <!--girado-->
         <div class="container logrosgirado boxmobilecircleizq" style="max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
 
             <div class="girado speech-bubbledefault" style="transform: scaleX(-1);">
-                <div class="w-full h-[200px] flex items-center justify-center text-black  text-[22px] sm:text-[36px] leading-[29px] md:leading-[36px] p-4 sm:p-[20px] text-end" style="transform: scaleX(-1);text-align: left;">
+                <div class="w-full h-[200px] flex items-center justify-center text-black p-4 lg:p-[20px] text-end responsive-textglobo" style="transform: scaleX(-1);text-align: left;">
                     <?php echo esc_attr($heading); ?>
                 </div>
 
@@ -79,10 +59,8 @@ $imagencontent_grande = get_sub_field('imagencontent_grande');
                     </div>
                 </div>
                
-
             </div>
         </div>
-      
     </section>
 
 <?php } else {  ?>
@@ -91,10 +69,9 @@ $imagencontent_grande = get_sub_field('imagencontent_grande');
         <div class="container logros" style="max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
 
             <div class="speech-bubbledefault">
-                <div class="w-full h-[200px] flex items-center justify-center text-black  text-[22px] sm:text-[36px] leading-[29px] md:leading-[36px] p-4 sm:p-[20px] text-end">
+            <div class="w-full h-[200px] flex items-center justify-center text-black p-4 lg:p-[20px] text-end responsive-textglobo">
                     <?php echo esc_attr($heading); ?>
                 </div>
-
                 <div class="text-right flex items-center justify-end">
                     <div class="flex flex-col items-end mr-4">
                         <p class="text-black text-[16px] sm:text-[18px] font-bold"> <?php echo esc_attr($author_content); ?></p>
@@ -102,12 +79,9 @@ $imagencontent_grande = get_sub_field('imagencontent_grande');
                     </div>
                     <img src="<?php echo esc_url($imagencontent); ?>" alt="gabii web developer" class="w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full object-cover border border-white" style="max-width: 10%; height: auto;">
                 </div>
-
             </div>
         </div>
 
-
-        
     </section>
 <?php }
 ?>

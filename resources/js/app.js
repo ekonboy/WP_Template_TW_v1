@@ -1,5 +1,5 @@
 //gabii v1.0
-function toggle() {
+function toggleMenuHeaderRes() {
     const button = document.getElementById('toggle-button');
     button.classList.toggle('translate-x-6'); 
 }
@@ -15,6 +15,16 @@ function toggle() {
 
 
 
+
+//   let main_navigation = document.querySelector('#primary-menu-toggle');
+//   document.querySelector('#primary-menu').addEventListener('click', function (e) {
+//         e.preventDefault();
+//         main_navigation.classList.toggle('visible');
+//   });
+
+
+
+ 
     function copyToClipboard() {
         if (navigator.clipboard) {
             const text = document.getElementById("merchant-id-1").textContent;
@@ -35,30 +45,45 @@ function toggle() {
 
   document.addEventListener("DOMContentLoaded", () => {
 
-    // Variables para el menú
-    let lastScrollY = window.scrollY;
-    let scrollDownCount = 0; // Contador de scrolls hacia abajo 
-    const threshold = 10; // Número de scrolls antes de ocultar el menú
-    const menu = document.querySelector(".headermenu");
-    let isHidden = false; // Controla si el menú está oculto
 
-    // Función para el toggle del menú
-    const toggleButton = document.querySelector('#primary-menu-toggle');
-    if (toggleButton) {
-        toggleButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            const main_navigation = document.querySelector('#primary-menu');
-            main_navigation.classList.toggle('hiddenmenu');
-            document.getElementById('primary-menu').classList.toggle('open');
-            // menu.classList.add("hiddenmenu");
+
+    const menuToggle = document.getElementById("primary-menu-toggle");
+    const primaryMenu = document.getElementById("primary-menu");
+
+    // Función para mostrar/ocultar el menú
+    if (menuToggle && primaryMenu) {
+        menuToggle.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Si el menú ya está visible
+            if (primaryMenu.classList.contains("visible")) {
+                primaryMenu.style.height = "0"; // Reduce el tamaño a 0 (cerrar el menú)
+                setTimeout(() => {
+                    primaryMenu.classList.remove("visible");
+                }, 400); // Espera a que la animación termine antes de quitar la clase
+            } else {
+                primaryMenu.classList.add("visible");
+                primaryMenu.style.height = primaryMenu.scrollHeight + "px"; // Expande el menú
+                primaryMenu.style.top = window.scrollY + 60 + "px"; // Ajusta la posición del menú según el desplazamiento
+            }
         });
     }
+
+
+
+    // Variables para el menú
+    let lastScrollY = window.scrollY;
+    let scrollDownCount = 0; 
+    const threshold = 10; 
+    const menu = document.querySelector(".headermenu");
+    let isHidden = false; 
+
+ //aqui toggle
 
     // Función para el scroll del menú y las animaciones
     window.addEventListener("scroll", function () {
         let currentScrollY = window.scrollY;
 
-        // Comportamiento del menú (desaparece al hacer scroll hacia abajo)
         if (currentScrollY > lastScrollY) {
             // Scroll hacia abajo
             scrollDownCount++;
@@ -67,13 +92,11 @@ function toggle() {
                 isHidden = true; // Evita que siga ejecutando la acción en cada scroll
             }
         } else {
-            // Scroll hacia arriba → Mostrar menú y resetear contador
             menu.classList.remove("hidden");
-            scrollDownCount = 0; // Reinicia el contador cuando sube
+            scrollDownCount = 0;
             isHidden = false;
         }
 
-        // Animación de los elementos .boxmobile
         const boxes = document.querySelectorAll(".boxmobile");
         boxes.forEach(boxmobile => {
             const rect = boxmobile.getBoundingClientRect();
@@ -84,33 +107,17 @@ function toggle() {
             }
         });
 
-        // Animación de los elementos .boxmobilecircle
         const elements = document.querySelectorAll(".boxmobilecircle, .boxmobilecircleizq");
         elements.forEach(element => {
             const rect = element.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) { // Aparece un poco antes de llegar al final
+            if (rect.top < window.innerHeight - 100) { 
                 element.classList.add("visible");
             } else {
                 element.classList.remove("visible");
             }
         });
-
         lastScrollY = currentScrollY;
     });
-
-
-
-
-
-
-    // Función para el toggle del botón
-    const button = document.getElementById('toggle-button');
-    if (button) {
-        button.addEventListener('click', function() {
-            button.classList.toggle('translate-x-6');
-        });
-    }
-
 
 
 
@@ -126,42 +133,20 @@ function toggle() {
                 btn.classList.toggle("active", i === index);
             });
     
-            // Obtener el ancho del primer botón (asumiendo que todos tienen el mismo ancho)
             const buttonWidth = buttonsswitch[0].offsetWidth;
-    
-            // Mover el fondo activo
-            activeBackground.style.width = `${buttonWidth}px`; // Ajustamos el ancho del fondo
-            activeBackground.style.left = `${buttonWidth * index}px`; // Ajustamos la posición del fondo
-    
-            // Mostrar el contenido correspondiente y ocultar los demás
+            activeBackground.style.width = `${buttonWidth}px`; 
+            activeBackground.style.left = `${buttonWidth * index}px`; 
             switcherContents.forEach((content, i) => {
                 content.classList.toggle("show", i === index);
             });
         }
     
-        // Añadir los event listeners a cada botón
         buttonsswitch.forEach((buttonswitch, index) => {
             buttonswitch.addEventListener("click", () => showContent(index));
         });
-    
-        // Inicializar con el contenido de la opción 1 visible
-        showContent(0); // Cambié a 0 porque queremos que el primer botón esté activo al principio
-    } else {
-        //console.error("Faltan botones, fondo activo o contenido.");
+        showContent(0);
     }
     
-
-    // C U R R I C U L U M
-
-
-
-    
-
-    
-
-
-
-
 
     
    //toogle de globo_extra.php
@@ -174,7 +159,6 @@ function toggle() {
 
        circle.style.visibility = 'visible';
        circle.classList.add('expanded');
-
        redDiv.style.pointerEvents = "none";
 
        setTimeout(() => {
@@ -185,62 +169,163 @@ function toggle() {
                case true:
                    greenDiv.style.opacity = "0";
                    greenDiv.style.pointerEvents = "none";
-                   greenDiv.style.display = "none";  // Ocultar greenDiv y eliminar su espacio
-
+                   greenDiv.style.display = "none";
                    redDiv.style.opacity = "1";
                    redDiv.style.pointerEvents = "auto";
-                   redDiv.style.display = "block";  // Asegurarse de que redDiv se muestre
-
-                   greenDiv.classList.add('hiddengloboextra'); // Añadir la clase hidden
-                   redDiv.classList.remove('hiddengloboextra'); // Eliminar la clase hidden
+                   redDiv.style.display = "block";  
+                   greenDiv.classList.add('hiddengloboextra');
+                   redDiv.classList.remove('hiddengloboextra');
                    break;
                case false:
                    redDiv.style.opacity = "0";
                    redDiv.style.pointerEvents = "none";
-                   redDiv.style.display = "none";  // Ocultar redDiv y eliminar su espacio
-
+                   redDiv.style.display = "none"; 
                    greenDiv.style.opacity = "1";
                    greenDiv.style.pointerEvents = "auto";
-                   greenDiv.style.display = "block";  // Asegurarse de que greenDiv se muestre
-
-                   redDiv.classList.add('hiddengloboextra'); // Añadir la clase hidden
-                   greenDiv.classList.remove('hiddengloboextra'); // Eliminar la clase hidden
-
+                   greenDiv.style.display = "block";
+                   redDiv.classList.add('hiddengloboextra');
+                   greenDiv.classList.remove('hiddengloboextra'); 
                    break;
            }
-
-           isGreen = !isGreen; // Cambiar estado
+           isGreen = !isGreen;
        }, 500);
    }
-
    document.querySelectorAll('.bubblebutton').forEach(button => {
     button.addEventListener('click', toggleView);
 });
 
     
-  
-    
-  
+
     //  boton que gira
     //  FULL STACK DEVELOPER - W O R D P R E S S - © 2025 - 
     const text = "F U L L S T A C K D E V E L O P E R - W O R D P R E S S - ";
     const container = document.querySelector(".text-circle");
 
-    // Generar las letras en círculo
     for (let i = 0; i < text.length; i++) {
         let span = document.createElement("span");
         span.innerText = text[i];
         let angle = (360 / text.length) * i;
-        span.style.transform = `rotate(${angle}deg) translate(0, -120px)`; // Ajustamos la posición de las letras
+        span.style.transform = `rotate(${angle}deg) translate(0, -120px)`; 
         container.appendChild(span);
     }
 
     let rotation = 0;
 
     window.addEventListener("wheel", (event) => {
-        rotation += event.deltaY > 0 ? 10 : -10; // Girar en función del scroll
-        container.style.transform = `rotate(${rotation}deg)`; // Girar el texto sobre su eje
+        rotation += event.deltaY > 0 ? 10 : -10; 
+        container.style.transform = `rotate(${rotation}deg)`;
     });
+
+
+
+    //menu ancla
+    function eliminarExperiencia() {
+        const experiencias = document.getElementsByClassName("experiencia_religiosa");
+        for (let i = 0; i < experiencias.length; i++) {
+            experiencias[i].style.display = "none"; 
+        }
+    };
+
+    function cargarExperiencia() {
+        const experiencias = document.getElementsByClassName("experiencia_religiosa");
+        for (let i = 0; i < experiencias.length; i++) {
+            experiencias[i].style.display = "inline"; 
+        }
+    };
+
+    function recargarExperiencia() {
+        const contenidoCurriculum = document.querySelectorAll(".curriculum-content");
+
+        contenidoCurriculum.forEach(function(caja) {
+            caja.style.display = "block";
+        });
+
+        cargarExperiencia();
+    }
+
+    const botonesToggleCV = document.querySelectorAll(".switcher-optioncv");
+    const cajasContenidoCV = document.querySelectorAll(".simpletext-contentcv");
+    const activeBackgroundcv = document.getElementById("active-backgroundcv");
+
+    cajasContenidoCV.forEach((caja, index) => {
+        if (index !== 0) {
+            caja.classList.add("oculto");
+        }
+    });
+
+    function toggleContentCV(index) {
+        cajasContenidoCV.forEach((contentcv, i) => {
+            if (i === index) {
+                contentcv.classList.remove("oculto");
+            } else {
+                contentcv.classList.add("oculto");
+            }
+        });
+
+        const buttonWidthcv = botonesToggleCV[0].offsetWidth;
+        activeBackgroundcv.style.width = `${buttonWidthcv}px`;
+        activeBackgroundcv.style.left = `${buttonWidthcv * index}px`;
+
+        botonesToggleCV.forEach((btn, i) => {
+            btn.classList.remove("active");
+            if (i === index) {
+                btn.classList.add("active");
+            }
+        });
+    }
+
+    botonesToggleCV.forEach((boton, index) => {
+        boton.addEventListener("click", function() {
+            toggleContentCV(index); 
+            if (boton.dataset.opcion === "curriculum") {
+                recargarExperiencia(); 
+            } else if (boton.dataset.opcion === "portfolio") {
+                eliminarExperiencia();
+            }
+        });
+    });
+
+    // Código de scroll
+    const switcherContainer = document.querySelector(".switcher-containercv");
+
+    if (switcherContainer) {
+        const offsetTop = switcherContainer.getBoundingClientRect().top + window.scrollY;
+        let lastScrollTop = 0; 
+        let scrollUpCount = 0; 
+
+        window.addEventListener("scroll", function () {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll >= offsetTop - 150) {
+                switcherContainer.classList.add("fixed-switcher");
+                switcherContainer.style.top = "150px"; 
+
+                if (currentScroll > lastScrollTop) {
+                    switcherContainer.classList.remove("scrolling-up");
+                    switcherContainer.classList.add("scrolling-down");
+                    scrollUpCount = 0;
+                } else {
+                    scrollUpCount++;
+                    if (scrollUpCount >= 1) { 
+                        switcherContainer.classList.add("scrolling-up");
+                        switcherContainer.classList.remove("scrolling-down");
+                    }
+                }
+            } else {
+                switcherContainer.classList.remove("fixed-switcher", "scrolling-up", "scrolling-down");
+                switcherContainer.style.top = ""; 
+            }
+
+            lastScrollTop = currentScroll;
+        });
+    }
+
+
+
+
+
+
+
 
 
 });

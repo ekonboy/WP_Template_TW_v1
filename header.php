@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> id="pageroot" class="scroll-smooth">
 
@@ -5,12 +8,9 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width">
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <!-- <php echo get_template_directory_uri() . '/css/app.css'; ?> -->
     <?php wp_head(); ?>
 </head>
-
-<body <?php body_class('bg-white text-gray-900 antialiased bg-white text-black dark:bg-gray-800 dark:text-white transition-all duration-300'); ?>>
+<body <?php body_class('bg-white text-gray-900 antialiased text-black dark:bg-gray-800 dark:text-white transition-all duration-300'); ?>>
 
     <?php do_action('tailpress_site_before'); ?>
 
@@ -22,23 +22,14 @@
             <div class="mx-auto container">
                 <div class="headermenu lg:flex lg:justify-bet22ween lg:items-center border-b py-6">
                     <!-- Logo y Toggle del Menú -->
-                    <div class="flex  items-center" style="width: 25%;">
+                    <div class="menuheaderresponsivemobile flex items-center" style="width: 30%;">
                         <div style="width:16%">
-                            <?php if (has_custom_logo()) { ?>
-                                <?php the_custom_logo(); ?>
-                            <?php } else { ?>
-                                <a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
-                                    <?php echo get_bloginfo('name'); ?>
-                                </a>
-                                <!-- <p class="text-sm font-light text-gray-600">
-                                    <php echo get_bloginfo('description'); ?>
-                                </p> -->
-                            <?php } ?>
+                        <?php has_custom_logo() ? the_custom_logo() : ''; ?>
                         </div>
 
                         <ul class="lg:flex lg:-mx-4">
                             <li>
-                                <a class="theme-toggle [&amp;>*]:pointer-events-none relative px-7 py-2.5 flex items-center rounded-[inherit] text-sm leading-5 font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 hover:dark:text-primary-600 transition-all duration-300" href="javascript:void(0)" onclick="toggle()">
+                                <a class="theme-toggle [&amp;>*]:pointer-events-none relative px-7 py-2.5 flex items-center rounded-[inherit] text-sm leading-5 font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 hover:dark:text-primary-600 transition-all duration-300" href="javascript:void(0)" onclick="toggleMenuHeaderRes()">
                                     <div class="flex dark:hidden items-center">
                                         <em class="text-lg leading-none w-7 ni ni-moon"></em>
                                     </div>
@@ -51,7 +42,6 @@
                                 </a>
                             </li>
                         </ul>
-
 
                         <div class="lg:hidden">
                             <a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
@@ -69,15 +59,12 @@
                     </div>
 
 
-
-
                     <div class="lg:flex lg:items-center">
                         <?php
-                        // Argumentos para wp_nav_menu
                         $menu_args = array(
                             'container_id'    => 'primary-menu',
-                            'container_class' => 'hiddenmenu bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
-                            'menu_class'      => 'lg:flex lg:-mx-4', // Aseguramos que el menú use las mismas clases
+                            'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+                            'menu_class'      => 'lg:flex lg:-mx-4', 
                             'theme_location'  => 'primary',
                             'li_class'        => 'lg:mx-4',
                             'fallback_cb'     => false,
@@ -95,16 +82,6 @@
             </div>
         </header>
 
-
-
-
-
-
-
-
-
-
-
         <div id="content" class="site-content flex-grow">
             <?php if (is_front_page()) { ?>
                 <div class="container mx-auto" style="height: 650px;">
@@ -113,82 +90,55 @@
                             <p>
 
 
-                            <div class="mt-16 mb-8 md:mt-20 lg:mt-24 px-4 sm:px-8 mx-auto w-full sm:max-w-screen-md flex flex-col items-center justify-center gap-5 md:gap-6 lg:gap-8"> <a href="#!" class="h-9 group w-fit flex items-center justify-center gap-0 bg-astro-dark-900/55 rounded-full">
+                            <div class="mt-16 mb-8 md:mt-20 lg:mt-24 px-4 sm:px-8 mx-auto w-full sm:max-w-screen-md flex flex-col items-center justify-center gap-5 md:gap-6 lg:gap-8">
+                                <a href="/gabii_rese_SP_EN_v1.pdf" target="_blank" class="switcher-container group w-fit flex items-center justify-center gap-0 bg-gabii-dark-900/55 rounded-full">
                                     <div class="px-3 h-full w-fit flex items-center gap-2 bg-gradient-to-tr from-[#1321AC] to-[#881ABD] rounded-full">
-                                        <span class="text-sm text-white font-light">gabii cv</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-white block sm:hidden" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"></path>
-                                        </svg>
+                                        <button data-opcion="curriculum_header" class="switcher-option_header active text-white">
+                                            Descargar <em class="ni ni-chevron-right"></em>
+                                        </button>
                                     </div>
                                     <div class="px-3 h-full w-fit items-center justify-center gap-2 flex">
-                                        <span class="text-sm text-astro-gray-100 group-hover:underline font-light">Download now!</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-astro-gray-100" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"></path>
-                                        </svg>
+                                        <button data-opcion="portfolio_header" class="switcher-option_header text-white">
+                                            Curriculum <em class="ni ni-external"></em>
+                                        </button>
                                     </div>
                                 </a>
+
                                 <div class="flex flex-col items-center">
                                     <h1 class="text-balance mb-4 text-center text-3xl/[1.1] font-bold sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] no-after font-[Obviously]">
                                         Experiencia en optimización, SEO, desarrollo escalable y diseño responsive
                                     </h1>
-
                                 </div>
 
                                 <div class="grid grid-rows-2 gap-2">
-                                    <div data-code-block="" class="px-4 py-2 bg-astro-dark-900/55 rounded-xl">
+                                    <div data-code-block="" class="px-4 py-2 bg-gabii-dark-900/55 rounded-xl">
                                         <div class="group h-full flex items-center">
-                                            <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 relative block w-3 -rotate-90 text-astro-gray-200 " aria-hidden="true">
+                                            <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 relative block w-3 -rotate-90 text-white " aria-hidden="true">
                                                 <path d="M1 1L11 11L21 1" stroke="currentColor" stroke-width="2"></path>
                                             </svg>
 
-
-                                            <code id="merchant-id-1" data-code="" class="flex-1 font-mono font-light text-sm text-astro-gray-200 mr-2 merchant-data">
-                                                npm create gabii@latest
-                                            </code>
-                                            <div class="relative">
-
-
-                                                <button onclick="copyToClipboard()" class="block mr-1 transition hover:scale-110 active:scale-100 active:transition-colors text-astro-gray-200 group-hover:text-astro-gray-100 copy-btn" title="Copy to clipboard">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24">
-                                                        <path fill="currentColor" d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.006-1zM5.002 8L5 20h10V8zM9 6h8v10h2V4H9z"></path>
-                                                    </svg>
-                                                </button>
-
-
-
-                                                <div id="copied-message" class="copied-message" data-visible="false">
-                                                    Copied!
-                                                </div>
-
-
+<code id="merchant-id-1" data-code="" class="flex-1 font-mono font-light text-sm text-white mr-2 merchant-data">
+npm create gabii@latest</code>
+<div class="relative">
+<button onclick="copyToClipboard()" class="block mr-1 transition hover:scale-110 active:scale-100 active:transition-colors text-white group-hover:text-astro-gray-100 copy-btn" title="Copy to clipboard">
+<em class="ni ni-copy"></em>
+</button><div id="copied-message" class="copied-message bg-gabii-dark-900/55 rounded-xl" data-visible="true">Copiado!</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <style>
-                                    .copied-message {
-                                        color: green;
-                                        font-weight: bold;
-                                        display: none;
-                                        margin-top: 10px;
-                                    }
-                                </style>
-                                <script>
-
-                                </script>
                             </div>
-
 
                             <div class="landing-section gap-4 sm:gap-8">
                                 <p class="font-light text-balance mb-4">Algunos de mis clientes donde he prestado servicios:</p>
 
                                 <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 sm:gap-x-6 sm:gap-y-6 px-1 sm:px-4">
-                                    <i class="payretailerslogo"></i>
-                                    <i class="pacificologo"></i>
-                                    <i class="paypagalogo"></i>
-                                    <i class="kuadylogo"></i>
-                                    <i class="upflogo"></i>
-                                    <i class="canalslogo"></i>
+                                    <i class="baselogo payretailerslogo"></i>
+                                    <i class="baselogo pacificologo"></i>
+                                    <i class="baselogo paypagalogo"></i>
+                                    <i class="baselogo kuadylogo"></i>
+                                    <i class="baselogo upflogo"></i>
+                                    <i class="baselogo canalslogo"></i>
                                 </div>
 
                             </div>

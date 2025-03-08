@@ -8,7 +8,6 @@
  * @since        1.0.0
  */
 
-// Obtener el índice de la sección
 $count = get_query_var('prt_count');
 $activatedcontent = get_sub_field('activatedcontent');
 $heading = get_sub_field('heading');
@@ -19,17 +18,13 @@ $ancho_total_texto = get_sub_field('ancho_total_texto');
 $girado = get_sub_field('girado');
 ?>
 
-<style>
-
-</style>
-
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
 <?php if ($girado == '1') { ?>
     <section class="globo boxmobilecircleizq  <?php echo esc_attr('section-' . $count); ?>">
         <div class="container logrosgirado" style="max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
 
         <div class="girado speech-bubbledefault" style="transform: scaleX(-1);">
-                <div class="w-full h-[200px]  flex items-center justify-center text-black text-[28px] sm:text-[36px] leading-[36px] p-4 sm:p-[20px] text-end" style="transform: scaleX(-1);text-align: left;">
+                <div class="w-full h-[200px] flex items-center justify-center text-black text-[28px] sm:text-[36px] leading-[36px] p-4 sm:p-[20px] text-end" style="transform: scaleX(-1);text-align: left;">
                     <?php echo esc_attr($heading); ?>
                 </div>
 
@@ -42,7 +37,6 @@ $girado = get_sub_field('girado');
                     </div>
                 </div>
                
-
             </div>
         </div>
     </section>
@@ -52,7 +46,7 @@ $girado = get_sub_field('girado');
     <div class="container logros" style="max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
 
             <div class="speech-bubbledefault">
-                <div class="w-full h-[200px]  flex items-center justify-center text-black text-[28px] sm:text-[36px] leading-[36px] p-4 sm:p-[20px] text-end" id="">
+                <div class="w-full h-[200px] flex items-center justify-center text-black text-[28px] sm:text-[36px] leading-[36px] p-4 sm:p-[20px] text-end">
                     <?php echo esc_attr($heading); ?>
                 </div>
 
