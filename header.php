@@ -20,10 +20,10 @@ session_start();
 
         <header>
             <div class="mx-auto container">
-                <div class="headermenu lg:flex lg:justify-bet22ween lg:items-center border-b py-6">
+                <div class="headermenu lg:flex lg:justify-between lg:items-center border-b py-6">
                     <!-- Logo y Toggle del Menú -->
-                    <div class="menuheaderresponsivemobile flex items-center" style="width: 30%;">
-                        <div style="width:16%">
+                    <div class="menuheaderresponsivemobile flex items-center">
+                        <div style="width:15%">
                         <?php has_custom_logo() ? the_custom_logo() : ''; ?>
                         </div>
 
@@ -58,7 +58,6 @@ session_start();
                         </div>
                     </div>
 
-
                     <div class="lg:flex lg:items-center">
                         <?php
                         $menu_args = array(
@@ -73,11 +72,7 @@ session_start();
                         // Llamada a wp_nav_menu
                         wp_nav_menu($menu_args);
                         ?>
-
                     </div>
-
-
-
                 </div>
             </div>
         </header>
@@ -88,7 +83,6 @@ session_start();
                     <div class="px-4 py-4 my-4">
                         <div class="mx-auto" style="text-align: center;">
                             <p>
-
 
                             <div class="mt-16 mb-8 md:mt-20 lg:mt-24 px-4 sm:px-8 mx-auto w-full sm:max-w-screen-md flex flex-col items-center justify-center gap-5 md:gap-6 lg:gap-8">
                                 <a href="/gabii_rese_SP_EN_v1.pdf" target="_blank" class="switcher-container group w-fit flex items-center justify-center gap-0 bg-gabii-dark-900/55 rounded-full">
@@ -106,7 +100,7 @@ session_start();
 
                                 <div class="flex flex-col items-center">
                                     <h1 class="text-balance mb-4 text-center text-3xl/[1.1] font-bold sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] no-after font-[Obviously]">
-                                        Experiencia en optimización, SEO, desarrollo escalable y diseño responsive
+                                        Competencia en optimización, SEO, desarrollo escalable y diseño responsive
                                     </h1>
                                 </div>
 
@@ -122,13 +116,12 @@ npm create gabii@latest</code>
 <div class="relative">
 <button onclick="copyToClipboard()" class="block mr-1 transition hover:scale-110 active:scale-100 active:transition-colors text-white group-hover:text-astro-gray-100 copy-btn" title="Copy to clipboard">
 <em class="ni ni-copy"></em>
-</button><div id="copied-message" class="copied-message bg-gabii-dark-900/55 rounded-xl" data-visible="true">Copiado!</div>
+</button><div id="copied-message" class="copied-message bg-gabii-dark-900/55 rounded-xl " data-visible="false">Copiado!</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="landing-section gap-4 sm:gap-8">
                                 <p class="font-light text-balance mb-4">Algunos de mis clientes donde he prestado servicios:</p>
 
@@ -144,7 +137,9 @@ npm create gabii@latest</code>
                             </div>
                             </p>
                         </div>
-                        <img src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese" class="w-full h-auto herohome">
+                             <div class="relative w-full h-screen"> 
+                                <img loading="eager" fetchpriority="high" src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese Full Stack Developer" class="blur-lg absolute -z-50 -translate-x-1/2 inset-x-1/2 custom-inset w-[2353px] h-[1969px] object-cover max-w-[unset]">
+                            </div>
                     </div>
                 </div>
             <?php } ?>

@@ -120,14 +120,14 @@ $accordion_contents = array(
 
 ?>
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
-<section class="content-info <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
+<section class="auto-content-info <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
     <div class="flex flex-col items-center justify-center text-center py-8 px-4">
 
         <h1 class="<?php echo $titulo_centrado ? 'after:left-1/2 after:translate-x-[-50%]' : 'after:left-0'; ?> font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 text-2xl lg:text-3xl mb-8 after:-bottom-3 text-slate-600 dark:after:bg-[#d0ff71] dark:text-white"><?php echo $heading; ?></h1>
         <p class="mt-4 text-lg text-gray-600"><?php echo $description; ?></p>
     </div>
 
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center p-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-4 w-[1280px]">
 
             <?php

@@ -22,8 +22,7 @@ $content_onlymobile = get_sub_field('content_onlymobile');
 <section class="gitcontent block md:hidden <?php echo esc_attr( $content_onlymobile == 1 ? 'md:hidden' : '' ); ?> <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>">
     <div class="container">
 
-        <div class="area-master headline" onclick="vamosalcvmaster();">Master
-                
+        <div class="area-master headline" onclick="vamosalcvmaster();">Master        
         </div>
         <div class="area-skills headline" onclick="vamosalcvskills();">Skills
         </div>

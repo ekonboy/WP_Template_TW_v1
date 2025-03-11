@@ -80,13 +80,13 @@ if (isset($_SESSION['mensaje_correo'])) {
                         <div class="modal-body bg-[#0e0f11] rounded-md w-full md:w-1/4 mx-auto transition-transform delay-500 group-[.show]:delay-0 group-[.show]:duration-300 ease-out -translate-y-[30px] group-[.show]:translate-y-0">
 
                             <div class="p-5 sm:p-6">
-                                <h5 class="text-xl leading-tighter font-heading font-bold mb-5 text-[#d0ff71] ">Contacta conmigo</h5>
+                                <h5 class="text-xl leading-tighter font-heading font-bold mb-5 text-[#d0ff71]">Contacta conmigo</h5>
 
                                 <div class="flex flex-wrap items-center -m-2">
                                     <div class="w-full lg:w-5/12 p-2">
                                         <div class="relative mb-5 last:mb-0">
-                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-white mb-2" for="nombre">Nombre</label>
-                                            <span class="block italic text-xs text-slate-400">Specify your name.</span>
+                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-[#d0ff71] mb-2" for="nombre">Nombre*</label>
+                                            <span class="block italic text-xs text-slate-400">Indica aquí tu nombre.</span>
                                         </div>
                                     </div><!-- col -->
                                     <div class="w-full lg:w-7/12 p-2">
@@ -104,8 +104,8 @@ if (isset($_SESSION['mensaje_correo'])) {
                                 <div class="flex flex-wrap items-center -m-2">
                                     <div class="w-full lg:w-5/12 p-2">
                                         <div class="relative mb-5 last:mb-0">
-                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-white mb-2" for="email">Email</label>
-                                            <span class="block italic text-xs text-slate-400">Copyright information of your website.</span>
+                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-[#d0ff71] mb-2" for="email">Email*</label>
+                                            <span class="block italic text-xs text-slate-400">Déjame tu mail y te responderé en menos de 12 horas.</span>
                                         </div>
                                     </div>
                                     <div class="w-full lg:w-7/12 p-2">
@@ -123,8 +123,8 @@ if (isset($_SESSION['mensaje_correo'])) {
                                 <div class="flex flex-wrap items-center -m-2">
                                     <div class="w-full lg:w-5/12 p-2">
                                         <div class="relative mb-5 last:mb-0">
-                                            <label class="inline-block text-sm font-medium text-[slate-700] dark:text-white mb-2" for="department">Departamento</label>
-                                            <span class="block italic text-xs text-slate-400">Copyright information of your website.</span>
+                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-[#d0ff71] mb-2" for="department">Departamento</label>
+                                            <span class="block italic text-xs text-slate-400">Aquí escribe tu cargo en la empresa.</span>
                                         </div>
                                     </div>
                                     <div class="w-full lg:w-7/12 p-2">
@@ -156,7 +156,7 @@ var form = document.getElementById('contactFormPlugin');
         var nombre = document.getElementById('nombre').value.trim();
         var email = document.getElementById('email').value.trim();
         if (nombre === '' || email === '') {
-            alert('Por favor, rellena todos los campos.');
+            alert('Por favor, rellena todos los campos mandatory.');
             event.preventDefault(); 
             
         }
