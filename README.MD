@@ -40,7 +40,7 @@ You will be asked if you would like to have WordPress installed as well. Keep in
 * Run `rm -rf .git` to remove git (or `rmdir .git` for Windows)
 * Run `npm install`
 * Run `npm run watch` to start developing
-
+* run `npm run dev` to develop project
 ### General
 
 You will find the editable CSS and Javascript files within the `/resources` folder.
@@ -97,3 +97,20 @@ You could also find the composer's global installation path by running `composer
 ## License
 
 MIT. Please see the [License File](/LICENSE) for more information.
+
+## Template formació:
+<div class="icono-texto">
+     <div class="linea"><em class="ni ni-plus-c text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
+</div>
+<div class="espaciado_abajo"></div>
+    <div class="icono-texto">
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
+    </div>
+
+<span class="espaciado_abajo"></span>
+<em class="ni ni-plus-c text-[#1321AC] dark:text-[#d0ff71]"></em> WordPress
+https://www.xxx.com

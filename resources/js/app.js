@@ -1,358 +1,338 @@
 //gabii v1.0
 function toggleMenuHeaderRes() {
-    const buttontoggle3 = document.getElementById('toggle-button');
-    buttontoggle3.classList.toggle('translate-x-6'); 
+  const buttontoggle3 = document.getElementById("toggle-button");
+  buttontoggle3.classList.toggle("translate-x-6");
 }
 
-  window.addEventListener("scroll", function () {
-      const menu = document.querySelector(".headermenu");
-      if (window.scrollY > 50) {
-          menu.classList.add("scrolled");
-      } else {
-          menu.classList.remove("scrolled");
-      }
-  });
-
-
-//header barba.js transaction
-  const toggleContainer = document.getElementById('toggle-container');
-  const toggleButton2 = document.getElementById('toggle-button');
-  const colorTransition = document.getElementById('colorTransition');
-
-  const handleClick = () => {
-    colorTransition.style.display = 'block';
-    colorTransition.style.animation = 'none'; 
-    void colorTransition.offsetWidth; 
-    colorTransition.style.animation = 'slideSmooth 0.8s linear forwards'; 
-  };
-
-  toggleContainer.addEventListener('click', (event) => {
-    handleClick();
-  });
-
-  toggleButton2.addEventListener('click', (event) => {
-    event.stopPropagation(); 
-    handleClick();
-  });
-
-
-
-    function copyToClipboard() {
-        if (navigator.clipboard) {
-            const text = document.getElementById("merchant-id-1").textContent;
-            navigator.clipboard.writeText(text).then(() => {
-                const message = document.getElementById("copied-message");
-                message.style.display = "block";
-    
-                setTimeout(() => {
-                    message.style.display = "none";
-                }, 2000);
-            }).catch(err => console.error("Error al copiar:", err));
-        } else {
-            console.error("La API Clipboard no está disponible.");
-        }
-    }
-
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-
-
-
-    const menuToggle = document.getElementById("primary-menu-toggle");
-    const primaryMenu = document.getElementById("primary-menu");
-
-    // Función para mostrar/ocultar el menú
-    if (menuToggle && primaryMenu) {
-        menuToggle.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            // Si el menú ya está visible
-            if (primaryMenu.classList.contains("visible")) {
-                primaryMenu.style.height = "0"; // Reduce el tamaño a 0 (cerrar el menú)
-                setTimeout(() => {
-                    primaryMenu.classList.remove("visible");
-                }, 400); // Espera a que la animación termine antes de quitar la clase
-            } else {
-                primaryMenu.classList.add("visible");
-                primaryMenu.style.height = primaryMenu.scrollHeight + "px"; // Expande el menú
-                primaryMenu.style.top = window.scrollY + 60 + "px"; // Ajusta la posición del menú según el desplazamiento
-            }
-        });
-    }
-
-
-
-    // Variables para el menú
-    let lastScrollY = window.scrollY;
-    let scrollDownCount = 0; 
-    const threshold = 10; 
-    const menu = document.querySelector(".headermenu");
-    let isHidden = false; 
-
- //aqui toggle
-
-    // Función para el scroll del menú y las animaciones
-    window.addEventListener("scroll", function () {
-        let currentScrollY = window.scrollY;
-
-        if (currentScrollY > lastScrollY) {
-            // Scroll hacia abajo
-            scrollDownCount++;
-            if (scrollDownCount >= threshold && !isHidden) {
-                menu.classList.add("hidden");
-                isHidden = true; // Evita que siga ejecutando la acción en cada scroll
-            }
-        } else {
-            menu.classList.remove("hidden");
-            scrollDownCount = 0;
-            isHidden = false;
-        }
-
-        const boxes = document.querySelectorAll(".boxmobile");
-        boxes.forEach(boxmobile => {
-            const rect = boxmobile.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.8) {
-                boxmobile.classList.add("show");
-            } else {
-                boxmobile.classList.remove("show");
-            }
-        });
-
-        const elements = document.querySelectorAll(".boxmobilecircle, .boxmobilecircleizq");
-        elements.forEach(element => {
-            const rect = element.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) { 
-                element.classList.add("visible");
-            } else {
-                element.classList.remove("visible");
-            }
-        });
-        lastScrollY = currentScrollY;
-    });
-
-
-
-    // Función para el cambio de contenido en el switcher
-    const buttonsswitch = document.querySelectorAll(".switcher-option");
-    const activeBackground = document.getElementById("active-background");
-    const switcherContents = document.querySelectorAll(".switcher-content");
-    
-    if (buttonsswitch.length > 0 && activeBackground && switcherContents.length > 0) {
-        function showContent(index) {
-            // Cambiar la clase active en los botones
-            buttonsswitch.forEach((btn, i) => {
-                btn.classList.toggle("active", i === index);
-            });
-    
-            const buttonWidth = buttonsswitch[0].offsetWidth;
-            activeBackground.style.width = `${buttonWidth}px`; 
-            activeBackground.style.left = `${buttonWidth * index}px`; 
-            switcherContents.forEach((content, i) => {
-                content.classList.toggle("show", i === index);
-            });
-        }
-    
-        buttonsswitch.forEach((buttonswitch, index) => {
-            buttonswitch.addEventListener("click", () => showContent(index));
-        });
-        showContent(0);
-    }
-    
-
-    
-   //toogle de globo_extra.php
-   let isGreen = true; // Estado inicial
-
-   function toggleView() {
-       const circle = isGreen ? document.getElementById('circle') : document.getElementById('circle2');
-       const greenDiv = document.getElementById('greenDiv');
-       const redDiv = document.getElementById('redDiv');
-
-       circle.style.visibility = 'visible';
-       circle.classList.add('expanded');
-       redDiv.style.pointerEvents = "none";
-
-       setTimeout(() => {
-           circle.style.visibility = 'hidden';
-           circle.classList.remove('expanded');
-
-           switch (isGreen) {
-               case true:
-                   greenDiv.style.opacity = "0";
-                   greenDiv.style.pointerEvents = "none";
-                   greenDiv.style.display = "none";
-                   redDiv.style.opacity = "1";
-                   redDiv.style.pointerEvents = "auto";
-                   redDiv.style.display = "block";  
-                   greenDiv.classList.add('hiddengloboextra');
-                   redDiv.classList.remove('hiddengloboextra');
-                   break;
-               case false:
-                   redDiv.style.opacity = "0";
-                   redDiv.style.pointerEvents = "none";
-                   redDiv.style.display = "none"; 
-                   greenDiv.style.opacity = "1";
-                   greenDiv.style.pointerEvents = "auto";
-                   greenDiv.style.display = "block";
-                   redDiv.classList.add('hiddengloboextra');
-                   greenDiv.classList.remove('hiddengloboextra'); 
-                   break;
-           }
-           isGreen = !isGreen;
-       }, 500);
-   }
-   document.querySelectorAll('.bubblebutton').forEach(button => {
-    button.addEventListener('click', toggleView);
+window.addEventListener("scroll", function () {
+  const menu = document.querySelector(".headermenu");
+  if (window.scrollY > 50) {
+    menu.classList.add("scrolled");
+  } else {
+    menu.classList.remove("scrolled");
+  }
 });
 
-    
+//header barba.js transaction
+const toggleContainer = document.getElementById("toggle-container");
+const toggleButton2 = document.getElementById("toggle-button");
+const colorTransition = document.getElementById("colorTransition");
 
-    //  boton que gira
-    //  FULL STACK DEVELOPER - W O R D P R E S S - © 2025 - 
-    const text = "F U L L S T A C K D E V E L O P E R - W O R D P R E S S - ";
-    const container = document.querySelector(".text-circle");
+const handleClick = () => {
+  colorTransition.style.display = "block";
+  colorTransition.style.animation = "none";
+  void colorTransition.offsetWidth;
+  colorTransition.style.animation = "slideSmooth 0.8s linear forwards";
+};
 
-    for (let i = 0; i < text.length; i++) {
-        let span = document.createElement("span");
-        span.innerText = text[i];
-        let angle = (360 / text.length) * i;
-        span.style.transform = `rotate(${angle}deg) translate(0, -120px)`; 
-        container.appendChild(span);
+toggleContainer.addEventListener("click", (event) => {
+  handleClick();
+});
+
+toggleButton2.addEventListener("click", (event) => {
+  event.stopPropagation();
+  handleClick();
+});
+
+function copyToClipboard() {
+  if (navigator.clipboard) {
+    const text = document.getElementById("merchant-id-1").textContent;
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        const message = document.getElementById("copied-message");
+        message.style.display = "block";
+
+        setTimeout(() => {
+          message.style.display = "none";
+        }, 2000);
+      })
+      .catch((err) => console.error("Error al copiar:", err));
+  } else {
+    console.error("La API Clipboard no está disponible.");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("primary-menu-toggle");
+  const primaryMenu = document.getElementById("primary-menu");
+
+  // Función para mostrar/ocultar el menú
+  if (menuToggle && primaryMenu) {
+    menuToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      // Si el menú ya está visible
+      if (primaryMenu.classList.contains("visible")) {
+        primaryMenu.style.height = "0"; // Reduce el tamaño a 0 (cerrar el menú)
+        setTimeout(() => {
+          primaryMenu.classList.remove("visible");
+        }, 400); // Espera a que la animación termine antes de quitar la clase
+      } else {
+        primaryMenu.classList.add("visible");
+        primaryMenu.style.height = primaryMenu.scrollHeight + "px"; // Expande el menú
+        primaryMenu.style.top = window.scrollY + 60 + "px"; // Ajusta la posición del menú según el desplazamiento
+      }
+    });
+  }
+
+  // Variables para el menú
+  let lastScrollY = window.scrollY;
+  let scrollDownCount = 0;
+  const threshold = 10;
+  const menu = document.querySelector(".headermenu");
+  let isHidden = false;
+
+  //aqui toggle
+
+  // Función para el scroll del menú y las animaciones
+  window.addEventListener("scroll", function () {
+    let currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      // Scroll hacia abajo
+      scrollDownCount++;
+      if (scrollDownCount >= threshold && !isHidden) {
+        menu.classList.add("hidden");
+        isHidden = true; // Evita que siga ejecutando la acción en cada scroll
+      }
+    } else {
+      menu.classList.remove("hidden");
+      scrollDownCount = 0;
+      isHidden = false;
     }
 
-    let rotation = 0;
-
-    window.addEventListener("wheel", (event) => {
-        rotation += event.deltaY > 0 ? 10 : -10; 
-        container.style.transform = `rotate(${rotation}deg)`;
+    const boxes = document.querySelectorAll(".boxmobile");
+    boxes.forEach((boxmobile) => {
+      const rect = boxmobile.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+        boxmobile.classList.add("show");
+      } else {
+        boxmobile.classList.remove("show");
+      }
     });
 
+    const elements = document.querySelectorAll(".boxmobilecircle, .boxmobilecircleizq");
+    elements.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        element.classList.add("visible");
+      } else {
+        element.classList.remove("visible");
+      }
+    });
+    lastScrollY = currentScrollY;
+  });
 
+  // Función para el cambio de contenido en el switcher
+  const buttonsswitch = document.querySelectorAll(".switcher-option");
+  const activeBackground = document.getElementById("active-background");
+  const switcherContents = document.querySelectorAll(".switcher-content");
 
-    //menu ancla
-    function eliminarExperiencia() {
-        const experiencias = document.getElementsByClassName("experiencia_religiosa");
-        for (let i = 0; i < experiencias.length; i++) {
-            experiencias[i].style.display = "none"; 
-        }
-    };
+  if (buttonsswitch.length > 0 && activeBackground && switcherContents.length > 0) {
+    function showContent(index) {
+      // Cambiar la clase active en los botones
+      buttonsswitch.forEach((btn, i) => {
+        btn.classList.toggle("active", i === index);
+      });
 
-    function cargarExperiencia() {
-        const experiencias = document.getElementsByClassName("experiencia_religiosa");
-        for (let i = 0; i < experiencias.length; i++) {
-            experiencias[i].style.display = "inline"; 
-        }
-    };
-
-    function recargarExperiencia() {
-        const contenidoCurriculum = document.querySelectorAll(".curriculum-content");
-
-        contenidoCurriculum.forEach(function(caja) {
-            caja.style.display = "block";
-        });
-
-        cargarExperiencia();
+      const buttonWidth = buttonsswitch[0].offsetWidth;
+      activeBackground.style.width = `${buttonWidth}px`;
+      activeBackground.style.left = `${buttonWidth * index}px`;
+      switcherContents.forEach((content, i) => {
+        content.classList.toggle("show", i === index);
+      });
     }
 
-    const botonesToggleCV = document.querySelectorAll(".switcher-optioncv");
-    const cajasContenidoCV = document.querySelectorAll(".simpletext-contentcv");
-    const activeBackgroundcv = document.getElementById("active-backgroundcv");
+    buttonsswitch.forEach((buttonswitch, index) => {
+      buttonswitch.addEventListener("click", () => showContent(index));
+    });
+    showContent(0);
+  }
 
-    cajasContenidoCV.forEach((caja, index) => {
-        if (index !== 0) {
-            caja.classList.add("oculto");
-        }
+  //toogle de globo_extra.php
+  let isGreen = true; // Estado inicial
+
+  function toggleView() {
+    const circle = isGreen ? document.getElementById("circle") : document.getElementById("circle2");
+    const greenDiv = document.getElementById("greenDiv");
+    const redDiv = document.getElementById("redDiv");
+
+    circle.style.visibility = "visible";
+    circle.classList.add("expanded");
+    redDiv.style.pointerEvents = "none";
+
+    setTimeout(() => {
+      circle.style.visibility = "hidden";
+      circle.classList.remove("expanded");
+
+      switch (isGreen) {
+        case true:
+          greenDiv.style.opacity = "0";
+          greenDiv.style.pointerEvents = "none";
+          greenDiv.style.display = "none";
+          redDiv.style.opacity = "1";
+          redDiv.style.pointerEvents = "auto";
+          redDiv.style.display = "block";
+          greenDiv.classList.add("hiddengloboextra");
+          redDiv.classList.remove("hiddengloboextra");
+          break;
+        case false:
+          redDiv.style.opacity = "0";
+          redDiv.style.pointerEvents = "none";
+          redDiv.style.display = "none";
+          greenDiv.style.opacity = "1";
+          greenDiv.style.pointerEvents = "auto";
+          greenDiv.style.display = "block";
+          redDiv.classList.add("hiddengloboextra");
+          greenDiv.classList.remove("hiddengloboextra");
+          break;
+      }
+      isGreen = !isGreen;
+    }, 500);
+  }
+  document.querySelectorAll(".bubblebutton").forEach((button) => {
+    button.addEventListener("click", toggleView);
+  });
+
+  //  boton que gira
+  //  FULL STACK DEVELOPER - W O R D P R E S S - © 2025 -
+  const text = "F U L L S T A C K D E V E L O P E R - W O R D P R E S S - ";
+  const container = document.querySelector(".text-circle");
+
+  for (let i = 0; i < text.length; i++) {
+    let span = document.createElement("span");
+    span.innerText = text[i];
+    let angle = (360 / text.length) * i;
+    span.style.transform = `rotate(${angle}deg) translate(0, -120px)`;
+    container.appendChild(span);
+  }
+
+  let rotation = 0;
+
+  window.addEventListener("wheel", (event) => {
+    rotation += event.deltaY > 0 ? 10 : -10;
+    container.style.transform = `rotate(${rotation}deg)`;
+  });
+
+  //menu ancla
+  function eliminarExperiencia() {
+    const experiencias = document.getElementsByClassName("experiencia_religiosa");
+    for (let i = 0; i < experiencias.length; i++) {
+      experiencias[i].style.display = "none";
+    }
+  }
+
+  function cargarExperiencia() {
+    const experiencias = document.getElementsByClassName("experiencia_religiosa");
+    for (let i = 0; i < experiencias.length; i++) {
+      experiencias[i].style.display = "inline";
+    }
+  }
+
+  function recargarExperiencia() {
+    const contenidoCurriculum = document.querySelectorAll(".curriculum-content");
+
+    contenidoCurriculum.forEach(function (caja) {
+      caja.style.display = "block";
     });
 
-    function toggleContentCV(index) {
-        cajasContenidoCV.forEach((contentcv, i) => {
-            if (i === index) {
-                contentcv.classList.remove("oculto");
-            } else {
-                contentcv.classList.add("oculto");
-            }
-        });
+    cargarExperiencia();
+  }
 
-        const buttonWidthcv = botonesToggleCV[0].offsetWidth;
-        activeBackgroundcv.style.width = `${buttonWidthcv}px`;
-        activeBackgroundcv.style.left = `${buttonWidthcv * index}px`;
+  const botonesToggleCV = document.querySelectorAll(".switcher-optioncv");
+  const cajasContenidoCV = document.querySelectorAll(".simpletext-contentcv");
+  const activeBackgroundcv = document.getElementById("active-backgroundcv");
 
-        botonesToggleCV.forEach((btn, i) => {
-            btn.classList.remove("active");
-            if (i === index) {
-                btn.classList.add("active");
-            }
-        });
+  cajasContenidoCV.forEach((caja, index) => {
+    if (index !== 0) {
+      caja.classList.add("oculto");
     }
+  });
 
-    botonesToggleCV.forEach((boton, index) => {
-        boton.addEventListener("click", function() {
-            toggleContentCV(index); 
-            if (boton.dataset.opcion === "curriculum") {
-                recargarExperiencia(); 
-            } else if (boton.dataset.opcion === "portfolio") {
-                eliminarExperiencia();
-            }
-        });
+  function toggleContentCV(index) {
+    cajasContenidoCV.forEach((contentcv, i) => {
+      if (i === index) {
+        contentcv.classList.remove("oculto");
+      } else {
+        contentcv.classList.add("oculto");
+      }
     });
 
-    // Código de scroll
-    const switcherContainer = document.querySelector(".switcher-containercv");
+    const buttonWidthcv = botonesToggleCV[0].offsetWidth;
+    activeBackgroundcv.style.width = `${buttonWidthcv}px`;
+    activeBackgroundcv.style.left = `${buttonWidthcv * index}px`;
 
-    if (switcherContainer) {
-        const offsetTop = switcherContainer.getBoundingClientRect().top + window.scrollY;
-        let lastScrollTop = 0; 
-        let scrollUpCount = 0; 
+    botonesToggleCV.forEach((btn, i) => {
+      btn.classList.remove("active");
+      if (i === index) {
+        btn.classList.add("active");
+      }
+    });
+  }
 
-        window.addEventListener("scroll", function () {
-            const currentScroll = window.scrollY;
+  botonesToggleCV.forEach((boton, index) => {
+    boton.addEventListener("click", function () {
+      toggleContentCV(index);
+      if (boton.dataset.opcion === "curriculum") {
+        recargarExperiencia();
+      } else if (boton.dataset.opcion === "portfolio") {
+        eliminarExperiencia();
+      }
+    });
+  });
 
-            if (currentScroll >= offsetTop - 150) {
-                switcherContainer.classList.add("fixed-switcher");
-                switcherContainer.style.top = "150px"; 
+  // Código de scroll
+  const switcherContainer = document.querySelector(".switcher-containercv");
 
-                if (currentScroll > lastScrollTop) {
-                    switcherContainer.classList.remove("scrolling-up");
-                    switcherContainer.classList.add("scrolling-down");
-                    scrollUpCount = 0;
-                } else {
-                    scrollUpCount++;
-                    if (scrollUpCount >= 1) { 
-                        switcherContainer.classList.add("scrolling-up");
-                        switcherContainer.classList.remove("scrolling-down");
-                    }
-                }
-            } else {
-                switcherContainer.classList.remove("fixed-switcher", "scrolling-up", "scrolling-down");
-                switcherContainer.style.top = ""; 
-            }
+  if (switcherContainer) {
+    const offsetTop = switcherContainer.getBoundingClientRect().top + window.scrollY;
+    let lastScrollTop = 0;
+    let scrollUpCount = 0;
 
-            lastScrollTop = currentScroll;
-        });
-    }
+    window.addEventListener("scroll", function () {
+      const currentScroll = window.scrollY;
 
+      if (currentScroll >= offsetTop - 150) {
+        switcherContainer.classList.add("fixed-switcher");
+        switcherContainer.style.top = "150px";
 
+        if (currentScroll > lastScrollTop) {
+          switcherContainer.classList.remove("scrolling-up");
+          switcherContainer.classList.add("scrolling-down");
+          scrollUpCount = 0;
+        } else {
+          scrollUpCount++;
+          if (scrollUpCount >= 1) {
+            switcherContainer.classList.add("scrolling-up");
+            switcherContainer.classList.remove("scrolling-down");
+          }
+        }
+      } else {
+        switcherContainer.classList.remove("fixed-switcher", "scrolling-up", "scrolling-down");
+        switcherContainer.style.top = "";
+      }
 
+      lastScrollTop = currentScroll;
+    });
+  }
 
-//letras home que se mueven
-var TxtRotate = function(el, toRotate, period) {
+  //letras home que se mueven
+  var TxtRotate = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
     this.period = parseInt(period, 10) || 1000;
-    this.txt = '';
+    this.txt = "";
     this.isDeleting = false;
     this.tick();
-};
+  };
 
-TxtRotate.prototype.tick = function() {
+  TxtRotate.prototype.tick = function () {
     var i = this.loopNum % this.toRotate.length;
     var fullText = this.toRotate[i];
 
-    this.txt = this.isDeleting
-        ? fullText.substring(0, this.txt.length - 1)
-        : fullText.substring(0, this.txt.length + 1);
+    this.txt = this.isDeleting ? fullText.substring(0, this.txt.length - 1) : fullText.substring(0, this.txt.length + 1);
 
     this.el.innerHTML = '<span class="wrap">' + this.txt + '</span><span class="cursor">|</span>';
 
@@ -360,33 +340,27 @@ TxtRotate.prototype.tick = function() {
     var delta = this.isDeleting ? 50 : 100; // Más rápido
 
     if (!this.isDeleting && this.txt === fullText) {
-        delta = this.period;
-        this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 200;
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === "") {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 200;
     }
 
-    setTimeout(function() {
-        that.tick();
+    setTimeout(function () {
+      that.tick();
     }, delta);
-};
+  };
 
-window.onload = function() {
-    var elements = document.getElementsByClassName('txt-rotate');
+  window.onload = function () {
+    var elements = document.getElementsByClassName("txt-rotate");
     for (var i = 0; i < elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-rotate');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-            new TxtRotate(elements[i], JSON.parse(toRotate), period);
-        }
+      var toRotate = elements[i].getAttribute("data-rotate");
+      var period = elements[i].getAttribute("data-period");
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
     }
-};
-
-
-
-
+  };
 });
-
-
