@@ -13,6 +13,54 @@ window.addEventListener("scroll", function () {
   }
 });
 
+
+  //letras home que se mueven
+  var TxtRotate = function (el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 1000;
+    this.txt = "";
+    this.isDeleting = false;
+    this.tick();
+  };
+
+  TxtRotate.prototype.tick = function () {
+    var i = this.loopNum % this.toRotate.length;
+    var fullText = this.toRotate[i];
+
+    this.txt = this.isDeleting ? fullText.substring(0, this.txt.length - 1) : fullText.substring(0, this.txt.length + 1);
+
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span><span class="cursor">|</span>';
+
+    var that = this;
+    var delta = this.isDeleting ? 50 : 100; // Más rápido
+
+    if (!this.isDeleting && this.txt === fullText) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === "") {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 200;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function () {
+    var elements = document.getElementsByClassName("txt-rotate");
+    for (var i = 0; i < elements.length; i++) {
+      var toRotate = elements[i].getAttribute("data-rotate");
+      var period = elements[i].getAttribute("data-period");
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+  };
+  
 //header barba.js transaction
 const toggleContainer = document.getElementById("toggle-container");
 const toggleButton2 = document.getElementById("toggle-button");
@@ -317,50 +365,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //letras home que se mueven
-  var TxtRotate = function (el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 1000;
-    this.txt = "";
-    this.isDeleting = false;
-    this.tick();
-  };
 
-  TxtRotate.prototype.tick = function () {
-    var i = this.loopNum % this.toRotate.length;
-    var fullText = this.toRotate[i];
 
-    this.txt = this.isDeleting ? fullText.substring(0, this.txt.length - 1) : fullText.substring(0, this.txt.length + 1);
 
-    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span><span class="cursor">|</span>';
 
-    var that = this;
-    var delta = this.isDeleting ? 50 : 100; // Más rápido
 
-    if (!this.isDeleting && this.txt === fullText) {
-      delta = this.period;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === "") {
-      this.isDeleting = false;
-      this.loopNum++;
-      delta = 200;
-    }
 
-    setTimeout(function () {
-      that.tick();
-    }, delta);
-  };
 
-  window.onload = function () {
-    var elements = document.getElementsByClassName("txt-rotate");
-    for (var i = 0; i < elements.length; i++) {
-      var toRotate = elements[i].getAttribute("data-rotate");
-      var period = elements[i].getAttribute("data-period");
-      if (toRotate) {
-        new TxtRotate(elements[i], JSON.parse(toRotate), period);
-      }
-    }
-  };
+
 });
