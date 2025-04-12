@@ -74,19 +74,20 @@ $imagencontent = get_sub_field('imagencontent');
                     <div id="option2-content" class="switcher-content">
                         <div class="speech-bubbledefault">
                             <b>Formación Complementaria</b><br />
-                            <em class="ni ni-check-fill-c"></em> Curso de NODE.JS, aplicaciones para API Diciembre 2021.<br />
+                            <em class="ni ni-check-fill-c"></em> Formación de GIT y GITHUB para programadores, 2025.<br />
+                            <em class="ni ni-check-fill-c"></em> Formación de DOCKER, marzo 2025.<br />
+                            <em class="ni ni-check-fill-c"></em> Curso de VUE.JS, diciembre 2023.<br />
+                            <em class="ni ni-check-fill-c"></em> Formación de API REST, 2022.<br />
                             <em class="ni ni-check-fill-c"></em> Curso analítica y plan de marketing digital, CEAM, noviembre 2021.<br />
-                            <em class="ni ni-check-fill-c"></em> Formación de Docker y Github en Barcelona Activa, agosto 2021.<br />
-                            <em class="ni ni-check-fill-c"></em> Formación online de Mobirise en Barcelona Activa, 2021.<br /><br />
                             <b>Catalán y castellano: nativo. Inglés: nivel B2. 😊</b><br />
                         </div>
                         <div class="speech-bubble">
                             <b>Formación Complementaria</b><br />
-                            <em class="ni ni-check-fill-c"></em> Curso de NODE.JS, aplicaciones para API diciembre 2021.<br />
+                            <em class="ni ni-check-fill-c"></em> Formación de GIT y GITHUB para programadores, 2025.<br />
+                            <em class="ni ni-check-fill-c"></em> Formación de DOCKER, marzo 2025.<br />
+                            <em class="ni ni-check-fill-c"></em> Curso de VUE.JS, diciembre 2023.<br />
+                            <em class="ni ni-check-fill-c"></em> Formación de API REST, 2022.<br />
                             <em class="ni ni-check-fill-c"></em> Curso analítica y plan de marketing digital, CEAM, noviembre 2021.<br />
-                            <em class="ni ni-check-fill-c"></em> Formación de DOCKER y GITHUB en Barcelona Activa, agosto 2021.<br />
-                            <em class="ni ni-check-fill-c"></em> Formación online de Mobirise en Barcelona Activa, 2021.<br />
-                            <em class="ni ni-check-fill-c"></em> Formación de API REST online en Barcelona Activa, 2020.<br />
                         </div>
                     </div>
 

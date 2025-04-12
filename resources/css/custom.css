@@ -3,23 +3,10 @@ article>*:not(.entry-content),
     @apply mx-auto max-w-content;
 }
 
-h1::after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 50%;
-    background-color: #1321AC;
-    margin-top: 8px;
-    border-radius: 9999px;
-    position: relative;
-    left: 0;
-}
-.after\:h-1:after {
-    margin-left: 16px;
-}
-.no-after::after {
-    content: none;
-}
+
+
+
+
 
 h2 {
     @apply text-xl;
@@ -152,6 +139,26 @@ footer img {
     justify-content: flex-start;flex-basis: calc(50% - 100px);
 }
 
+@keyframes slideSmooth {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  #colorTransition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d0ff71;
+    display: none; 
+    z-index: 999999;
+
+  } 
 
 .bubbletext h1+p {
     margin-top: 25px;
@@ -800,14 +807,104 @@ button>.ni-laravel {
     height: max(120vw, 120vh);
 }
 
-.gabii_template_bubble {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 480px;
+
+
+
+
+
+
+
+
+.lineahoriizq {
     position: relative;
 }
+.lineahoriizq::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 100vh;
+    background-color: rgb(117, 116, 116);
+    opacity: 0.1;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.lineahorider {
+    position: relative; 
+}
+.lineahorider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;  
+    width: 1px;  
+    height: 100vh;
+    background-color: rgb(117, 116, 116); 
+    opacity: 0;
+    top: 50%; 
+}
+
+
+
+
+
+h1 {
+    position: relative;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 1px;
+    height: 30px;
+    background-color: #d0ff71;
+}
+
+
+h1.no-before::before {
+    display: none;
+}
+
+.no-after::after {
+    display: none;
+}
+
+
+.no-after::after {
+    content: none;
+}
+
+
+
+
+/* Si la clase 'no-before' está presente en el <h1>, ocultamos el ::before */
+h1.no-before::before {
+    display: none;
+    content: none;
+}
+
+.simpletext-content h1::before {
+    display: none;
+    content: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .bubbletext {
     text-align: left;
@@ -1332,7 +1429,6 @@ object {
 
     div#primary-menu {
         color: #d0ff71;
-        background-color: #1f2937;
         text-align: right;
         font-family: 'Obviously';
         font-size: 20px;
@@ -1342,6 +1438,7 @@ object {
         width: 350px;
         background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjMxOCIgdmlld0JveD0iMCAwIDM1MCAzMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMzUwIDYyQzM1MCAxOS4zMzMzIDMxMS42NjcgMC41IDI5MyAwLjVINDlDMzAuMzMzMyAwLjUgMCAxOS4zMzMzIDAgNjJWMjU0QzAgMjk2LjY2NyAzMi4zMzMzIDMxOCA1MSAzMThIMTU5QzE3Ny42NjcgMzE4IDE5Ni42NjcgMzA4LjgzMyAyMDYgMjg3LjVDMjE1LjMzMyAyNjYuMTY3IDIzNC4xNjcgMjU0IDI0My41IDI1NEgzMDNDMzIxLjY2NyAyNTQgMzUwIDIzMi42NjcgMzUwIDE5MFY2MloiIGZpbGw9IiNDOEZGNjYiLz4NCjwvc3ZnPg0K);
     }
+    
 
     .speech-bubbledefault,
     .speech-bubble {

@@ -46,17 +46,26 @@ $classbuttondesign = $button_classes[$button_design] ?? 'btn_amarillotexto-image
 ?>
 
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
-    <section class="texto-imagen flex <?php echo esc_attr($colordefondopuntos == '1') ? 'colordefondopuntos' : ''; ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex; justify-content: space-around; background-color: <?php echo esc_attr($background_color); ?>">
+    <section id="<?php echo esc_attr('section-' . $count); ?>" class="texto-imagen flex <?php echo esc_attr($colordefondopuntos == '1') ? 'colordefondopuntos' : ''; ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex; justify-content: space-around; background-color: <?php echo esc_attr($background_color); ?>">
 
         <div class="especialmobileimagen 
         <?php echo get_sub_field('girado') ? 'contenidoalreves' : 'contenidonormal'; ?> 
     <?php echo isset($column_row) && $column_row == '0' ? 'initial' : 'contenidovertical'; ?>" style="display: flex; align-items: center; max-width: <?php echo esc_attr($ancho_total_texto); ?>px;gap: <?php echo esc_attr($ancho_total_texto_gap); ?>px">
-            <div style="flex: 1;">
+            <div class="lineahoriizq" style="flex: 1;">
                 <?php if ($heading): ?>
 
-                    <h1 class="<?php echo $texto_centrado ? 'after:left-1/2 after:translate-x-[-50%]' : 'after:left-0'; ?> p-4 font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 after:content[''] after:bg-brand text-2xl lg:text-3xl mb-8 after:-bottom-3 <?php echo ($background_color === 'transparent') ? 'text-[#0e0f11] dark:text-white' : 'text-white'; ?> dark:after:bg-[#d0ff71]" style="<?php echo $texto_centrado ? 'text-align: center;' : ''; ?>">
-                        <?php echo !empty($heading) ? esc_html($heading) : ''; ?>
+                    <h1 class="
+                        <?php echo isset($texto_centrado) && $texto_centrado ? 'after:left-1/2 after:translate-x-[-50%] no-before' : ''; ?> 
+                        <?php echo isset($texto_centrado) && !$texto_centrado ? '' : ''; ?> 
+                        p-4 font-semibold relative 
+                        <?php echo isset($texto_centrado) && $texto_centrado ? 'after:content[\'\'] after:h-1 after:rounded-full after:bg-[#d0ff71] after:absolute after:w-full' : ''; ?>
+                        text-2xl lg:text-3xl mb-8 after:-bottom-3 
+                        <?php echo ($background_color === 'transparent') ? 'text-[#0e0f11] dark:text-white' : 'text-white'; ?> 
+                        dark:after:bg-[#d0ff71]"
+                                                style="<?php echo isset($texto_centrado) && $texto_centrado ? 'text-align: center;' : ''; ?>">
+                                                <?php echo !empty($heading) ? esc_html($heading) : ''; ?>
                     </h1>
+
 
                 <?php endif; ?>
 
@@ -83,7 +92,7 @@ $classbuttondesign = $button_classes[$button_design] ?? 'btn_amarillotexto-image
             </div>
 
             <!-- Columna 2: Imagen ;-->
-            <div style="flex: 1; padding: 20px 0; display: flex; justify-content: center; align-items: center; <?php echo ($imagen_align == 0) ? 'justify-content: flex-start;' : 'justify-content: flex-end;'; ?>">
+            <div class="lineahorider" style="flex: 1; padding: 20px 0; display: flex; justify-content: center; align-items: center; <?php echo ($imagen_align == 0) ? 'justify-content: flex-start;' : 'justify-content: flex-end;'; ?>">
                 <?php if ($imagencontent): ?>
                     <img src="<?php echo esc_url($imagencontent); ?>" alt="gabii rese FSD" style="max-width: 100%; height: auto;padding:15px">
                 <?php else: ?>
@@ -93,4 +102,5 @@ $classbuttondesign = $button_classes[$button_design] ?? 'btn_amarillotexto-image
 
         </div>
     </section>
+
 </div>

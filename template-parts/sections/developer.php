@@ -19,11 +19,14 @@ $content_onlymobile = get_sub_field('content_onlymobile');
 
 <style>
 
+
+
 </style>
 
 
 
-<section class="developer block <?php echo esc_attr($content_onlymobile == 1 ? 'md:hidden' : ''); ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex;flex-direction: column;flex-wrap: nowrap;align-content: space-between;justify-content: center;background-color: <?php echo esc_attr($background_color); ?>">
+
+<section class="developer block <?php echo esc_attr($content_onlymobile == 1 ? 'md:hidden' : ''); ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-content: space-between;justify-content: center;background-color: <?php echo esc_attr($background_color); ?>">
   <div class="container">
     <?php if ($imagencontent): ?>
       <div style="flex: 1; padding: 20px; display: flex; justify-content: center; align-items: center;">
@@ -35,10 +38,19 @@ $content_onlymobile = get_sub_field('content_onlymobile');
       <?php echo $content = get_sub_field('content');
       ?>
     <?php endif; ?>
+
+
+
+
   </div>
 
+
+
 <script>
-       
+
 </script>
+
+
 </section>
     </div>
+

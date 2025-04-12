@@ -1,8 +1,8 @@
 <?php
-session_start(); 
+session_start();
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> id="pageroot" class="scroll-smooth">
+<html <?php language_attributes(); ?> id="pageroot" class="dark scroll-smooth">
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -10,7 +10,11 @@ session_start();
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head(); ?>
 </head>
+
 <body <?php body_class('bg-white text-gray-900 antialiased text-black dark:bg-gray-800 dark:text-white transition-all duration-300'); ?>>
+
+    <div id="colorTransition"></div>
+
 
     <?php do_action('tailpress_site_before'); ?>
 
@@ -24,7 +28,7 @@ session_start();
                     <!-- Logo y Toggle del Menú -->
                     <div class="menuheaderresponsivemobile flex items-center">
                         <div style="width:15%">
-                        <?php has_custom_logo() ? the_custom_logo() : ''; ?>
+                            <?php has_custom_logo() ? the_custom_logo() : ''; ?>
                         </div>
 
                         <ul class="lg:flex lg:-mx-4">
@@ -36,8 +40,8 @@ session_start();
                                     <div class="hidden dark:flex items-center">
                                         <em class="text-lg leading-none w-7 ni ni-sun"></em>
                                     </div>
-                                    <div class="ms-auto relative h-6 w-12 rounded-full border-2 border-gray-200 dark:border-primary-600 bg-[#3e3c3c] dark:bg-primary-600">
-                                        <div class="absolute start-0.5 dark:start-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-[#d0ff71] transition-all duration-300" id="toggle-button"></div>
+                                    <div class="ms-auto relative h-6 w-12 rounded-full border-2 border-gray-200 dark:border-primary-600 bg-[#3e3c3c] dark:bg-primary-600" id="toggle-container">
+                                        <button class="absolute start-0.5 dark:start-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-[#d0ff71] transition-all duration-300" id="toggle-button"></button>
                                     </div>
                                 </a>
                             </li>
@@ -62,8 +66,8 @@ session_start();
                         <?php
                         $menu_args = array(
                             'container_id'    => 'primary-menu',
-                            'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
-                            'menu_class'      => 'lg:flex lg:-mx-4', 
+                            'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+                            'menu_class'      => 'lg:flex lg:-mx-4',
                             'theme_location'  => 'primary',
                             'li_class'        => 'lg:mx-4',
                             'fallback_cb'     => false,
@@ -99,24 +103,30 @@ session_start();
                                 </a>
 
                                 <div class="flex flex-col items-center">
-                                    <h1 class="text-balance mb-4 text-center text-3xl/[1.1] font-bold sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] no-after font-[Obviously]">
-                                        Competencia en optimización, SEO, desarrollo escalable y diseño responsive
-                                    </h1>
+                                    <h2 class="no-after text-balance mb-4 text-center text-3xl/[1.1] font-bold sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] font-[Obviously]">
+                                        Competencia en optimización, SEO, desarrollo escalable y <span
+                                            class="txt-rotate bg-navbar rounded-0"
+                                            data-period="1000"
+                                            data-rotate='[ " diseño responsive ", "  experiencia del usuario ", " soluciones personalizadas " ]'>
+                                        </span>
+                                    </h2>
                                 </div>
+
 
                                 <div class="grid grid-rows-2 gap-2">
                                     <div data-code-block="" class="px-4 py-2 bg-gabii-dark-900/55 rounded-xl">
                                         <div class="group h-full flex items-center">
-                                            <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 relative block w-3 -rotate-90 text-white " aria-hidden="true">
+                                            <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 relative block w-3 -rotate-90 text-white" aria-hidden="true">
                                                 <path d="M1 1L11 11L21 1" stroke="currentColor" stroke-width="2"></path>
                                             </svg>
 
-<code id="merchant-id-1" data-code="" class="flex-1 font-mono font-light text-sm text-white mr-2 merchant-data">
-npm create gabii@latest</code>
-<div class="relative">
-<button onclick="copyToClipboard()" class="block mr-1 transition hover:scale-110 active:scale-100 active:transition-colors text-white group-hover:text-astro-gray-100 copy-btn" title="Copy to clipboard">
-<em class="ni ni-copy"></em>
-</button><div id="copied-message" class="copied-message bg-gabii-dark-900/55 rounded-xl " data-visible="false">Copiado!</div>
+                                            <code id="merchant-id-1" data-code="" class="flex-1 font-mono font-light text-sm text-white mr-2 merchant-data">
+                                                npm create gabii@latest</code>
+                                            <div class="relative">
+                                                <button onclick="copyToClipboard()" class="block mr-1 transition hover:scale-110 active:scale-100 active:transition-colors text-white group-hover:text-astro-gray-100 copy-btn" title="Copy to clipboard">
+                                                    <em class="ni ni-copy"></em>
+                                                </button>
+                                                <div id="copied-message" class="copied-message bg-gabii-dark-900/55 rounded-xl" data-visible="false">Copiado!</div>
                                             </div>
                                         </div>
                                     </div>
@@ -137,11 +147,12 @@ npm create gabii@latest</code>
                             </div>
                             </p>
                         </div>
-                             <div class="relative w-full h-screen"> 
-                                <img loading="eager" fetchpriority="high" src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese Full Stack Developer" class="blur-lg absolute -z-50 -translate-x-1/2 inset-x-1/2 custom-inset w-[2353px] h-[1969px] object-cover max-w-[unset]">
-                            </div>
+                        <div class="relative w-full h-screen">
+                            <img loading="eager" fetchpriority="high" src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese Full Stack Developer" class="blur-lg absolute -z-50 -translate-x-1/2 inset-x-1/2 custom-inset w-[2353px] h-[1969px] object-cover max-w-[unset]">
+                        </div>
                     </div>
                 </div>
+
             <?php } ?>
 
             <?php do_action('tailpress_content_start'); ?>

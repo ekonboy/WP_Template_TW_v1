@@ -43,8 +43,8 @@ $content_onlymobile = get_sub_field('content_onlymobile');
             <div class="green-div" id="greenDiv">
                 <div class="baselogo gabii_template_bubble">
                     <div class="bubbletext text-[#0e0f11]">
-                        <h1 class="after:left-0 font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 after:content[''] after:bg-brand text-2xl lg:text-3xl mb-2 after:-bottom-3 text-slate-600 dark:after:bg-[#d0ff71] dark:text-[#0e0f11]">
-                            <?php echo $heading_uno = get_sub_field('heading_uno'); ?></h1>
+                        <h2 class="after:left-0 font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 after:content[''] after:bg-brand text-2xl lg:text-3xl mb-2 after:-bottom-3 text-slate-600 dark:after:bg-[#d0ff71] dark:text-[#0e0f11]">
+                            <?php echo $heading_uno = get_sub_field('heading_uno'); ?></h2>
                         <?php echo $content_uno = get_sub_field('content_uno'); ?>
                     </div>
                     <button class="bubblebutton text-white px-5 py-4 items-center bg-gradient-to-tr from-[#1321AC] to-[#881ABD] rounded-full" onclick="toggleView()">Cuéntame más!</button>
