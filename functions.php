@@ -16,6 +16,33 @@ add_action('send_headers', 'add_cors_headers');
 
 
 
+add_filter('acf/settings/show_admin', '__return_true'); // Opcional, para seguir viendo el admin
+
+add_filter('acf_pro_license', '__return_null'); // Evita guardar una licencia
+
+add_filter('acf_pro_license_key', '__return_false'); // Evita validar con clave
+
+remove_action('admin_init', 'acf_pro_check_license');
+
+add_filter('acf/settings/license', '__return_null');
+
+
+
+if (defined('WP_ENV') && WP_ENV === 'development') {
+    add_filter('acf/settings/license', '__return_null');
+    remove_action('admin_init', 'acf_pro_check_license');
+}
+
+
+
+if (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
+    // filtros aquí
+}
+
+
+
+
+
 
 
 /**
@@ -177,6 +204,18 @@ add_filter('wp_nav_menu_items', 'add_contact_button_to_menu', 10, 2);
 
 
 /* custom */
+/*
+ *****************************************************************
+ ***************************** U P L O A D S V G *******************************
+ *****************************************************************
+ */
+function permitir_svg_subidas($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'permitir_svg_subidas');
+
+
 
 /*
  *****************************************************************

@@ -8,6 +8,13 @@ session_start();
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width">
     <link rel="profile" href="http://gmpg.org/xfn/11">
+
+    <?php
+    wp_enqueue_script('vue-app', get_template_directory_uri() . '/public/js/vue-app.js', [], null, true);
+    wp_enqueue_script('app', get_template_directory_uri() . '/public/js/app.js', [], null, true); // Tu archivo JS personalizado
+    ?>
+    <?php wp_enqueue_style('app-css', get_template_directory_uri() . '/public/css/app.css'); ?>
+
     <?php wp_head(); ?>
 </head>
 
@@ -81,6 +88,11 @@ session_start();
             </div>
         </header>
 
+
+
+
+
+
         <div id="content" class="site-content flex-grow">
             <?php if (is_front_page()) { ?>
                 <div class="container mx-auto" style="height: 650px;">
@@ -104,14 +116,14 @@ session_start();
 
                                 <div class="flex flex-col items-center">
                                     <h2 class="no-after text-balance mb-4 text-center text-3xl/[1.1] font-bold sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] font-[Obviously]">
-                                        Competencia en optimización, SEO, desarrollo escalable y <span
+                                        Competencia en desarrollo escalable, responsive, soluciones personalizadas y <span
                                             class="txt-rotate bg-navbar rounded-0"
                                             data-period="1000"
-                                            data-rotate='[ " diseño responsive ", "  experiencia del usuario ", " soluciones personalizadas " ]'>
+                                            data-rotate='[ " WPO ", "  UX ", " SEO " ]'>
                                         </span>
                                     </h2>
                                 </div>
-
+                               
 
                                 <div class="grid grid-rows-2 gap-2">
                                     <div data-code-block="" class="px-4 py-2 bg-gabii-dark-900/55 rounded-xl">

@@ -5,26 +5,23 @@ mix.setResourceRoot('../');
 mix.setPublicPath(path.resolve('./'));
 
 mix.webpackConfig({
-    watchOptions: { ignored: [
-        path.posix.resolve(__dirname, './node_modules'),
-        path.posix.resolve(__dirname, './css'),
-        path.posix.resolve(__dirname, './js')
-    ] }
+    watchOptions: { 
+        ignored: [
+            path.posix.resolve(__dirname, './node_modules'),
+            path.posix.resolve(__dirname, './css'),
+            path.posix.resolve(__dirname, './js')
+        ] 
+    }
 });
 
-//mix.js('resources/js/app.js', 'js');
+// Compilando ambos archivos, si decides separar Vue
+mix.js('resources/js/app.js', 'public/js')
+   .js('resources/js/vue-app.js', 'public/js') // Compilando Vue en un archivo separado
+   .vue() // Procesar archivos Vue
 
-mix.postCss("resources/css/app.css", "css");
-
-mix.postCss("resources/css/editor-style.css", "css");
-
-// mix.browserSync({
-//     proxy: 'http://tailpress.test',
-//     host: 'tailpress.test',
-//     open: 'external',
-//     port: 8000
-//     injectChanges: true
-// });
+// Compilación de CSS
+mix.postCss("resources/css/app.css", "public/css");
+mix.postCss("resources/css/editor-style.css", "public/css");
 
 if (mix.inProduction()) {
     mix.version();

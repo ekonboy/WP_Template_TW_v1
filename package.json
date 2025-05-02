@@ -1,37 +1,49 @@
 {
-	"name": "tailpress",
-	"version": "3.4.0",
-	"description": "Boilerplate WordPress theme with Tailwind CSS.",
-	"author": "Jeffrey van Rossum",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/jeffreyvr/tailpress"
-	},
-	"theme_uri": "https://github.com/jeffreyvr/tailpress",
-	"author_uri": "https://vanrossum.dev",
-	"text_domain": "tailpress",
-	"license": "MIT",
-	"scripts": {
-		"dev": "mix",
-		"watch": "mix watch",
-		"watch-poll": "mix watch -- --watch-options-poll=1000",
-		"hot": "mix watch --hot",
-		"production": "mix --production"
-	},
-	"devDependencies": {
-		"@jeffreyvr/tailwindcss-tailpress": "^2.0.0",
-		"autoprefixer": "^10.4.20",
-		"browser-sync": "^2.26.14",
-		"cross-env": "^6.0.3",
-		"laravel-mix": "^6.0.29",
-		"postcss": "^8.5.2",
-		"postcss-import": "^14.0.0",
-		"postcss-nested": "^5.0.3",
-		"postcss-nested-ancestors": "^2.0.0",
-		"resolve-url-loader": "^3.1.2",
-		"tailwindcss": "^3.4.17"
-	},
-	"dependencies": {
-		"@tailwindcss/vite": "^4.0.6"
-	}
+  "name": "tailpress",
+  "version": "3.4.0",
+  "description": "Boilerplate WordPress theme with Tailwind CSS.",
+  "author": "Jeffrey van Rossum",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffreyvr/tailpress.git"
+  },
+  "theme_uri": "https://github.com/jeffreyvr/tailpress",
+  "author_uri": "https://vanrossum.dev",
+  "text_domain": "tailpress",
+  "license": "MIT",
+  "scripts": {
+    "dev": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "@jeffreyvr/tailwindcss-tailpress": "^2.0.0",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vue/compiler-sfc": "^3.5.13",
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^2.26.14",
+    "cross-env": "^6.0.3",
+    "laravel-mix": "^6.0.29",
+    "postcss": "^8.5.2",
+    "postcss-import": "^14.0.0",
+    "postcss-nested": "^5.0.3",
+    "postcss-nested-ancestors": "^2.0.0",
+    "resolve-url-loader": "^3.1.2",
+    "tailwindcss": "^3.4.17",
+    "vue": "^3.5.13",
+    "vue-loader": "^17.3.1",
+    "@vue/compiler-sfc": "^next"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.6",
+    "firebase": "^11.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffreyvr/tailpress/issues"
+  },
+  "homepage": "https://github.com/jeffreyvr/tailpress#readme",
+  "main": "postcss.config.js",
+  "keywords": []
 }
