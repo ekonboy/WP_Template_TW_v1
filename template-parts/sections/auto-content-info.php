@@ -42,29 +42,6 @@ $imagenes = [
     "/wp-content/themes/tailpress-master/resources/img/personajes/20.jpg"
 ];
 
-// $accordion_headings = array(
-//     "Ludwig van Beethoven",
-//     "Charlie Chaplin",
-//     "Albert Einstein",
-//     "Pablo Picasso",
-//     "Miguel de Cervantes Saavedra",
-//     "Sócrates",
-//     "Yuri Gagarin",
-//     "Bruce Lee",
-//     "Robin Williams",
-//     "Nikola Tesla",
-//     "Karl Marx",
-//     "Coco Chanel",
-//     "Alexander Fleming",
-//     "René Descartes",
-//     "John Maynard Keynes",
-//     "Marie Curie ",
-//     "Martin Luther King Jr.",
-//     "René Laennec",
-//     "Elvis Presley",
-//     "Michael Jackson"
-// );
-
 
 $accordion_headings = array(
     "René Descartes (1596–1650)",
@@ -75,17 +52,17 @@ $accordion_headings = array(
     "René Goscinny ",
     "René Auberjonois",
     "René Rodríguez (Nacido en 1959)",
-    "René Vives(1930–2022)",
-    "René Arcos Nacido en 1944) ",
+    "René Vives (1930–2022)",
+    "René Arcos (Nacido en 1944) ",
     "René Briche (Nacido en 1941)",
     "René Duguay-Trouin (1673–1736)",
     "René Malaval (Nacido en 1929)",
     "René Thimais (Nacido en 1949)",
     "René Péchard (Nacido en 1965)",
     "René Prêtre (Nacido en 1949) ",
-    "René Magritte(1898–1967)",
-    "René Dufresne(Nacido en 1960)",
-    "René Leduc(1905–1981)",
+    "René Magritte (1898–1967)",
+    "René Dufresne (Nacido en 1960)",
+    "René Leduc (1905–1981)",
     "René Boivin (1890–1965)"
 );
 
@@ -116,31 +93,24 @@ $creator = array(
 
 // Array con 20 contenidos ficticios
 $accordion_contents = array(
-    "Everything I build goes with gabii. Makes server management too easy 👌 ❤️",
-    "gabii has saved us hundreds of hours of precious development time and I couldn’t imagine running our business without it. There is no other way to get set up quickly as with gabii. They have thought of everything!",
-    "I've used gabii since its launch, and I've honestly never thought about switching anywhere else.",
-    "Using gabii is an absolute no brainer. It has every thing a Laravel dev needs to host their applications!",
-    "I would not want to manage servers and deployments any other way again.",
-    "Been using gabii for almost 2 years. I just wonder why I didn't start earlier.",
-    "I always recommend that people use gabii to host Laravel and other PHP frameworks, like Craft CMS or WordPress. ",
-    "Changer in server management. It gave us the confidence to move from crappy shared hosting to reliable, quality servers. Using gabii feels like having a server specialist in our team. Proud to be a day-one customer! 👍",
-    "The feature rich deployment tool you need for every day operations. Worth every penny 🤟",
-    "I never thought managing servers could be this easy. gabii is a game changer!",
-    "Nunca pensé que gestionar servidores podría ser tan fácil. ¡gabii es un cambio total!",
-    "Before gabii, we spent hours configuring servers. Now, it takes minutes and we can concentrate on building awesome features.",
-    "Antes de gabii, pasábamos horas configurando servidores. Ahora, solo toma minutos y podemos concentrarnos en construir increíbles características.",
-    "With gabii, I no longer worry about the complexity of server management. It just works seamlessly.",
-    "Cwith gabii, ya no me preocupo por la complejidad de la gestión de servidores. Simplemente funciona sin problemas.",
-    "If you’re serious about Laravel, gabii is a must-have. It simplifies every aspect of server management and deployment.",
-    "Si eres serio con Laravel, gabii es imprescindible. Simplifica todos los aspectos de la gestión de servidores y despliegue.",
-    "I’ve been using gabii for months and it’s still one of the best investments I’ve made for my development workflow.",
-    "He estado usando gabii durante meses y sigue siendo una de las mejores inversiones que he hecho para mi flujo de trabajo de desarrollo.",
-    "Deploying with ❤️gabii❤️ is so easy, I now spend more time coding than managing servers!",
-    "¡Desplegar cwith gabii es tan fácil que ahora paso más tiempo programando que gestionando servidores!",
-    "Managing servers with gabii is a breeze. I can now deploy new features in just a few clicks.",
-    "Gestionar servidores cwith gabii es pan comido. Ahora puedo desplegar nuevas características con solo unos pocos clics.",
-    "gabii helped us automate our server deployment process, making it fast, reliable, and cost-effective.",
-    "gabii nos ayudó a automatizar nuestro proceso de despliegue de servidores, haciéndolo rápido, confiable y rentable."
+    "Descartes was a French philosopher and mathematician, known for: I think, therefore I am. He is considered the father of modern philosophy and made key contributions to analytic geometry. 👌 ❤️",
+    "René Laennec was a French physician who invented the stethoscope. He revolutionized the diagnosis of chest diseases and is considered a pioneer in clinical medicine and auscultation.",
+    "René Magritte was a Belgian surrealist artist known for thought-provoking images. His work challenges perceptions of reality, famously painting This is not a pipe in The Treachery of Images..",
+    "René Girard was a French historian and philosopher known for his theory of mimetic desire, scapegoating, and the role of religion in human culture and violence.",
+    "René Favaloro was an Argentine cardiac surgeon who pioneered coronary artery bypass surgery. He greatly advanced heart surgery and emphasized ethics and public healthcare in medicine.",
+    "René Goscinny was a French writer and humorist, co-creator of Asterix and Lucky Luke. His storytelling deeply influenced European comics and children's literature.",
+    "René Auberjonois was an American actor best known for roles in Star Trek: Deep Space Nine, Benson, and voice acting in animated films like The Little Mermaid.",
+    "René Rodríguez is a Cuban-American journalist and film critic, known for his work with the Miami Herald, covering cinema and cultural topics with insight and depth. 👍",
+    "René Vives was a Venezuelan actor, known for his performances in theater, television, and film. He was a respected figure in the Venezuelan cultural scene. 🤟",
+    "René Arcos is a French contemporary artist and sculptor, recognized for his abstract and symbolic works, often inspired by nature and human emotion.",
+    "René Briche is a French painter known for landscapes and still life compositions. His work is characterized by vivid colors and a strong sense of atmosphere.",
+    "René Duguay-Trouin was a celebrated French naval officer and privateer. He earned fame for his naval victories against the British and Dutch during the War of Spanish Succession.",
+    "René Malaval is a French writer and novelist known for his works depicting rural life in Provence, blending regional culture with humanist themes in accessible, evocative storytelling.",
+    "René Thimais is a French painter recognized for his vibrant use of color and expressive style, often portraying abstract figures and emotional landscapes.",
+    "René Péchard is a French humanitarian doctor known for his medical missions in developing countries, focusing on child health and access to care in underserved regions.",
+    "René Prêtre is a renowned Swiss pediatric heart❤️ surgeon, known for his life-saving operations and humanitarian work. He was named Swiss of the Year in 2009.",
+    "René Magritte was a Belgian surrealist artist, famous for exploring reality and illusion. His iconic works challenge perception, like The Treachery of Images",
+    "René Dufresne is a Canadian political journalist known for his work in radio and print, covering provincial and federal politics with in-depth analysis and clarity.",
 );
 
 ?>

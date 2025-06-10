@@ -1,0 +1,217 @@
+.green-div,
+.red-div {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    display: flex;
+}
+
+.red-div {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.green-div p,
+.red-div p {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+
+.circle,
+.circle2 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    transition: all 0.5s ease-out;
+    z-index: 5;
+}
+
+.circle {
+    background-color: #C8FF66;
+}
+
+.circle2 {
+    background-color: #d0ff71;
+}
+
+.expanded {
+    visibility: visible;
+    width: max(120vw, 120vh);
+    height: max(120vw, 120vh);
+}
+
+
+
+
+
+
+
+
+
+.lineahoriizq {
+    position: relative;
+}
+.lineahoriizq::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 100vh;
+    background-color: rgb(117, 116, 116);
+    opacity: 0.1;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.lineahorider {
+    position: relative; 
+}
+.lineahorider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;  
+    width: 1px;  
+    height: 100vh;
+    background-color: rgb(117, 116, 116); 
+    opacity: 0;
+    top: 50%; 
+}
+
+
+
+
+
+h1 {
+    position: relative;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 1px;
+    height: 30px;
+    background-color: #d0ff71;
+}
+
+
+h1.no-before::before {
+    display: none;
+}
+
+.no-after::after {
+    display: none;
+}
+
+
+.no-after::after {
+    content: none;
+}
+
+
+
+
+/* Si la clase 'no-before' está presente en el <h1>, ocultamos el ::before */
+h1.no-before::before {
+    display: none;
+    content: none;
+}
+
+.simpletext-content h1::before {
+    display: none;
+    content: none;
+}
+
+
+
+.bubbletext {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 50px;
+}
+
+.bubblebutton {
+    position: absolute;
+    bottom: 83px;
+    right: 108px;
+}
+
+.hiddengloboextra {
+    display: none !important;
+}
+
+/*new*/
+
+.boxmobile {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.boxmobile.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.boxmobileizq {
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.boxmobileizq.hide {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.bubbletext h1+p {
+    margin-top: 25px;
+}
+
+
+.baselogo {
+    display: inline-block; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* m o b i l e  l a n d s c a p e */
+@media screen and (min-width: 750px) and (max-width: 950px) {
+
+}
+
+
+
+/*1/3*/
+/* M E D I A  Q U E R Y S */
+@media only screen and (min-width: 1400px) {
+}
+
+/*2/3*/
+@media (min-width: 900px) and (max-width: 1919px) {
+}
+
+
+/*3/3*/
+/* M E D I A  Q U E R Y S  M O B I L E S */
+@media only screen and (max-width: 768px) {
+    .gabii_template_bubble {
+        width: 350px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjMxOCIgdmlld0JveD0iMCAwIDM1MCAzMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMzUwIDYyQzM1MCAxOS4zMzMzIDMxMS42NjcgMC41IDI5MyAwLjVINDlDMzAuMzMzMyAwLjUgMCAxOS4zMzMzIDAgNjJWMjU0QzAgMjk2LjY2NyAzMi4zMzMzIDMxOCA1MSAzMThIMTU5QzE3Ny42NjcgMzE4IDE5Ni42NjcgMzA4LjgzMyAyMDYgMjg3LjVDMjE1LjMzMyAyNjYuMTY3IDIzNC4xNjcgMjU0IDI0My41IDI1NEgzMDNDMzIxLjY2NyAyNTQgMzUwIDIzMi42NjcgMzUwIDE5MFY2MloiIGZpbGw9IiNDOEZGNjYiLz4NCjwvc3ZnPg0K);
+    }
+}

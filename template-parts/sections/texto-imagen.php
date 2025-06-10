@@ -44,7 +44,7 @@ $button_classes = [
 ];
 $classbuttondesign = $button_classes[$button_design] ?? 'btn_amarillotexto-imagen';
 ?>
-
+ 
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
     <section id="<?php echo esc_attr('section-' . $count); ?>" class="texto-imagen flex <?php echo esc_attr($colordefondopuntos == '1') ? 'colordefondopuntos' : ''; ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex; justify-content: space-around; background-color: <?php echo esc_attr($background_color); ?>">
 

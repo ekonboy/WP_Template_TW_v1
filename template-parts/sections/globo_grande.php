@@ -22,11 +22,7 @@ $author_content_grande = get_sub_field('author_content_grande');
 $author_title_grande = get_sub_field('author_title_grande');
 $imagencontent_grande = get_sub_field('imagencontent_grande');
 ?>
- <style>
 
- 
-
-</style>
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
 <?php if ($globo_grande == '1') { ?>
     <section class="globo_grande flex justify-center flex-col sm:flex-row <?php echo esc_attr('section-' . $count); ?> <?php echo ($globo_girado == '1') ? 'globogirado' : '' ?>">

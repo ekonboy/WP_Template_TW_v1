@@ -20,21 +20,19 @@
   },
   "devDependencies": {
     "@jeffreyvr/tailwindcss-tailpress": "^2.0.0",
-    "@vitejs/plugin-vue": "^5.2.3",
-    "@vue/compiler-sfc": "^3.5.13",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "browser-sync": "^2.26.14",
     "cross-env": "^6.0.3",
+    "css-loader": "^7.1.2",
     "laravel-mix": "^6.0.29",
-    "postcss": "^8.5.2",
+    "postcss": "^8.5.4",
     "postcss-import": "^14.0.0",
     "postcss-nested": "^5.0.3",
     "postcss-nested-ancestors": "^2.0.0",
     "resolve-url-loader": "^3.1.2",
-    "tailwindcss": "^3.4.17",
-    "vue": "^3.5.13",
-    "vue-loader": "^17.3.1",
-    "@vue/compiler-sfc": "^next"
+    "sass": "^1.89.1",
+    "sass-loader": "^14.2.1",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",

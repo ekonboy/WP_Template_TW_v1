@@ -53,7 +53,6 @@ $content_onlymobile = get_sub_field('content_onlymobile');
         <?php endif; ?>
     </div>
 
-
     <?php if ($content_dos): ?>
         <div class="red-div" id="redDiv" style="display:none">
             <div class="baselogo gabii_template_bubble">

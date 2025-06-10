@@ -96,7 +96,7 @@ session_start();
         <div id="content" class="site-content flex-grow">
             <?php if (is_front_page()) { ?>
                 <div class="container mx-auto" style="height: 650px;">
-                    <div class="px-4 py-4 my-4">
+                    <div class="px-4 ">
                         <div class="mx-auto" style="text-align: center;">
                             <p>
 
@@ -144,6 +144,8 @@ session_start();
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="landing-section gap-4 sm:gap-8">
                                 <p class="font-light text-balance mb-4">Algunos de mis clientes donde he prestado servicios:</p>
 

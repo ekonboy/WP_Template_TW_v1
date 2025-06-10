@@ -18,15 +18,7 @@ $content_onlymobile = get_sub_field('content_onlymobile');
 ?>
 
 <style>
-/* #news-containerapi {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px; 
-    padding: 20px;
-    max-width: none;
-    width: 100%;
-    grid-auto-rows: minmax(200px, auto);
-} */
+
 #news-containerapi {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
@@ -114,7 +106,7 @@ $content_onlymobile = get_sub_field('content_onlymobile');
 }
 .btnloadmorenews {display: flex;justify-content: center;}
 
-@media (max-width: 350px) {
+@media (max-width: 500px) {
 
 #news-containerapi {
     display: grid;

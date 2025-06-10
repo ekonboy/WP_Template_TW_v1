@@ -1,30 +1,31 @@
-let mix = require('laravel-mix');
-let path = require('path');
+const mix = require('laravel-mix');
+const path = require('path');
+const tailwindcss = require('tailwindcss');
 
 mix.setResourceRoot('../');
 mix.setPublicPath(path.resolve('./'));
 
+mix.sass('resources/scss/main.scss', 'public/css')
+   .options({
+     processCssUrls: false,
+     postCss: [tailwindcss('./tailwind.config.js')]
+   });
+
 mix.webpackConfig({
-    watchOptions: { 
-        ignored: [
-            path.posix.resolve(__dirname, './node_modules'),
-            path.posix.resolve(__dirname, './css'),
-            path.posix.resolve(__dirname, './js')
-        ] 
-    }
+  watchOptions: {
+    ignored: [
+      path.posix.resolve(__dirname, './node_modules'),
+      path.posix.resolve(__dirname, './css'),
+      path.posix.resolve(__dirname, './js')
+    ]
+  }
 });
 
-// Compilando ambos archivos, si decides separar Vue
-mix.js('resources/js/app.js', 'public/js')
-   .js('resources/js/vue-app.js', 'public/js') // Compilando Vue en un archivo separado
-   .vue() // Procesar archivos Vue
 
-// Compilación de CSS
-mix.postCss("resources/css/app.css", "public/css");
-mix.postCss("resources/css/editor-style.css", "public/css");
 
+// Configuración de producción
 if (mix.inProduction()) {
-    mix.version();
+  mix.version().sourceMaps();
 } else {
-    mix.options({ manifest: false });
+  mix.webpackConfig({ devtool: 'inline-source-map' });
 }
