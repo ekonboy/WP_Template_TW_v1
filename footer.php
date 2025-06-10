@@ -383,12 +383,12 @@
 
 
 
-<div class="circle-container">
+<!-- <div class="circle-container">
       <div class="text-circle"></div>
       <div class="logo-container">
         <i class="baselogo wplogo"></i>
       </div>
-    </div>
+    </div> -->
 
 </footer>
 

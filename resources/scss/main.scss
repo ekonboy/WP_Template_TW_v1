@@ -3,8 +3,12 @@
 // @tailwind utilities;
 
 
-
+@import "template-parts/mixins";
 @import "template-parts/globo";
 @import "template-parts/globo_grande";
 @import "template-parts/globo_extra";
 @import "template-parts/texto-imagen";
+@import "template-parts/simpletext-card";
+@import "template-parts/simpletext-content";
+@import "template-parts/section-imagen";
+@import "template-parts/simpletext-noporfolio";

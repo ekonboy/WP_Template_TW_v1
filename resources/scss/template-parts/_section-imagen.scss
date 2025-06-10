@@ -1,0 +1,11 @@
+.section_imagensvg {
+    display: block;
+    width: 100vw;
+    height: 200px;
+}
+ @include mobile {
+    .section_imagensvg {
+        height: 50px;
+    }
+}
+

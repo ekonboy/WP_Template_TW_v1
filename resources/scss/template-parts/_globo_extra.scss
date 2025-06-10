@@ -49,13 +49,7 @@
     height: max(120vw, 120vh);
 }
 
-
-
-
-
-
-
-
+.solodesktop {display: block;}
 
 .lineahoriizq {
     position: relative;
@@ -190,28 +184,10 @@ h1.no-before::before {
 }
 
 
-/* m o b i l e  l a n d s c a p e */
-@media screen and (min-width: 750px) and (max-width: 950px) {
-
-}
-
-
-
-/*1/3*/
-/* M E D I A  Q U E R Y S */
-@media only screen and (min-width: 1400px) {
-}
-
-/*2/3*/
-@media (min-width: 900px) and (max-width: 1919px) {
-}
-
-
-/*3/3*/
-/* M E D I A  Q U E R Y S  M O B I L E S */
-@media only screen and (max-width: 768px) {
+@include mobile {
     .gabii_template_bubble {
         width: 350px;
         background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjMxOCIgdmlld0JveD0iMCAwIDM1MCAzMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMzUwIDYyQzM1MCAxOS4zMzMzIDMxMS42NjcgMC41IDI5MyAwLjVINDlDMzAuMzMzMyAwLjUgMCAxOS4zMzMzIDAgNjJWMjU0QzAgMjk2LjY2NyAzMi4zMzMzIDMxOCA1MSAzMThIMTU5QzE3Ny42NjcgMzE4IDE5Ni42NjcgMzA4LjgzMyAyMDYgMjg3LjVDMjE1LjMzMyAyNjYuMTY3IDIzNC4xNjcgMjU0IDI0My41IDI1NEgzMDNDMzIxLjY2NyAyNTQgMzUwIDIzMi42NjcgMzUwIDE5MFY2MloiIGZpbGw9IiNDOEZGNjYiLz4NCjwvc3ZnPg0K);
     }
+    .solodesktop {display: none!important;}
 }

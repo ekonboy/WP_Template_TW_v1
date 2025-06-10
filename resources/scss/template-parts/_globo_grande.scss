@@ -114,19 +114,13 @@
 }
 
 
-
-
-/* m o b i l e  l a n d s c a p e */
-@media screen and (min-width: 750px) and (max-width: 950px) {
-
+@include tablet-landscape {
     .globo_grande {
         flex-direction: column;
         align-items: center;
         gap: 20px;
         max-width: 100%;
-        /* Asegúrate de que el contenedor no se expanda más de lo necesario */
         box-sizing: border-box;
-        /* Para que el padding no haga que el ancho se expanda más de lo esperado */
     }
 
     .responsive-textglobo {
@@ -142,9 +136,7 @@
 
 }
 
-/*3/3*/
-/* M E D I A  Q U E R Y S  M O B I L E S */
-@media only screen and (max-width: 768px) {
+@include mobile {
 
     .globo_grande {
         height: 700px;

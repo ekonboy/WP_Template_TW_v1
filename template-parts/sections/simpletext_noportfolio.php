@@ -19,13 +19,7 @@ $titulo_centrado = get_sub_field('titulo_centrado');
 $ancla = get_sub_field('ancla');
 $content_script = get_sub_field('content_script');
 ?>
-<style>
-    .logros_habilidades {
-        top: -70px;
-        position: absolute;
-        right: 46%;
-    }
-</style>
+
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
 <section class="simpletext-noporfolio flex justify-center flex-col md:flex-row especialdesktop <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
 

@@ -25,12 +25,12 @@ $content_onlymobile = get_sub_field('content_onlymobile');
 // 2 : Desktop -> visible solo en PC
 
 ?>
-<style>
+<!-- <style>
 .solodesktop {display: block;}
 @media only screen and (max-width: 768px) {
     .solodesktop {display: none!important;}
 }
-</style>
+</style> -->
 <script>
         function toggleView() {
             console.log("toggleView called");
