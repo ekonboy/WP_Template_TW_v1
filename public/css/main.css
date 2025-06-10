@@ -28,6 +28,7 @@
 
 .speech-bubble,
 .speech-bubbledefault {
+  width: 800px;
   height: 320px;
   background: #C8FF66;
   border-radius: 40px;
