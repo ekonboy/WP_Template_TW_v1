@@ -18,9 +18,167 @@ session_start();
     <?php wp_head(); ?>
 </head>
 <style>
+    .navbar {
+        position: fixed;
+        background: #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 0 1rem;
+        font-family: 'Obviously', sans-serif;
+        border-radius: 30px;
+        /* Oculta el overflow para que el menú no sobresalga */
+        overflow: hidden;
+        /* Altura mínima para el header */
+        min-height: 56px;
+        width: 95%;
+    height: auto;
+     transition: height 0.4s cubic-bezier(.4,2,.6,1);
+    opacity: 0.99;
+    z-index: 9999;
+    }
+.menu-toggle:checked ~ .navbar {
+    height: 97vh;
+}
+    .menu-toggle {
+        display: none;
+    }
 
+    .hamburger {
+        display: block;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        margin: 1rem 0;
+        left: 10px;
+        top: 4px;
+    }
 
+    .hamburger span {
+        display: block;
+        height: 4px;
+        width: 100%;
+        background: #222;
+        margin: 6px 0;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    /* Menú oculto por defecto en móvil */
+    .menu {
+        max-height: 0;
+        overflow: hidden;
+        background: #e5e5e5;
+        position: static;
+        /* Cambia a static para que esté dentro del flujo de la navbar */
+        width: 100%;
+        transition: max-height 0.3s ease;
+        box-shadow: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        z-index: 1;
+        border-radius: 0 0 50px 50px;
+        /* El border-radius solo afecta la parte inferior, pero el contenedor navbar ya tiene el radius completo */
+    }
+
+    .menu li {
+        /* border-bottom: 1px solid #ccc; */
+    }
+
+    .menu li:last-child {
+        border-bottom: none;
+    }
+
+    .menu a {
+        display: block;
+        padding: 1rem;
+        color: #222;
+        text-decoration: none;
+        transition: background 0.2s;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .menu a:hover {
+        background: #d4d4d4;
+    }
+
+    /* Mostrar menú cuando el checkbox está activado */
+    .menu-toggle:checked~.menu {
+        max-height: 800px;
+        /* Suficiente para todos los items */
+        transition: max-height 0.5s cubic-bezier(.4, 2, .6, 1);
+    }
+
+    
+/* Animación a X cuando el menú está abierto */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+    /* Esconder hamburguesa y mostrar menú horizontal en escritorio */
+    @media (min-width: 768px) {
+        .hamburger {
+            display: none;
+        }
+
+        .menu {
+            position: static;
+            max-height: none;
+            display: flex;
+            flex-direction: row;
+            box-shadow: none;
+            background: none;
+            border-radius: 50px;
+        }
+
+        .menu li {
+            border: none;
+        }
+
+        .menu a {
+            padding: 1rem 1.5rem;
+            color: #222;
+            text-align: left;
+        }
+    }
 </style>
+
+<style>
+    .btn-contactame {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75em 1.5em;
+        background: #1321ac;
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 1rem;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        gap: 0.75em;
+        transition: background 0.2s;
+        min-width: 260px;
+    }
+
+
+    .btn-contactame .avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #fff;
+        background: #ccc;
+    }
+</style>
+
 
 <body <?php body_class('bg-white text-gray-900 antialiased text-black dark:bg-gray-800 dark:text-white transition-all duration-300'); ?>>
 
@@ -34,7 +192,7 @@ session_start();
         <?php do_action('tailpress_header'); ?>
 
         <header>
-            <div class="mx-auto container">
+            <div class="mx-auto lg:container hidden lg:block">
                 <div class="headermenu lg:flex lg:justify-between lg:items-center border-b py-6">
                     <!-- Logo y Toggle del Menú -->
                     <div class="menuheaderresponsivemobile flex items-center">
@@ -58,28 +216,9 @@ session_start();
                             </li>
                         </ul>
 
-                        <nav class="navbar lg:hidden">
-                            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 
-                            <label for="menu-toggle" class="hamburger">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </label>
 
-                            <?php
-                            $menu_args = array(
-                                'container'       => false,
-                                'menu_class'      => 'menu lg:flex lg:-mx-4',
-                                'theme_location'  => 'primary',
-                                'li_class'        => 'lg:mx-4',
-                                'fallback_cb'     => false,
-                            );
-                            wp_nav_menu($menu_args);
-                            ?>
-                        </nav>
                     </div>
-
 
                     <div class="lg:flex lg:items-center">
                         <?php
@@ -99,6 +238,53 @@ session_start();
                 </div>
             </div>
         </header>
+
+
+        <!-- responsive-->
+        <header>
+            <div class="mx-auto lg:hidden" style="padding: 10px;">
+                <nav class="navbar">
+                    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+                    <label for="menu-toggle" class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <ul class="menu">
+                        <li><a href="#">Experiencia</a></li>
+                        <li><a href="#">CV</a></li>
+                        <li><a href="#">Formación</a></li>
+                        <li><a href="#">Logros</a></li>
+                        <li><a href="#">News</a></li>
+
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+
+
+                        <li><a href="#">
+                                <button class="btn-contactame">
+                                    Hazme pull y te explico!
+                                    <img class="avatar" src="/wp-content/uploads/2025/02/gabii_5b.png" alt="Foto de perfil">
+                                </button>
+                            </a></li>
+
+
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+
 
 
         <div id="content" class="site-content flex-grow">
