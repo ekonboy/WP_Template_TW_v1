@@ -187,7 +187,23 @@ session_start();
     vertical-align: middle;
 }
 
-
+.gabiiresetext{
+    font-family: 'Obviously', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    margin-left: 10px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: flex-start;
+    top: 10px;
+    float: right;
+    right: 30px;
+}
 </style>
 
 
@@ -260,7 +276,8 @@ session_start();
                         <span></span>
                         <span></span>
                         <span></span>
-                    </label>
+                   </label>
+                    <label for="menu-gabiitest" class="gabiiresetext">gabiirese</label> 
                     <ul class="menu">
                         <li><a href="#">Experiencia</a></li>
                         <li><a href="#">CV</a></li>
