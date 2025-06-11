@@ -329,8 +329,8 @@
 .circle,
 .circle2 {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 1000px;
+  height: 1000px;
   border-radius: 50%;
   left: 50%;
   top: 80%;

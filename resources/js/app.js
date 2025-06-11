@@ -1,105 +1,12 @@
-//gabii v1.0
+//gabii v1.0 original-editor
 function toggleMenuHeaderRes() {
   const buttontoggle3 = document.getElementById("toggle-button");
   buttontoggle3.classList.toggle("translate-x-6");
-}
-
-window.addEventListener("scroll", function () {
-  const menu = document.querySelector(".headermenu");
-  if (window.scrollY > 50) {
-    menu.classList.add("scrolled");
-  } else {
-    menu.classList.remove("scrolled");
-  }
-});
-
-
-  //letras home que se mueven
-  var TxtRotate = function (el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 1000;
-    this.txt = "";
-    this.isDeleting = false;
-    this.tick();
-  };
-
-  TxtRotate.prototype.tick = function () {
-    var i = this.loopNum % this.toRotate.length;
-    var fullText = this.toRotate[i];
-
-    this.txt = this.isDeleting ? fullText.substring(0, this.txt.length - 1) : fullText.substring(0, this.txt.length + 1);
-
-    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span><span class="cursor">|</span>';
-
-    var that = this;
-    var delta = this.isDeleting ? 50 : 100; // Más rápido
-
-    if (!this.isDeleting && this.txt === fullText) {
-      delta = this.period;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === "") {
-      this.isDeleting = false;
-      this.loopNum++;
-      delta = 200;
-    }
-
-    setTimeout(function () {
-      that.tick();
-    }, delta);
-  };
-
-  window.onload = function () {
-    var elements = document.getElementsByClassName("txt-rotate");
-    for (var i = 0; i < elements.length; i++) {
-      var toRotate = elements[i].getAttribute("data-rotate");
-      var period = elements[i].getAttribute("data-period");
-      if (toRotate) {
-        new TxtRotate(elements[i], JSON.parse(toRotate), period);
-      }
-    }
-  };
   
-//header barba.js transaction
-const toggleContainer = document.getElementById("toggle-container");
-const toggleButton2 = document.getElementById("toggle-button");
-const colorTransition = document.getElementById("colorTransition");
-
-const handleClick = () => {
-  colorTransition.style.display = "block";
-  colorTransition.style.animation = "none";
-  void colorTransition.offsetWidth;
-  colorTransition.style.animation = "slideSmooth 0.8s linear forwards";
-};
-
-toggleContainer.addEventListener("click", (event) => {
-  handleClick();
-});
-
-toggleButton2.addEventListener("click", (event) => {
-  event.stopPropagation();
-  handleClick();
-});
-
-function copyToClipboard() {
-  if (navigator.clipboard) {
-    const text = document.getElementById("merchant-id-1").textContent;
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        const message = document.getElementById("copied-message");
-        message.style.display = "block";
-
-        setTimeout(() => {
-          message.style.display = "none";
-        }, 2000);
-      })
-      .catch((err) => console.error("Error al copiar:", err));
-  } else {
-    console.error("La API Clipboard no está disponible.");
-  }
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("primary-menu-toggle");
@@ -124,14 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Variables para el menú
-  let lastScrollY = window.scrollY;
-  let scrollDownCount = 0;
-  const threshold = 10;
-  const menu = document.querySelector(".headermenu");
-  let isHidden = false;
 
-  //aqui toggle
+
+
 
   // Función para el scroll del menú y las animaciones
   window.addEventListener("scroll", function () {
@@ -243,25 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", toggleView);
   });
 
-  //  boton que gira
-  //  FULL STACK DEVELOPER - W O R D P R E S S - © 2025 -
-  const text = "F U L L S T A C K D E V E L O P E R - W O R D P R E S S - ";
-  const container = document.querySelector(".text-circle");
 
-  for (let i = 0; i < text.length; i++) {
-    let span = document.createElement("span");
-    span.innerText = text[i];
-    let angle = (360 / text.length) * i;
-    span.style.transform = `rotate(${angle}deg) translate(0, -120px)`;
-    container.appendChild(span);
-  }
-
-  let rotation = 0;
-
-  window.addEventListener("wheel", (event) => {
-    rotation += event.deltaY > 0 ? 10 : -10;
-    container.style.transform = `rotate(${rotation}deg)`;
-  });
 
   //menu ancla
   function eliminarExperiencia() {
@@ -319,16 +203,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  botonesToggleCV.forEach((boton, index) => {
-    boton.addEventListener("click", function () {
-      toggleContentCV(index);
-      if (boton.dataset.opcion === "curriculum") {
-        recargarExperiencia();
-      } else if (boton.dataset.opcion === "portfolio") {
-        eliminarExperiencia();
-      }
-    });
-  });
+  // botonesToggleCV.forEach((boton, index) => {
+  //   boton.addEventListener("click", function () {
+  //     toggleContentCV(index);
+  //     if (boton.dataset.opcion === "curriculum") {
+  //       recargarExperiencia();
+  //     } else if (boton.dataset.opcion === "portfolio") {
+  //       eliminarExperiencia();
+  //     }
+  //   });
+  // });
 
   // Código de scroll
   const switcherContainer = document.querySelector(".switcher-containercv");

@@ -38,6 +38,100 @@ ol {
     }
 }
 
+/*menu*/
+.navbar {
+  position: relative;
+  padding: 0 1rem;
+  font-family: sans-serif;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: block;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  margin: 1rem 0;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+  background-color: #1321ac;
+}
+
+
+.dark .hamburger span {
+  background-color: #fff;
+}
+
+
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  background:#b4b6c6;
+  position: absolute;
+  left: -256px;
+  right: 0;
+  top: 56px;
+  transition: max-height 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+}
+.menu li {
+  border-bottom: 1px solid #eee;
+}
+.menu li:last-child {
+  border-bottom: none;
+}
+.menu a {
+  display: block;
+  padding: 1rem;
+  color: #222;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.menu a:hover {
+  background: #f5f5f5;
+}
+
+.menu-toggle:checked ~ .menu {
+  max-height: 400px;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  .menu {
+    position: static;
+    max-height: none;
+    display: flex;
+    flex-direction: row;
+    box-shadow: none;
+    background: none;
+  }
+  .menu li {
+    border: none;
+  }
+  .menu a {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/*final menu*
+
 /*icons*/
 .ni {
     font-family: 'Nioicon' !important;
@@ -51,6 +145,7 @@ ol {
     -moz-osx-font-smoothing: grayscale;
 }
 
+a:where(:not(.wp-element-button)) {text-decoration: none;}
 body,
 html {
     font-family: 'gabii', sans-serif;
@@ -174,8 +269,13 @@ footer img {
     justify-content: flex-start;
     flex-basis: calc(50% - 100px);
 }
+#toggle-container {width: 44px;}
+#toggle-button {
+  left: 2px;
+  top: 2px;
+}
 
-@keyframes slideSmooth {
+/* @keyframes slideSmooth {
     0% {
         transform: translateX(100%);
     }
@@ -183,9 +283,9 @@ footer img {
     100% {
         transform: translateX(-100%);
     }
-}
+} */
 
-#colorTransition {
+/* #colorTransition {
     position: fixed;
     top: 0;
     left: 0;
@@ -194,7 +294,7 @@ footer img {
     background-color: #d0ff71;
     display: none;
     z-index: 999999;
-}
+} */
 
 
 section.gitcontent.block.md\:hidden.section-1 {
@@ -661,7 +761,7 @@ object {
 
 
 
-@include desktop-xl  {
+ @media only screen and (min-width: 1400px) {
 
 
     .headermenu {
@@ -715,7 +815,7 @@ object {
 
 
 /*2/3*/
-@include desktop {
+@media (min-width: 900px) and (max-width: 1919px) {
 
     .headermenu {
         transition: all 0.3s ease;
@@ -752,16 +852,7 @@ object {
 
 
 
-
-
-
-
-
-
-
-
-/* m o b i l e  l a n d s c a p e */
-@include tablet-landscape {
+  @media screen and (min-width: 750px) and (max-width: 950px) {
 
     .custom-md-leading {
         line-height: 24px;
@@ -781,7 +872,7 @@ object {
 
 
 
-@include mobile {
+  @media only screen and (max-width: 768px) {
     .onlydesktop {
         display: none !important;
     }

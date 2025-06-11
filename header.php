@@ -10,17 +10,21 @@ session_start();
     <link rel="profile" href="http://gmpg.org/xfn/11">
 
     <?php
-    wp_enqueue_script('vue-app', get_template_directory_uri() . '/public/js/vue-app.js', [], null, true);
+
     wp_enqueue_script('app', get_template_directory_uri() . '/public/js/app.js', [], null, true); // Tu archivo JS personalizado
     ?>
     <?php wp_enqueue_style('app-css', get_template_directory_uri() . '/public/css/app.css'); ?>
 
     <?php wp_head(); ?>
 </head>
+<style>
+
+
+</style>
 
 <body <?php body_class('bg-white text-gray-900 antialiased text-black dark:bg-gray-800 dark:text-white transition-all duration-300'); ?>>
 
-    <div id="colorTransition"></div>
+
 
 
     <?php do_action('tailpress_site_before'); ?>
@@ -54,20 +58,28 @@ session_start();
                             </li>
                         </ul>
 
-                        <div class="lg:hidden">
-                            <a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
-                                <svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-                                        <g id="icon-shape">
-                                            <path d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z"
-                                                id="Combined-Shape"></path>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
+                        <nav class="navbar lg:hidden">
+                            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+                            <label for="menu-toggle" class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </label>
+
+                            <?php
+                            $menu_args = array(
+                                'container'       => false,
+                                'menu_class'      => 'menu lg:flex lg:-mx-4',
+                                'theme_location'  => 'primary',
+                                'li_class'        => 'lg:mx-4',
+                                'fallback_cb'     => false,
+                            );
+                            wp_nav_menu($menu_args);
+                            ?>
+                        </nav>
                     </div>
+
 
                     <div class="lg:flex lg:items-center">
                         <?php
@@ -89,10 +101,6 @@ session_start();
         </header>
 
 
-
-
-
-
         <div id="content" class="site-content flex-grow">
             <?php if (is_front_page()) { ?>
                 <div class="container mx-auto" style="height: 650px;">
@@ -101,18 +109,7 @@ session_start();
                             <p>
 
                             <div class="mt-16 mb-8 md:mt-20 lg:mt-24 px-4 sm:px-8 mx-auto w-full sm:max-w-screen-md flex flex-col items-center justify-center gap-5 md:gap-6 lg:gap-8">
-                                <a href="/gabii_rese_SP_EN_v1.pdf" target="_blank" class="switcher-container group w-fit flex items-center justify-center gap-0 bg-gabii-dark-900/55 rounded-full">
-                                    <div class="px-3 h-full w-fit flex items-center gap-2 bg-gradient-to-tr from-[#1321AC] to-[#881ABD] rounded-full">
-                                        <button data-opcion="curriculum_header" class="switcher-option_header active text-white">
-                                            Descargar <em class="ni ni-chevron-right"></em>
-                                        </button>
-                                    </div>
-                                    <div class="px-3 h-full w-fit items-center justify-center gap-2 flex">
-                                        <button data-opcion="portfolio_header" class="switcher-option_header text-white">
-                                            Curriculum <em class="ni ni-external"></em>
-                                        </button>
-                                    </div>
-                                </a>
+
 
                                 <div class="flex flex-col items-center">
                                     <h2 class="no-after text-balance mb-4 text-center text-3xl/[1.1] font-bold sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] font-[Obviously]">
@@ -123,47 +120,22 @@ session_start();
                                         </span>
                                     </h2>
                                 </div>
-                               
 
-                                <div class="grid grid-rows-2 gap-2">
-                                    <div data-code-block="" class="px-4 py-2 bg-gabii-dark-900/55 rounded-xl">
-                                        <div class="group h-full flex items-center">
-                                            <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 relative block w-3 -rotate-90 text-white" aria-hidden="true">
-                                                <path d="M1 1L11 11L21 1" stroke="currentColor" stroke-width="2"></path>
-                                            </svg>
 
-                                            <code id="merchant-id-1" data-code="" class="flex-1 font-mono font-light text-sm text-white mr-2 merchant-data">
-                                                npm create gabii@latest</code>
-                                            <div class="relative">
-                                                <button onclick="copyToClipboard()" class="block mr-1 transition hover:scale-110 active:scale-100 active:transition-colors text-white group-hover:text-astro-gray-100 copy-btn" title="Copy to clipboard">
-                                                    <em class="ni ni-copy"></em>
-                                                </button>
-                                                <div id="copied-message" class="copied-message bg-gabii-dark-900/55 rounded-xl" data-visible="false">Copiado!</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
 
-                            <div class="landing-section gap-4 sm:gap-8">
-                                <p class="font-light text-balance mb-4">Algunos de mis clientes donde he prestado servicios:</p>
 
-                                <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 sm:gap-x-6 sm:gap-y-6 px-1 sm:px-4">
-                                    <i class="baselogo payretailerslogo"></i>
-                                    <i class="baselogo pacificologo"></i>
-                                    <i class="baselogo paypagalogo"></i>
-                                    <i class="baselogo kuadylogo"></i>
-                                    <i class="baselogo upflogo"></i>
-                                    <i class="baselogo canalslogo"></i>
-                                </div>
-
-                            </div>
                             </p>
                         </div>
-                        <div class="relative w-full h-screen">
-                            <img loading="eager" fetchpriority="high" src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese Full Stack Developer" class="blur-lg absolute -z-50 -translate-x-1/2 inset-x-1/2 custom-inset w-[2353px] h-[1969px] object-cover max-w-[unset]">
+
+
+                        <div class="relative w-full h-screen hidden lg:block">
+                            <img loading="eager" fetchpriority="high" src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese Full Stack Developer"
+                                class="blur-lg absolute -z-50 -translate-x-1/2 inset-x-1/2 custom-inset w-[2353px] h-[1969px] object-cover max-w-[unset]">
                         </div>
+
+
                     </div>
                 </div>
 
