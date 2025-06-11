@@ -20,8 +20,8 @@ session_start();
 <style>
     .navbar {
         position: fixed;
-        background: #e5e5e5;
-        border-bottom: 1px solid #e5e5e5;
+        background: #202f42;
+        border-bottom: 1px solid #202f42;
         padding: 0 1rem;
         font-family: 'Obviously', sans-serif;
         border-radius: 30px;
@@ -30,14 +30,16 @@ session_start();
         /* Altura mínima para el header */
         min-height: 56px;
         width: 95%;
-    height: auto;
-     transition: height 0.4s cubic-bezier(.4,2,.6,1);
-    opacity: 0.99;
-    z-index: 9999;
+        height: auto;
+        transition: height 0.4s cubic-bezier(.4, 2, .6, 1);
+        opacity: 0.99;
+        z-index: 9999;
     }
-.menu-toggle:checked ~ .navbar {
-    height: 97vh;
-}
+
+    .menu-toggle:checked~.navbar {
+        height: 97vh;
+    }
+
     .menu-toggle {
         display: none;
     }
@@ -58,7 +60,7 @@ session_start();
         display: block;
         height: 4px;
         width: 100%;
-        background: #222;
+        background: #fff;
         margin: 6px 0;
         border-radius: 2px;
         transition: 0.3s;
@@ -68,7 +70,7 @@ session_start();
     .menu {
         max-height: 0;
         overflow: hidden;
-        background: #e5e5e5;
+        background: #202f42;
         position: static;
         /* Cambia a static para que esté dentro del flujo de la navbar */
         width: 100%;
@@ -93,16 +95,16 @@ session_start();
     .menu a {
         display: block;
         padding: 1rem;
-        color: #222;
+        color: #fff;
         text-decoration: none;
         transition: background 0.2s;
         text-align: center;
         font-size: 22px;
     }
 
-    .menu a:hover {
-        background: #d4d4d4;
-    }
+    /* .menu a:hover {
+        background: red;
+    } */
 
     /* Mostrar menú cuando el checkbox está activado */
     .menu-toggle:checked~.menu {
@@ -111,17 +113,19 @@ session_start();
         transition: max-height 0.5s cubic-bezier(.4, 2, .6, 1);
     }
 
-    
-/* Animación a X cuando el menú está abierto */
-.menu-toggle:checked + .hamburger span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-.menu-toggle:checked + .hamburger span:nth-child(2) {
-    opacity: 0;
-}
-.menu-toggle:checked + .hamburger span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
+
+    /* Animación a X cuando el menú está abierto */
+    .menu-toggle:checked+.hamburger span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .menu-toggle:checked+.hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked+.hamburger span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
 
     /* Esconder hamburguesa y mostrar menú horizontal en escritorio */
     @media (min-width: 768px) {
@@ -156,8 +160,8 @@ session_start();
         display: inline-flex;
         align-items: center;
         padding: 0.75em 1.5em;
-        background: #1321ac;
-        color: #fff;
+        background: #C8FF66;
+        color: #000;
         font-family: sans-serif;
         font-size: 1rem;
         border: none;
@@ -177,6 +181,13 @@ session_start();
         border: 2px solid #fff;
         background: #ccc;
     }
+.menu a em {
+    font-size: 44px; /* El doble de 22px */
+    line-height: 1;
+    vertical-align: middle;
+}
+
+
 </style>
 
 
@@ -264,8 +275,6 @@ session_start();
                         <li><a href="#"></a></li>
                         <li><a href="#"></a></li>
                         <li><a href="#"></a></li>
-                                                <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
                         <li><a href="#"></a></li>
 
 
@@ -275,6 +284,18 @@ session_start();
                                     <img class="avatar" src="/wp-content/uploads/2025/02/gabii_5b.png" alt="Foto de perfil">
                                 </button>
                             </a></li>
+
+                        <span class="flex gap-4 justify-center items-center">
+                            <a href="https://www.linkedin.com/in/gabiirese" target="_blank" aria-label="LinkedIn">
+                                <em class="ni ni-linkedin-round"></em>
+                            </a>
+                            <a href="https://github.com/eKonboy" target="_blank" aria-label="GitHub">
+                                <em class="ni ni-github-round"></em>
+                            </a>
+                            <a href="https://facebook.com/tuusuario" target="_blank" aria-label="Facebook">
+                                <em class="ni ni-wordpress"></em>
+                            </a>
+                        </span>
 
 
 
