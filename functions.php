@@ -251,8 +251,69 @@ function render_flexible_content() {
 
 /*
  *****************************************************************
- ***************************** AP I  N E W S  *******************************
+ ***************************** H E L P E R S  ********************
  *****************************************************************
  */
 // Cargar helpers y colores
 require_once get_template_directory() . '/inc/helpers.php';
+
+
+/*
+ *****************************************************************
+ ***************************** P R E V I E W  ********************
+ *****************************************************************
+ */
+function my_acf_admin_head() {
+    $siteURL = get_site_url();
+    ?>
+    <style type="text/css">
+        .imagePreview { 
+            position: absolute; 
+            right: 100%; 
+            top: 0px; 
+            z-index: 999999; 
+            border: 1px solid #f2f2f2; 
+            box-shadow: 0px 0px 3px #b6b6b6; 
+            background-color: #fff; 
+            padding: 20px;
+        }
+        .imagePreview img { 
+            width: 300px; 
+            height: auto; 
+            display: block; 
+        }
+        .acf-tooltip li:hover { 
+            background-color: #0074a9; 
+        }
+    </style>
+    <script>
+    jQuery(document).ready(function($) {
+        // Helper para esperar a que el elemento exista
+        function waitForEl(selector, callback) {
+            if ($(selector).length) {
+                callback();
+            } else {
+                setTimeout(function() { waitForEl(selector, callback); }, 100);
+            }
+        }
+
+        // Cuando se hace click en "Agregar layout"
+        $('a[data-name=add-layout]').click(function(){
+            waitForEl('.acf-tooltip li', function() {
+                $('.acf-tooltip li a').hover(function(){
+                    var imageTP = $(this).attr('data-layout');
+                    $('.acf-tooltip').append(
+                        '<div class="imagePreview"><img src="<?php echo $siteURL; ?>/wp-content/themes/tailpress-master/template-parts/preview/' + imageTP + '.png"></div>'
+                    );
+                }, function(){
+                    $('.imagePreview').remove();
+                });
+            });
+        });
+    });
+    </script>
+    <?php
+}
+add_action('acf/input/admin_head', 'my_acf_admin_head');
+
+
