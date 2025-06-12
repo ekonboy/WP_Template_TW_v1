@@ -16,8 +16,6 @@ $button_title_link = get_sub_field('button_title_link');
 $button_design = get_sub_field('button_design');
 $content_tituloespecial = get_sub_field('content_tituloespecial');
 $content_especial = get_sub_field('content_especial');
-$background_color = get_sub_field('background_color');
-$colortext_content = get_sub_field('colortext_content');
 $colordefondopuntos = get_sub_field('colordefondopuntos');
 $ancho_total_texto = get_sub_field('ancho_total_texto');
 $ancho_total_texto_gap = get_sub_field('ancho_total_texto_gap');
@@ -43,6 +41,17 @@ $button_classes = [
     'btn_degstexto-imagen'      // 3
 ];
 $classbuttondesign = $button_classes[$button_design] ?? 'btn_amarillotexto-imagen';
+
+$background_color_key = get_sub_field('background_color');
+$colortext_content_key = get_sub_field('colortext_content');
+$text_color_key = get_sub_field('colortext_content');
+$color_key = get_sub_field('background_color'); // ejemplo: 'brandPrimaryLightest'
+
+$theme_colors = get_theme_colors();
+
+$background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key] : '#fff';
+$colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_colors[$colortext_content_key] : '#000';
+
 ?>
  
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">

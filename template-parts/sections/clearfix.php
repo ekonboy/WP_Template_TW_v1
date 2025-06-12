@@ -10,9 +10,13 @@
 // Obtener el índice de la sección
 $count = get_query_var('prt_count');
 $activatedcontent = get_sub_field('activatedcontent');
-$background_color  = get_sub_field('background_color');
 $espacio_arriba = get_sub_field('espacio_arriba');
 $espacio_abajo = get_sub_field('espacio_abajo');
+
+$background_color_key = get_sub_field('background_color');
+$color_key = get_sub_field('background_color'); // ejemplo: 'brandPrimaryLightest'
+$theme_colors = get_theme_colors();
+$background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key] : '#fff';
 ?>
 
     <style> 

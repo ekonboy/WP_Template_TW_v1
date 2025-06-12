@@ -11,13 +11,20 @@ $count = get_query_var('prt_count');
 $activatedcontent = get_sub_field('activatedcontent');
 $heading = get_sub_field('heading');
 $content = get_sub_field('content');
-$background_color = get_sub_field('background_color');
-$colortext_content = get_sub_field('colortext_content');
 $ancho_total_texto = get_sub_field('ancho_total_texto');
 $justificar_texto = get_sub_field('justificar_texto'); 
 $titulo_centrado = get_sub_field('titulo_centrado');
 $ancla = get_sub_field('ancla');
 $content_script = get_sub_field('content_script');
+$background_color_key = get_sub_field('background_color');
+$colortext_content_key = get_sub_field('colortext_content');
+$text_color_key = get_sub_field('colortext_content');
+$color_key = get_sub_field('background_color'); // ejemplo: 'brandPrimaryLightest'
+
+$theme_colors = get_theme_colors();
+
+$background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key] : '#fff';
+$colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_colors[$colortext_content_key] : '#000';
 ?>
 
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
