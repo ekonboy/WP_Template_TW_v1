@@ -42,14 +42,12 @@ $button_classes = [
 ];
 $classbuttondesign = $button_classes[$button_design] ?? 'btn_amarillotexto-imagen';
 
+
 $background_color_key = get_sub_field('background_color');
 $colortext_content_key = get_sub_field('colortext_content');
-$text_color_key = get_sub_field('colortext_content');
-$color_key = get_sub_field('background_color'); // ejemplo: 'brandPrimaryLightest'
-
 $theme_colors = get_theme_colors();
 
-$background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key] : '#fff';
+$background_color = isset($theme_colors[$background_color_key]) ? $theme_colors[$background_color_key] : '#fff';
 $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_colors[$colortext_content_key] : '#000';
 
 ?>

@@ -81,7 +81,7 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
                 <form id="contactFormPlugin" action="" method="POST">
                     <div id="ModalContactForm" class="modal group fixed inset-0 flex items-center py-5 px-3 transition-all duration-500 opacity-0 invisible [&.show]:visible [&.show]:opacity-100 z-[5000]">
                         <div class="modal-close absolute inset-0 bg-slate-700 bg-opacity-50"></div>
-                        <div class="modal-body bg-[#0e0f11] rounded-md w-full md:w-1/4 mx-auto transition-transform delay-500 group-[.show]:delay-0 group-[.show]:duration-300 ease-out -translate-y-[30px] group-[.show]:translate-y-0">
+                        <div class="modal-body bg-brandPrimaryDark rounded-md w-full md:w-1/4 mx-auto transition-transform delay-500 group-[.show]:delay-0 group-[.show]:duration-300 ease-out -translate-y-[30px] group-[.show]:translate-y-0">
 
                             <div class="p-5 sm:p-6">
                                 <h5 class="text-xl leading-tighter font-heading font-bold mb-5 text-[#d0ff71]">Contacta conmigo</h5>

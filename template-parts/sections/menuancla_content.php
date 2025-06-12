@@ -15,7 +15,7 @@ $ancla = get_sub_field('ancla');
 $imagencontent = get_sub_field('imagencontent');
 
 $background_color_key = get_sub_field('background_color');
-$color_key = get_sub_field('background_color'); // ejemplo: 'brandPrimaryLightest'
+
 $theme_colors = get_theme_colors();
 $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key] : '#fff';
 ?>

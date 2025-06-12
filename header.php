@@ -117,7 +117,7 @@ session_start();
                                 </span>
                                 <!-- Switch visual -->
                                 <span class="ms-auto relative h-6 w-12 rounded-full border-2 border-gray-200 dark:border-primary-600 bg-[#3e3c3c] dark:bg-primary-600 ml-2" id="toggle-container">
-                                    <span class="absolute left-0.5 dark:left-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-[#d0ff71] transition-all duration-300" id="toggle-button"></span>
+                                    <span class="absolute left-0.5 dark:left-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-brandPrimaryLightest transition-all duration-300" id="toggle-button"></span>
                                 </span>
                             </button>
                         </div>

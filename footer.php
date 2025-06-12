@@ -327,12 +327,12 @@
     </div>
   </button>
 
-<footer id="colophon" class="site-footer dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-[#0e0f11] py-8" role="contentinfo">
+<footer id="colophon" class="site-footer dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-brandPrimaryDark py-8" role="contentinfo">
 	<img src="/wp-content/uploads/2025/02/descarga.webp" alt="jo mateix fa temps" width="20%" height="auto">
 
 	<?php do_action('tailpress_footer'); ?>
 
-	<div class="container flex flex-col mx-auto text-center  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-[#0e0f11] text-xs mt-4">
+	<div class="container flex flex-col mx-auto text-center  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-brandPrimaryDark text-xs mt-4">
 		<div class="flex flex-col justify-around items-center">
 
 			<svg class="block dark:hidden" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -358,14 +358,14 @@
 
 		</div>
 
-		<div class="flex flex-col justify-around items-center  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-[#0e0f11] mt-2">
+		<div class="flex flex-col justify-around items-center  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-brandPrimaryDark mt-2">
 			&copy; <?php echo date_i18n('Y'); ?> gabii rese - Desarrollador web - PHP - Laravel - Prestashop - WordPress - SEO <br />
 		</div>
 
 		<div class="flex flex-col justify-around items-center">
 			<!-- Contenido aquí -->
 
-			<div class="text-2xl mt-2 md:text-4xl md:mt-4  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-[#0e0f11]">
+			<div class="text-2xl mt-2 md:text-4xl md:mt-4  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-brandPrimaryDark">
 				<a href="https://portal.vistarapida.es" target="_blank"><em class="ni ni-laravel"></em></a>
 				<em class="ni ni-css3-fill"></em>
 				<em class="ni ni-js"></em>

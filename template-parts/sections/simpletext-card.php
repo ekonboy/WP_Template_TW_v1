@@ -18,15 +18,11 @@ $ancla = get_sub_field('ancla');
 
 $background_color_key = get_sub_field('background_color');
 $colortext_content_key = get_sub_field('colortext_content');
-$text_color_key = get_sub_field('colortext_content');
-$color_key = get_sub_field('background_color'); // ejemplo: 'brandPrimaryLightest'
-
 $theme_colors = get_theme_colors();
-
 $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key] : '#fff';
 $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_colors[$colortext_content_key] : '#000';
 ?>
-<div class="experiencia_religiosa" v-show="selectedOption === 'curriculum'">
+<div class="experiencia_religiosa">
   <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
     <section class="simpletext-card flex justify-center flex-col md:flex-row especialdesktop <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
 

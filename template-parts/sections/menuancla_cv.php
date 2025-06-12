@@ -10,7 +10,7 @@ $count = get_query_var('prt_count');
 $activatedcontent = get_sub_field('activatedcontent');
 $content_onlymobile = get_sub_field('content_onlymobile');
 $background_color_key = get_sub_field('background_color');
-$color_key = get_sub_field('background_color'); // ejemplo: 'brandPrimaryLightest'
+
 $theme_colors = get_theme_colors();
 $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key] : '#fff';
 ?>
