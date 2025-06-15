@@ -147,7 +147,7 @@ session_start();
 
         <div id="content" class="site-content flex-grow">
             <?php if (is_front_page()) { ?>
-                <div class="container mx-auto" style="height: 650px;">
+                <!-- <div class="container mx-auto" style="height: 650px;">
                     <div class="px-4 ">
                         <div class="mx-auto" style="text-align: center;">
                             <p>
@@ -167,11 +167,11 @@ session_start();
 
 
                         <div class="relative w-full h-screen hidden lg:block">
-                            <img loading="eager" fetchpriority="high" src="<?php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese Full Stack Developer"
+                            <img loading="eager" fetchpriority="high" src="<php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese Full Stack Developer"
                                 class="blur-lg absolute -z-50 -translate-x-1/2 inset-x-1/2 custom-inset w-[2353px] h-[1969px] object-cover max-w-[unset]">
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             <?php } ?>
 

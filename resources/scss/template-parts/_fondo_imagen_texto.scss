@@ -1,0 +1,40 @@
+.imagensuperior {position:relative;top:50px}
+.background-fullwidth {
+  width: 100vw;
+  height: 640px; /* O ajusta la altura según lo que necesites */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: calc(50% - 50vw); /* Para que ocupe el 100% real del viewport aunque esté dentro de un contenedor */
+  position: relative;
+  z-index: 0;
+}
+
+.background-fullwidth {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.fondo_imagen_texto-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px; /* Ajusta según tu diseño */
+  height: 100%;
+  text-align: center;
+}
+
+
+@include mobile {
+    .background-fullwidth {
+        width: 100vw;
+        height: 40%;
+    }
+}

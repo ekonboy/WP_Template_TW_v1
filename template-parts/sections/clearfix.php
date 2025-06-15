@@ -20,8 +20,8 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
 ?>
 
     <style> 
-    .espacioarriba {<?php echo  $espacio_arriba; ?>}
-    .espacioabajo {<?php echo  $espacio_abajo; ?>}
+    .espacioarriba {margin-top: <?php echo  $espacio_arriba; ?>px;}
+    .espacioabajo {margin-bottom:<?php echo  $espacio_abajo; ?>px;}
     </style>
     
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">

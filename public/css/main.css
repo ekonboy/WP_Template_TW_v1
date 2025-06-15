@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Colors
 --------------------------------------------- */
 /* Primary */
@@ -457,4 +458,119 @@ aside.wp-asidewp p {
   top: -70px;
   position: absolute;
   right: 46%;
+}
+
+/* Estilos para el grid */
+.contenido-grid-container {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.contenido-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+}
+
+.grid-image-container {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.grid-logo {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.grid-titulo {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.grid-texto {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.grid_absolute_content {
+  background-color: #f7f7fd;
+  margin: 0 auto;
+  z-index: 100;
+  margin-top: -100px;
+  margin-bottom: -100px;
+  position: relative;
+  display: block;
+}
+
+.grid_absolute {
+  height: 400px;
+}
+
+/* Versión desktop */
+@media (min-width: 768px) {
+  .contenido-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 0 2rem;
+  }
+}
+.imagensuperior {
+  position: relative;
+  top: 50px;
+}
+
+.background-fullwidth {
+  width: 100vw;
+  height: 640px; /* O ajusta la altura según lo que necesites */
+  margin-left: calc(50% - 50vw); /* Para que ocupe el 100% real del viewport aunque esté dentro de un contenedor */
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.fondo_imagen_texto-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px; /* Ajusta según tu diseño */
+  height: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .background-fullwidth {
+    width: 100vw;
+    height: 40%;
+  }
 }

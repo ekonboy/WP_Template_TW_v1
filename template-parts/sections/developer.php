@@ -31,7 +31,6 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
 
 
 
-
 <section class="developer block <?php echo esc_attr($content_onlymobile == 1 ? 'md:hidden' : ''); ?> <?php echo esc_attr('section-' . $count); ?>" style="display: flex;flex-direction: column;flex-wrap: nowrap;align-content: space-between;justify-content: center;background-color: <?php echo esc_attr($background_color); ?>">
   <div class="container">
     <?php if ($imagencontent): ?>
@@ -54,4 +53,3 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
 
 </section>
     </div>
-
