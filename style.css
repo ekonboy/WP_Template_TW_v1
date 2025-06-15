@@ -1,13 +1,13 @@
 /*
-Theme Name: TailPress
+Theme Name: zaska
 Theme URI: https://github.com/jeffreyvr/tailpress
 Author: Jeffrey van Rossum
 Author URI: https://vanrossum.dev
-Description: TailPress is a simple boilerplate WordPress theme with Tailwind CSS.
+Description: zaska is a simple boilerplate WordPress theme with Tailwind CSS.
 Version: 3.4.0
 License: MIT
 License URI: https://github.com/jeffreyvr/tailpress/blob/master/LICENSE
-Text Domain: tailpress
+Text Domain: zaska
 */
 @tailwind base;
 @tailwind components;

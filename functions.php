@@ -303,7 +303,7 @@ function my_acf_admin_head() {
                 $('.acf-tooltip li a').hover(function(){
                     var imageTP = $(this).attr('data-layout');
                     $('.acf-tooltip').append(
-                        '<div class="imagePreview"><img src="<?php echo $siteURL; ?>/wp-content/themes/tailpress-master/template-parts/preview/' + imageTP + '.png"></div>'
+                        '<div class="imagePreview"><img src="<?php echo $siteURL; ?>/wp-content/themes/zaska/template-parts/preview/' + imageTP + '.png"></div>'
                     );
                 }, function(){
                     $('.imagePreview').remove();

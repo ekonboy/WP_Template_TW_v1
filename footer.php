@@ -245,7 +245,7 @@
                           <div class="title">Javascript</div>
                           <div class="text">Es el estándar en el desarrollo web para manejar eventos, manipular el DOM y realizar solicitudes de red.</div>
                         </div>
-                        <img src="/wp-content/themes/tailpress-master/resources/img/skills/javascript-1.svg" alt="Logo">
+                        <img src="/wp-content/themes/zaska/resources/img/skills/javascript-1.svg" alt="Logo">
                     </div>
                       
                 </div>
@@ -255,7 +255,7 @@
                           <div class="title">Vite bundler</div>
                           <div class="text">Build tool moderno y rápido para proyectos de desarrollo web. Utiliza un enfoque de compilación en tiempo real.</div>
                         </div>
-                        <img src="/wp-content/themes/tailpress-master/resources/img/skills/vite_logo.svg" alt="Logo">
+                        <img src="/wp-content/themes/zaska/resources/img/skills/vite_logo.svg" alt="Logo">
 					
                     </div>
                 </div>
@@ -265,7 +265,7 @@
                           <div class="title">Bootstrap 5.0</div>
                           <div class="text">Framework de diseño que facilita la creación de interfaces web responsivas y modernas con componentes y utilidades predefinidos.</div>
                         </div>
-                        <img src="/wp-content/themes/tailpress-master/resources/img/skills/bootstrap-logo.svg" alt="Logo">
+                        <img src="/wp-content/themes/zaska/resources/img/skills/bootstrap-logo.svg" alt="Logo">
                     </div>
                 </div>
                 <div class="div4">
@@ -274,7 +274,7 @@
                           <div class="title">HTML 5</div>
                           <div class="text">Lenguaje de marcado estándar utilizado para estructurar contenido web y mejorar el SEO con sus nuevas etiquetas semanticas.</div>
                         </div>
-                        <img src="/wp-content/themes/tailpress-master/resources/img/skills/html-1.svg" alt="Logo">
+                        <img src="/wp-content/themes/zaska/resources/img/skills/html-1.svg" alt="Logo">
                     </div>
                 </div>
                 <div class="div5">
@@ -282,7 +282,7 @@
                         <div class="contentbig">
                           <div class="title">WordPress 4.4</div>
                           <div class="text">Sistema de gestión de contenido (CMS) que permite crear y administrar sitios web de manera fácil y rápida, muy usado por su flexibilidad y facilidad de uso.</div>
-                            <div class="logobig_ext" style="width: 80%;  margin: 0 auto;filter: drop-shadow(1px 1px 20px yellow);"> <img src="/wp-content/themes/tailpress-master/resources/img/skills/wordpress-logo.svg" alt="Logo" ></div>
+                            <div class="logobig_ext" style="width: 80%;  margin: 0 auto;filter: drop-shadow(1px 1px 20px yellow);"> <img src="/wp-content/themes/zaska/resources/img/skills/wordpress-logo.svg" alt="Logo" ></div>
                         </div>
                     </div>
                 </div>
@@ -292,7 +292,7 @@
                           <div class="title">CSS 3.0</div>
                           <div class="text">Permite diseñar y controlar la apariencia de las páginas web de manera más avanzada y dinámica.</div>
                         </div>
-                        <img src="/wp-content/themes/tailpress-master/resources/img/skills/css-3.svg" alt="Logo">
+                        <img src="/wp-content/themes/zaska/resources/img/skills/css-3.svg" alt="Logo">
                     </div>
                  </div>
                 <div class="div7">
@@ -301,7 +301,7 @@
                           <div class="title">Tailwind 4</div>
                           <div class="text">Framework de diseño de código abierto para la construcción de interfaces web modernas y personalizables.</div>
                         </div>
-                        <img src="/wp-content/themes/tailpress-master/resources/img/skills/tailwind.svg" alt="Logo">
+                        <img src="/wp-content/themes/zaska/resources/img/skills/tailwind.svg" alt="Logo">
                     </div>
                 </div>
                 <div class="div8">
@@ -310,7 +310,7 @@
                           <div class="title">Laravel 11 PHP 8.3</div>
                           <div class="text">Framework de desarrollo web basado en PHP, diseñado para facilitar la creación de aplicaciones robustas y escalable.</div>
                         </div>
-                        <img src="/wp-content/themes/tailpress-master/resources/img/skills/laravel-logo.svg" alt="Logo">
+                        <img src="/wp-content/themes/zaska/resources/img/skills/laravel-logo.svg" alt="Logo">
                     </div>
                 </div>
                 <div class="div9">
@@ -319,7 +319,7 @@
                           <div class="title">Prestashop 8.1</div>
                           <div class="text">Plataforma de comercio electrónico que permite a los usuarios crear tiendas online personalizables y funcionales.</div>
                         </div>
-                        <img src="/wp-content/themes/tailpress-master/resources/img/skills/prestashop.svg" alt="Logo">
+                        <img src="/wp-content/themes/zaska/resources/img/skills/prestashop.svg" alt="Logo">
                     </div>
                 </div>
                 </div>
