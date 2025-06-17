@@ -5,13 +5,16 @@
 
 @import "./globals/mixins";
 @import "./globals/colors";
+@import "./globals/sizes";
 
+@import "./globals/custom";
 
 @import "./template-parts/texto-imagen";
 @import "./template-parts/simpletext-card";
 @import "./template-parts/simpletext-content";
 @import "./template-parts/section-imagen";
 @import "./template-parts/simpletext-noporfolio";
-
 @import "./template-parts/grid_absolute";
 @import "./template-parts/fondo_imagen_texto";
+
+@import "./template-parts/hero_content";

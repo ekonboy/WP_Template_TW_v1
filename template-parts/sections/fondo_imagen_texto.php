@@ -24,27 +24,14 @@ $theme_colors = get_theme_colors();
 $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key] : '#fff';
 ?>
 
-<style>
-
-
-
-
-
-
-
-</style>
-
 <!-- <img src="https://dummyimage.com/4000x600/000/fff" alt="Imagen dummy" /> -->
 
-
-
 <section class="fondo_imagen_texto block <?php echo esc_attr($content_onlymobile == 1 ? 'md:hidden' : ''); ?> <?php echo ($superior == 0) ? 'imagensuperior' : ''; ?> <?php echo esc_attr('section-' . $count); ?>" style="position: relative; overflow: hidden;">
-
   <?php
   if (!empty($imagencontent)) {
-      $bg_url = is_array($imagencontent) ? ($imagencontent['sizes']['large'] ?? $imagencontent['url']) : $imagencontent;
-      ?>
-      <div class="background-fullwidth" style="background-image: url('<?php echo esc_url($bg_url); ?>');"></div>
+    $bg_url = is_array($imagencontent) ? ($imagencontent['sizes']['large'] ?? $imagencontent['url']) : $imagencontent;
+  ?>
+    <div class="background-fullwidth" style="background-image: url('<?php echo esc_url($bg_url); ?>');"></div>
   <?php } ?>
 
   <div class="container-fluid fondo_imagen_texto-content">
@@ -52,18 +39,8 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
       <?php echo !empty($heading) ? esc_html($heading) : ''; ?>
     </h1>
 
-      <?php echo wp_kses_post($content); ?>
-
+    <?php echo wp_kses_post($content); ?>
 
   </div>
-
 </section>
-
-
-
-
-
-
-
-    </div>
-
+</div>

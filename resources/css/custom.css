@@ -37,6 +37,9 @@ ol {
         @apply list-decimal list-inside;
     }
 }
+/* colores*/
+.clase-heading2 { color: #881abd; }
+html.dark .clase-heading2 { color: #d0ff71; }
 
 /*menu responsive*/
     .navbar {
@@ -217,7 +220,8 @@ ol {
         object-fit: contain;
     }
 
-/*final menu*
+/*final menu*/
+
 
 /*icons*/
 .ni {

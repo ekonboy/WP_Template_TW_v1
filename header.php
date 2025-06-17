@@ -147,31 +147,7 @@ session_start();
 
         <div id="content" class="site-content flex-grow">
             <?php if (is_front_page()) { ?>
-                <!-- <div class="container mx-auto" style="height: 650px;">
-                    <div class="px-4 ">
-                        <div class="mx-auto" style="text-align: center;">
-                            <p>
-                            <div class="mt-16 mb-8 md:mt-20 lg:mt-24 px-4 sm:px-8 mx-auto w-full sm:max-w-screen-md flex flex-col items-center justify-center gap-5 md:gap-6 lg:gap-8">
-                                <div class="flex flex-col items-center">
-                                    <h2 class="no-after text-balance mb-4 text-center text-3xl/[1.1] font-bold sm:max-w-[24ch] md:text-4xl/[1.1] xl:text-5xl/[1.1] font-[Obviously]">
-                                        Competencia en desarrollo escalable, responsive, soluciones personalizadas y <span
-                                            class="txt-rotate bg-navbar rounded-0"
-                                            data-period="1000"
-                                            data-rotate='[ " WPO ", "  UX ", " SEO " ]'>
-                                        </span>
-                                    </h2>
-                                </div>
-                            </div>
-                            </p>
-                        </div>
-
-
-                        <div class="relative w-full h-screen hidden lg:block">
-                            <img loading="eager" fetchpriority="high" src="<php echo get_template_directory_uri() . '/resources/img/HeroBackground.webp'; ?>" alt="gabii rese Full Stack Developer"
-                                class="blur-lg absolute -z-50 -translate-x-1/2 inset-x-1/2 custom-inset w-[2353px] h-[1969px] object-cover max-w-[unset]">
-                        </div>
-                    </div>
-                </div> -->
+               
 
             <?php } ?>
 

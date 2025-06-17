@@ -12,6 +12,10 @@ module.exports = {
         "./resources/**/*.php",
         "./resources/**/*.js"
     ],
+  safelist: [
+    'text-brandPrimaryLightest',
+    'dark:text-brandSecondaryDarkest'
+  ],
     darkMode: 'class',
     theme: {
         container: {
@@ -28,15 +32,15 @@ module.exports = {
           },
         extend: {
              colors: {
-                brandPrimaryLightest: '#d0ff71',
-                brandPrimaryLight: '#1321ac',
-                brandPrimaryMedium: '#1f2937',
-                brandPrimaryDark: '#0e0f11',
-                brandPrimaryDarkest: '#141c2b',
-                brandSecondaryDark: '#881abd',
-            },
-            colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
-            fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme))
+                brandPrimaryDarkest: '#00e785',
+                brandPrimaryDark: '#cafde7',
+                brandPrimaryMedium: '#50c4fe',
+                brandPrimaryLight: '#ffe96e',
+                brandPrimaryLightest: '#fdecff',
+                brandSecondaryDarkest: '#fdcaca',
+                 ...tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
+             },
+                fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme))
         },
         screens: {
             'xs': '480px',

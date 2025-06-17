@@ -11,6 +11,8 @@
 $count = get_query_var('prt_count');
 $activatedcontent = get_sub_field('activatedcontent');
 $heading = get_sub_field('heading');
+$heading2 = get_sub_field('heading2');//color
+$heading3 = get_sub_field('heading3');
 $button_title = get_sub_field('button_title');
 $button_title_link = get_sub_field('button_title_link');
 $button_design = get_sub_field('button_design');
@@ -61,7 +63,7 @@ $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_color
             <div class="lineahoriizq" style="flex: 1;">
                 <?php if ($heading): ?>
 
-                    <h1 class="
+                    <h1 class="h1normal 
                         <?php echo isset($texto_centrado) && $texto_centrado ? 'after:left-1/2 after:translate-x-[-50%] no-before' : ''; ?> 
                         <?php echo isset($texto_centrado) && !$texto_centrado ? '' : ''; ?> 
                         p-4 font-semibold relative 
@@ -70,7 +72,7 @@ $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_color
                         <?php echo ($background_color === 'transparent') ? 'text-[#0e0f11] dark:text-white' : 'text-white'; ?> 
                         dark:after:bg-[#d0ff71]"
                                                 style="<?php echo isset($texto_centrado) && $texto_centrado ? 'text-align: center;' : ''; ?>">
-                                                <?php echo !empty($heading) ? esc_html($heading) : ''; ?>
+                                                <span class="clase-heading2"><?php echo !empty($heading2) ? wp_kses_post($heading2) : ''; ?></span><?php echo !empty($heading) ? wp_kses_post($heading) : ''; ?><?php echo !empty($heading3) ? wp_kses_post($heading3) : ''; ?>
                     </h1>
 
 
