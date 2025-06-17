@@ -461,6 +461,39 @@ aside.wp-asidewp p {
   margin: 0 auto;
 }
 
+.btnbase_textoimagenen88 {
+  border-radius: 50px;
+  text-align: center;
+  max-width: 550px;
+  padding: 15px 29px;
+  /* margin-top: 25px; */
+  position: relative;
+  z-index: 1;
+}
+
+.btn_amarillotexto-imagen88 {
+  background: linear-gradient(to right, #00e785, #50c4fe);
+  padding: 2px;
+}
+
+.btn_amarillotexto-imagen88 > span {
+  display: block;
+  border-radius: 50px;
+  background-color: #1e1e1e;
+  color: white;
+  font-weight: 600;
+  padding: 15px 29px;
+}
+
+.btn_verdetexto {
+  background-color: #15dea5;
+  color: #0e0f11;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
 @media only screen and (min-width: 1400px) {
   .especialdesktop {
     display: flex;

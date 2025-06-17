@@ -28,39 +28,6 @@ $theme_colors = get_theme_colors();
 $background_color = isset($theme_colors[$background_color_key]) ? $theme_colors[$background_color_key] : '#fff';
 $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_colors[$colortext_content_key] : '#000';
 ?>
-<style>
-    .btnbase_textoimagenen88 {
-        border-radius: 50px;
-        text-align: center;
-        max-width: 550px;
-        padding: 15px 29px;
-        /* margin-top: 25px; */
-        position: relative;
-        z-index: 1;
-    }
-
-    .btn_amarillotexto-imagen88 {
-        background: linear-gradient(to right, #00e785, #50c4fe);
-        padding: 2px;
-    }
-
-
-    .btn_amarillotexto-imagen88 > span {
-        display: block;
-        border-radius: 50px;
-        background-color: #1e1e1e;
-        color: white;
-        font-weight: 600;
-        padding: 15px 29px;
-    }
-
-    .btn_verdetexto{
-    background-color: #15dea5;
-    color: #0e0f11;
-}
-.actions {margin-top: 20px;}
-</style>
-
 
 
 
@@ -80,7 +47,7 @@ $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_color
 
                     <?php echo esc_html($heading); ?>
                     <!-- <php echo !empty($heading2) ? esc_html($heading2) : ''; ?> -->
-                       <?php if ($heading_degradado === '1') echo esc_html($heading2); ?>
+                    <?php if ($heading_degradado === '1') echo esc_html($heading2); ?>
                 </h1>
 
 
@@ -93,14 +60,14 @@ $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_color
                         </span>
                     </div>
                 <?php endif; ?>
-                
 
-<p class="actions">
-<div class="flex flex-col md:flex-row items-center gap-4 md:gap-10">
-    <div class="btnbase_textoimagenen88 btn_verdetexto"><span>Why Vue</span></div>
-    <div class="btnbase_textoimagenen88 btn_amarillotexto-imagen88"><span>Get Security Updates for Vue 2</span></div>
-</div>
-</p>
+
+                <p class="actions">
+                <div class="flex flex-col md:flex-row items-center gap-4 md:gap-10">
+                    <div class="btnbase_textoimagenen88 btn_verdetexto"><span>Why Vue</span></div>
+                    <div class="btnbase_textoimagenen88 btn_amarillotexto-imagen88"><span>Get Security Updates for Vue 2</span></div>
+                </div>
+                </p>
 
 
 

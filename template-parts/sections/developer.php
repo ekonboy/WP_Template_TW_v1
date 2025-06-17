@@ -52,4 +52,4 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
   </script>
 
 </section>
-    </div>
+ 
