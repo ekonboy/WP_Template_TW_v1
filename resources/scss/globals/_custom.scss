@@ -16,9 +16,9 @@
 
 @include mobile {
     .h1normal {
-        font-size: $hero-title-size_mobile;
+        font-size: $hero-title-size_mobile_xs;
         margin: 0 0 30px 0;
-        line-height: $hero-title-lineheight_mobile;
+        line-height: $hero-title-lineheight_mobile_xs;
 
     }
 }
@@ -27,3 +27,4 @@
 @include tablet-landscape {
 
 }
+

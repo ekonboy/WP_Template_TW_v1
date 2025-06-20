@@ -328,7 +328,7 @@
   </button>
 
 <footer id="colophon" class="site-footer dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-brandPrimaryDark py-8" role="contentinfo">
-	<img src="/wp-content/uploads/2025/02/descarga.webp" alt="jo mateix fa temps" width="20%" height="auto">
+	
 
 	<?php do_action('tailpress_footer'); ?>
 

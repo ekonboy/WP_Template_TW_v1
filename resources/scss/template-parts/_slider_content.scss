@@ -1,0 +1,379 @@
+.galleria {
+    height: 100vh;
+    margin: auto;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: none;
+}
+
+.galleria__inner {
+    display: flex;
+    align-items: start;
+    position: relative;
+    cursor: grab;
+    touch-action: none;
+}
+
+.galleria:active {
+    cursor: grabbing;
+}
+
+.galleria__item {
+    flex: 0 0 300px;
+    padding: 0 1rem;
+}
+
+.galleria__item-inner {
+    height: 450px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2rem;
+    border-radius: 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    text-align: center;
+    padding-top: 10%;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.textolittel_slider {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 20px;
+    color: #dceef8;
+    line-height: 22px;
+}
+
+.game-section {
+    padding: 60px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.owl-carousel {
+    overflow: visible;
+}
+
+.game-section .owl-stage {
+    margin: 15px 0;
+    display: flex;
+    transform: translateX(-30%);
+    transition: all 0.3s ease;
+}
+
+.game-section .itemslider {
+    margin: 0 15px 0;
+    width: 250px;
+    min-width: 250px;
+    height: 450px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+.item-desc:hover {
+    background-color: #002948;
+}
+
+.game-section .itemslider.active {
+    width: 250px;
+}
+
+.game-section .itemslider:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.game-section .itemslider-desc {
+    padding: 0 24px 12px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateY(calc(100% - 54px));
+    -webkit-transform: translateY(calc(100% - 54px));
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+.game-section .itemslider.active .itemslider-desc {
+    transform: none;
+    -webkit-transform: none;
+}
+
+.game-section .itemslider-desc p {
+    opacity: 0;
+    -webkit-transform: translateY(32px);
+    transform: translateY(32px);
+    transition: all 0.4s ease-in-out 0.2s;
+    -webkit-transition: all 0.4s ease-in-out 0.2s;
+}
+
+.game-section .itemslider.active .itemslider-desc p {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.game-section .owl-theme.custom-carousel .owl-dots {
+    margin-top: -20px;
+    position: relative;
+    z-index: 5;
+}
+
+.h3hero {
+    font-size: $hero-title-size;
+    margin: 0 0 30px 0;
+    line-height: $hero-title-lineheight;
+    font-weight: 600;
+    font-family: 'Obviously', sans-serif;
+
+}
+
+.h3hero.tituloslider {
+    right: 3%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    min-width: 1000px;
+}
+
+
+
+.game-section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.contenedor-slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-left: 30%;
+    // Empieza 30% a la izquierda
+    margin-left: -30%;
+    // Compensa el padding
+    -webkit-overflow-scrolling: touch;
+}
+
+.itemslider {
+    flex: 0 0 250px;
+    scroll-snap-align: start;
+}
+
+.item-desc {
+    background: #0e1726;
+    border-radius: 20px;
+    padding: 0;
+    min-height: 450px;
+}
+
+
+
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.slider-icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.slider-icon {
+    width: 100px;
+    height: auto;
+    max-width: 120px;
+    object-fit: contain;
+}
+
+// Estilos específicos para alineación izquierda
+.galleria__item-inner.izquierda {
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 40px 30px !important;
+}
+
+.galleria__item-inner.izquierda .slider-icon-container {
+    justify-content: flex-start;
+    margin-left: 0;
+}
+
+.galleria__item-inner.izquierda .textolittel_slider {
+    width: 100% !important;
+    max-width: 300px;
+    text-align: left;
+    padding: 20px 0;
+}
+
+
+
+.izquierda {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.itemslider.izquierda .textolittel_slider {
+    padding: 0;
+    // No necesitas !important si el selector es más específico
+}
+
+
+.slidertitulo {
+    font-size: 20px;
+    line-height: 28px;
+    color: #dceef8;
+}
+
+// Eliminar barras de scroll
+.contenedor-slider::-webkit-scrollbar {
+    display: none;
+}
+
+//OVERRIDE
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: visible !important;
+    -webkit-transform: translate3d(0, 0, 0);
+    left: 20% !important;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 70% !important;
+}
+
+.itemslider:hover {
+    /* Efecto al pasar el mouse por encima de cada slide */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+    transition: all 0.3s;
+}
+
+// end OVERRIDE
+
+
+
+// responsive css Start 
+@media (min-width: 992px) and (max-width: 1199px) {
+    .game-section {
+        padding: 50px 30px;
+    }
+
+    .game-section .itemslider {
+        margin: 0 12px 60px;
+    }
+
+    .game-section .itemslider.active {
+        width: 250px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .game-section {
+        padding: 50px 30px 40px;
+    }
+
+    .game-section .itemslider {
+        margin: 0 12px 60px;
+    }
+
+    .game-section .itemslider.active {
+        width: 250px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .h3hero.tituloslider {
+        right: 0;
+        text-align: center;
+        min-width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: $hero-title-size_mobile;
+        line-height: $hero-title-lineheight_mobile;
+    }
+
+
+    .owl-carousel .owl-stage-outer {
+        overflow: visible !important;
+        left: 0 !important;
+    }
+
+    .game-section .owl-stage {
+        transform: translateX(-15%);
+        // Menor desplazamiento en móviles
+    }
+
+    .galleria__item-inner {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        height: 450px;
+        padding-top: 15%;
+    }
+
+    //   .textolittel_slider {font-size: 2.3rem;width:270px;line-height: 2.5rem;padding: 15px;}
+    .game-section {
+        padding: 30px 15px 20px;
+    }
+
+    .game-section .itemslider {
+        margin: 0 10px 40px;
+        width: 270px;
+        height: 430px;
+    }
+
+    .game-section .itemslider.active {
+        width: 270px;
+        box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .game-section .itemslider-desc {
+        padding: 0 14px 5px;
+        transform: translateY(calc(100% - 42px));
+        -webkit-transform: translateY(calc(100% - 42px));
+    }
+}
