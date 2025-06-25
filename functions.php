@@ -41,6 +41,13 @@ remove_action('admin_init', 'acf_pro_check_license');
 add_filter('acf/settings/license', '__return_null');
 
 
+
+
+
+
+
+
+
 /*
  *****************************************************************
  ***************************** C O N F I G *******************************
@@ -136,11 +143,11 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 // add_action( 'wp_enqueue_scripts', 'tailpress_enqueue_scripts' );
 
 
-function cargar_estilos_adicionales() {
-    wp_enqueue_style('iconos-css', get_template_directory_uri() . '/resources/css/icons.css', array(), null, 'all');
-    wp_enqueue_style('custom-svg-css', get_template_directory_uri() . '/resources/css/customsvg.css', array(), null, 'all');
-}
-add_action('wp_enqueue_scripts', 'cargar_estilos_adicionales');
+// function cargar_estilos_adicionales() {
+//     wp_enqueue_style('iconos-css', get_template_directory_uri() . '/resources/css/icons.css', array(), null, 'all');
+//     wp_enqueue_style('custom-svg-css', get_template_directory_uri() . '/resources/css/customsvg.css', array(), null, 'all');
+// }
+// add_action('wp_enqueue_scripts', 'cargar_estilos_adicionales');
 
 
 

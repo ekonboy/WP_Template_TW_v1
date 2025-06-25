@@ -21,8 +21,6 @@ $ancho_total_texto = get_sub_field('ancho_total_texto');
 $imagencontent = get_sub_field('imagencontent');
 $content_onlymobile = get_sub_field('content_onlymobile');
 $justificar_texto = get_sub_field('justificar_texto');
-$texto_gsap = get_sub_field('texto_gsap');
-
 
 $background_color_key = get_sub_field('background_color');
 $color_key = get_sub_field('background_color');
@@ -30,39 +28,36 @@ $theme_colors = get_theme_colors();
 $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key] : '#f7f7fd';
 ?>
 
+
 <section class="hero_content <?php echo esc_attr('section-' . $count); ?>" style="background-color: <?php echo esc_attr($background_color); ?>;">
     <div class="container" style="max-width: <?php echo esc_attr($ancho_total_texto); ?>px;">
         <div class="hero-content">
 
 
 
-            <?php if ($texto_gsap == 1): ?>
-                <main>
-                    <?php if ($heading): ?>
-                        <section id="inicio">
-                            <h1 class="hero-title <?php echo esc_html($justificar_texto); ?>">
-                                <?php echo esc_html($heading); ?>
-                                <?php if (!empty($heading2)): ?>
-                                    <span class="clase-heading2"><?php echo esc_html($heading2); ?></span>
-                                <?php endif; ?>
-                                <?php if (!empty($heading3)): ?>
-                                    <?php echo esc_html($heading3); ?>
-                                <?php endif; ?>
-                            </h1>
-                        </section>
-                    <?php endif; ?>
-                </main>
-            <?php else: ?>
-                <?php if ($heading): ?>
-                    <h1 class="h1hero">
-                        <?php echo esc_html($heading); ?>
-                        <?php if (!empty($heading2)): ?>
-                            <span class="clase-heading2"><?php echo esc_html($heading2); ?></span>
-                            <?php echo esc_html($heading3); ?>
-                        <?php endif; ?>
-                    </h1>
-                <?php endif; ?>
-            <?php endif; ?>
+
+
+ <main>
+<?php if ($heading): ?>
+<section id="inicio">
+<h1 class="hero-title <?php echo esc_html($justificar_texto) ?>">
+<?php echo esc_html($heading); ?>
+<?php if (!empty($heading2)): ?>
+<span class="clase-heading2"><?php echo esc_html($heading2); ?></span>
+<?php echo esc_html($heading3); ?>
+<?php endif; ?>
+</h1>
+</section>
+<?php endif; ?>
+  </main>
+
+             
+    
+
+ 
+
+
+
 
 
             <?php if ($content): ?>
@@ -79,7 +74,6 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
     </div>
 </section>
 
-<?php if ($texto_gsap == 1): ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-<?php endif; ?>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>

@@ -89,7 +89,7 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
                                 <div class="flex flex-wrap items-center -m-2">
                                     <div class="w-full lg:w-5/12 p-2">
                                         <div class="relative mb-5 last:mb-0">
-                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-[#d0ff71] mb-2" for="nombre">Nombre*</label>
+                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-[brandPrimaryLight] mb-2" for="nombre">Nombre*</label>
                                             <span class="block italic text-xs text-slate-400">Indica aquí tu nombre.</span>
                                         </div>
                                     </div><!-- col -->
@@ -108,7 +108,7 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
                                 <div class="flex flex-wrap items-center -m-2">
                                     <div class="w-full lg:w-5/12 p-2">
                                         <div class="relative mb-5 last:mb-0">
-                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-[#d0ff71] mb-2" for="email">Email*</label>
+                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-[brandPrimaryLight] mb-2" for="email">Email*</label>
                                             <span class="block italic text-xs text-slate-400">Déjame tu mail y te responderé en menos de 12 horas.</span>
                                         </div>
                                     </div>
@@ -127,7 +127,7 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
                                 <div class="flex flex-wrap items-center -m-2">
                                     <div class="w-full lg:w-5/12 p-2">
                                         <div class="relative mb-5 last:mb-0">
-                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-[#d0ff71] mb-2" for="department">Departamento</label>
+                                            <label class="inline-block text-sm font-medium text-slate-700 dark:text-[brandPrimaryLight] mb-2" for="department">Departamento</label>
                                             <span class="block italic text-xs text-slate-400">Aquí escribe tu cargo en la empresa.</span>
                                         </div>
                                     </div>

@@ -10,8 +10,8 @@ session_start();
     <link rel="profile" href="http://gmpg.org/xfn/11">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 
     <?php
@@ -54,7 +54,7 @@ session_start();
                                         <em class="text-lg leading-none w-7 ni ni-sun"></em>
                                     </div>
                                     <div class="ms-auto relative h-6 w-12 rounded-full border-2 border-gray-200 dark:border-primary-600 bg-[#3e3c3c] dark:bg-primary-600" id="toggle-container">
-                                        <button class="absolute start-0.5 dark:start-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-brandPrimaryLightest transition-all duration-300" id="toggle-button"></button>
+                                        <button class="absolute start-0.5 dark:start-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-color-brand-primary-mediumest transition-all duration-300" id="toggle-button"></button>
                                     </div>
                                 </a>
                             </li>
@@ -76,6 +76,19 @@ session_start();
                         wp_nav_menu($menu_args);
                         ?>
                     </div>
+
+
+
+                    <?php if (class_exists('WooCommerce')) : ?>
+                        <a class="menu-cart-icon" href="<?php echo wc_get_cart_url(); ?>">
+                            <span class="dashicons dashicons-cart"></span>
+                            <span class="cart-count"><em class="ni ni-cart-fill"></em><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                        </a>
+                    <?php endif; ?>
+
+
+
+
                 </div>
             </div>
         </header>
@@ -122,7 +135,7 @@ session_start();
                                 </span>
                                 <!-- Switch visual -->
                                 <span class="ms-auto relative h-6 w-12 rounded-full border-2 border-gray-200 dark:border-primary-600 bg-[#3e3c3c] dark:bg-primary-600 ml-2" id="toggle-container">
-                                    <span class="absolute left-0.5 dark:left-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-brandPrimaryLightest transition-all duration-300" id="toggle-button"></span>
+                                    <span class="absolute left-0.5 dark:left-6.5 top-0.5 h-4 w-4 rounded-full bg-gray-200 dark:bg-color-brand-primary-mediumest transition-all duration-300" id="toggle-button"></span>
                                 </span>
                             </button>
                         </div>
@@ -152,7 +165,7 @@ session_start();
 
         <div id="content" class="site-content flex-grow">
             <?php if (is_front_page()) { ?>
-               
+
 
             <?php } ?>
 

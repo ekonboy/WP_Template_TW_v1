@@ -35,7 +35,7 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
   <?php } ?>
 
   <div class="container-fluid fondo_imagen_texto-content">
-    <h1 class="font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 after:content[''] after:bg-brand text-2xl lg:text-3xl mb-8 after:-bottom-3 text-slate-600 dark:after:bg-[#d0ff71] dark:text-white">
+    <h1 class="font-semibold relative after:content[''] after:h-1 after:rounded-full after:bg-brand after:absolute after:w-12 after:content[''] after:bg-brand text-2xl lg:text-3xl mb-8 after:-bottom-3 text-slate-600 dark:after:bg-color-brand-primary-medium dark:text-white">
       <?php echo !empty($heading) ? esc_html($heading) : ''; ?>
     </h1>
 

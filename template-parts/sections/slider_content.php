@@ -22,17 +22,16 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
 ?>
 <?php
 $iconos = [
-    '<em class="ni ni-comments"></em>',
-    '<em class="ni ni-list-thumb-fill"></em>',
-    '<em class="ni ni-masonry"></em>',
-    '<em class="ni ni-layers"></em>',
-    '<em class="ni ni-clipboad-check-fill"></em>',
-    '<em class="ni ni-archive-fill"></em>',
-    '<em class="ni ni-plus-medi-fill"></em>',
-    '<em class="ni ni-cross-c"></em>'
+  '<em class="ni ni-comments"></em>',
+  '<em class="ni ni-list-thumb-fill"></em>',
+  '<em class="ni ni-masonry"></em>',
+  '<em class="ni ni-layers"></em>',
+  '<em class="ni ni-clipboad-check-fill"></em>',
+  '<em class="ni ni-archive-fill"></em>',
+  '<em class="ni ni-plus-medi-fill"></em>',
+  '<em class="ni ni-cross-c"></em>'
 ];
 ?>
-
 
 
 <div style="display:<?php echo ($activatedcontent == 0) ? 'none' : 'block'; ?>;">
@@ -67,15 +66,18 @@ $iconos = [
                 <div class="galleria__item-inner <?php echo (!$izquierda == '0') ? '' : 'izquierda'; ?>"
                   style="color: <?php echo $color ? esc_attr($color) : '#fff'; ?>">
 
-                  <?php if ($icono): ?>
+                  <?php if ($icono && !empty($icono['url'])): ?>
                     <div class="slider-icon-container">
-                      <!-- <img src="<php echo esc_url($icono['url']); ?>"
-                        alt="<php echo esc_attr($icono['alt']); ?>"
-                        class="slider-icon" /> -->
-                        <!-- <em class="ni ni-comments"></em> -->
-                         <?php echo $iconos[$counter % count($iconos)]; ?>
+                      <img src="<?php echo esc_url($icono['url']); ?>"
+                        alt="<?php echo esc_attr($icono['alt']); ?>"
+                        class="slider-icon" />
+                    </div>
+                  <?php else: ?>
+                    <div class="slider-icon-container">
+                      <?php echo $iconos[$counter % count($iconos)]; ?>
                     </div>
                   <?php endif; ?>
+
 
                   <span class="slidertitulo"><?php echo nl2br(esc_html($titulo)); ?></span>
 

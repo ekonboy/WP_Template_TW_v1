@@ -67,10 +67,10 @@ $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_color
                         <?php echo isset($texto_centrado) && $texto_centrado ? 'after:left-1/2 after:translate-x-[-50%] no-before' : ''; ?> 
                         <?php echo isset($texto_centrado) && !$texto_centrado ? '' : ''; ?> 
                         p-4 font-semibold relative 
-                        <?php echo isset($texto_centrado) && $texto_centrado ? 'after:content[\'\'] after:h-1 after:rounded-full after:bg-[#d0ff71] after:absolute after:w-full' : ''; ?>
+                        <?php echo isset($texto_centrado) && $texto_centrado ? 'after:content[\'\'] after:h-1 after:rounded-full after:bg-color-brand-primary-medium after:absolute after:w-full' : ''; ?>
                         text-2xl lg:text-3xl mb-8 after:-bottom-3 
-                        <?php echo ($background_color === 'transparent') ? 'text-[#0e0f11] dark:text-white' : 'text-white'; ?> 
-                        dark:after:bg-[#d0ff71]"
+                        <?php echo ($background_color === 'transparent') ? 'text-[#00e785] dark:text-[#00e785]' : 'text-[#00e785]'; ?> 
+                        dark:after:bg-color-brand-primary-medium"
                                                 style="<?php echo isset($texto_centrado) && $texto_centrado ? 'text-align: center;' : ''; ?>">
                                                 <span class="clase-heading2"><?php echo !empty($heading2) ? wp_kses_post($heading2) : ''; ?></span><?php echo !empty($heading) ? wp_kses_post($heading) : ''; ?><?php echo !empty($heading3) ? wp_kses_post($heading3) : ''; ?>
                     </h1>
@@ -79,7 +79,7 @@ $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_color
                 <?php endif; ?>
 
                 <?php if ($content_tituloespecial): ?>
-                    <div class="lg:text-[18px] text-[16px] p-4 <?php echo ($background_color === 'transparent') ? 'text-[#0e0f11] dark:text-white' : 'text-white'; ?> <?php echo (get_sub_field('column_row') && get_sub_field('texto_centrado')) ? 'contenidovertical texto-justificado' : ''; ?>">
+                    <div class="hero-description p-4 <?php echo ($background_color === 'transparent') ? 'text-[#0e0f11] dark:text-white' : 'text-white'; ?> <?php echo (get_sub_field('column_row') && get_sub_field('texto_centrado')) ? 'contenidovertical texto-justificado' : ''; ?>">
                         <?php echo wp_kses_post($content_tituloespecial); ?>
 
                         <?php if ($button_title): ?>
@@ -94,7 +94,7 @@ $colortext_content = isset($theme_colors[$colortext_content_key]) ? $theme_color
                 <?php endif; ?>
 
                 <?php if ($content_especial): ?>
-                    <div class="solo-grande lg:text-[18px] text-[16px] lg:w-[calc(80%-20px)] p-4 <?php echo ($background_color === 'transparent') ? 'text-[#0e0f11] dark:text-white' : 'text-white'; ?> <?php echo get_sub_field('texto_centrado') ? 'texto-justificado' : ''; ?>">
+                    <div class="solo-grande hero-description lg:w-[calc(80%-20px)] p-4 <?php echo ($background_color === 'transparent') ? 'text-[#0e0f11] dark:text-white' : 'text-white'; ?> <?php echo get_sub_field('texto_centrado') ? 'texto-justificado' : ''; ?>">
                         <?php echo wp_kses_post($content_especial); ?>
                     </div>
                 <?php endif; ?>

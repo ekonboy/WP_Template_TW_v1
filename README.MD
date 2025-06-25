@@ -100,17 +100,17 @@ MIT. Please see the [License File](/LICENSE) for more information.
 
 ## Template formació:
 <div class="icono-texto">
-     <div class="linea"><em class="ni ni-plus-c text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
+     <div class="linea"><em class="ni ni-plus-c text-[#1321AC] dark:text-[brandPrimaryLight]"></em><span class="texto">xxx.</span></div>
 </div>
 <div class="espaciado_abajo"></div>
     <div class="icono-texto">
-      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
-      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
-      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
-      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
-      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[#d0ff71]"></em><span class="texto">xxx.</span></div>
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[brandPrimaryLight]"></em><span class="texto">xxx.</span></div>
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[brandPrimaryLight]"></em><span class="texto">xxx.</span></div>
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[brandPrimaryLight]"></em><span class="texto">xxx.</span></div>
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[brandPrimaryLight]"></em><span class="texto">xxx.</span></div>
+      <div class="linea"> <em class="ni ni-check-fill-c  text-[#1321AC] dark:text-[brandPrimaryLight]"></em><span class="texto">xxx.</span></div>
     </div>
 
 <span class="espaciado_abajo"></span>
-<em class="ni ni-plus-c text-[#1321AC] dark:text-[#d0ff71]"></em> WordPress
+<em class="ni ni-plus-c text-[#1321AC] dark:text-[brandPrimaryLight]"></em> WordPress
 https://www.xxx.com

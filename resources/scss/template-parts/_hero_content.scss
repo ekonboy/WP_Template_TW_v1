@@ -30,12 +30,6 @@ section.hero_content {
     font-family: 'Obviously',sans-serif;
 }
 
-// .container {
-//     display: flex;
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     align-items: center;
-// }
 
 .container {
     display: flex;
@@ -53,6 +47,7 @@ section.hero_content {
     display: flex;
     justify-content: center;
 }
+
 
 
 @media (max-width: 768px) {
@@ -76,3 +71,31 @@ section.hero_content {
         padding: 15px;
     }
 }
+
+//GSAP
+  .hero-title {
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    font-family: $ff-obviously;
+}
+
+@media screen and (max-width: 850px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+}
+
+
+@media screen and (max-width: 675px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+  }

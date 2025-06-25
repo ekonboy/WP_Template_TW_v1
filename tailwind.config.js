@@ -13,8 +13,15 @@ module.exports = {
         "./resources/**/*.js"
     ],
   safelist: [
-    'text-brandPrimaryLightest',
-    'dark:text-brandSecondaryDarkest'
+  'bg-brandPrimaryLight',
+  'bg-brandPrimaryDarkest',
+  'bg-brandPrimaryMedium',
+  'bg-brandPrimaryDark',
+  'bg-brandPrimaryLightest',
+  'bg-brandSecondaryDarkest',
+  'text-brandPrimaryLightest',
+  'text-brandPrimaryMedium',
+  'dark:text-brandSecondaryDarkest'
   ],
     darkMode: 'class',
     theme: {

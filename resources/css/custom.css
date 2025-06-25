@@ -39,7 +39,8 @@ ol {
 }
 /* colores*/
 .clase-heading2 { color: #881abd; }
-html.dark .clase-heading2 { color: #d0ff71; }
+html.dark .clase-heading2 { color: #ffe96e; }
+
 
 /*menu responsive*/
     .navbar {
@@ -243,6 +244,9 @@ html {
     overflow-x: hidden;
 }
 
+html:not(.dark) {
+  background-color: #f4fafd;
+}
 
 
 .icono-texto .linea {

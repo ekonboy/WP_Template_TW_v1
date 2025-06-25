@@ -205,6 +205,10 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
     <?php endif; ?>
   </div>
 
+
+
+</section>
+ 
   <script>
 
       // Interacción moderna con los tabs
@@ -227,6 +231,3 @@ document.querySelectorAll('.tab-btn').forEach(button => {
   });
 });
   </script>
-
-</section>
- 

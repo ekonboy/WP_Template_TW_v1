@@ -5,6 +5,23 @@
     font-weight: 600;
     font-family: 'Obviously',sans-serif;
 }
+.hero-description {font-size:$hero-description-size ;}
+
+
+//colors
+.bg-brandPrimaryDarkest {background-color: $color-brand-primary-darkest;}
+.bg-brandPrimaryDark {background-color: $color-brand-primary-dark;}
+.bg-brandPrimaryMedium {background-color: $color-brand-primary-medium;}
+.bg-brandPrimaryLight {background-color: $color-brand-primary-light}
+.bg-brandPrimaryLightest {background-color: $color-brand-primary-lightest;}
+.bg-brandSecondaryDarkest {background-color: $color-brand-secondary-darkest;}
+.text-brandPrimaryMedium {color: $color-brand-primary-medium;}
+.text-brandPrimaryLight{color: $color-brand-primary-light}
+
+// .dark .text-brandPrimaryMedium {
+//   color: $color-brand-primary-medium; // por ejemplo
+// }
+
 
 @include desktop-xl {
 
@@ -21,6 +38,8 @@
         line-height: $hero-title-lineheight_mobile_xs;
 
     }
+
+    .hero-description {font-size:$hero-description-size_mobile;}
 }
 
 

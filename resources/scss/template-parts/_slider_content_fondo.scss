@@ -30,17 +30,19 @@
     height: 450px;
     display: flex;
     // justify-content: flex-start;
-    font-size: 2rem;
     border-radius: 20px;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-content: center;
-    text-align: center;
-    padding-top: 10%;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
+    align-content: center;text-align: center;
 }
+.galleria__item-inner_fondo, .textotitulgran {
+font-size: 2rem;
+font-weight: 700;
+    line-height: 100%;
+    font-style: normal;
+    padding-top: 10%;
+    color: #dceef8;
+}   
 
 .textolittel_slider_fondo {
     font-size: 16px;
@@ -52,10 +54,11 @@
     line-height: 22px;
 }
 
-// .game-section_fondo {
-//     padding: 60px 0;
-//     overflow: visible;
-// }
+.slidertitulo {
+    font-size: 20px;
+    line-height: 28px;
+    color: #dceef8;
+}
 
 .game-section_fondo {
     padding: 60px 0;

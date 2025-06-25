@@ -2,12 +2,12 @@
 <?php do_action('tailpress_content_end'); ?>
 
 </div>
-<?php do_action('tailpress_content_after'); ?>
+<?php do_action('tailpress_content_after'); ?> 
 
 <div class="pujaradalt">
 	<a href="#content" class="text-gray-500 hover:text-gray-900">
 		<svg width="176" height="29" viewBox="0 0 176 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M44.2514 20.9085C99.0629 -7.53548 81.4629 -6.39771 138.789 20.9085L176 28.2679H0L44.2514 20.9085Z" fill="#D0FF71" />
+			<path d="M44.2514 20.9085C99.0629 -7.53548 81.4629 -6.39771 138.789 20.9085L176 28.2679H0L44.2514 20.9085Z" fill="#ffe96e" />
 			<g filter="url(#filter0_d_4_7)">
 				<mask id="path-2-inside-1_4_7" fill="white">
 					<path d="M96.0246 9.99619L90.5029 6.30439L84.9755 10L84 9.34783L90.5029 5L97 9.34395L96.0246 9.99619Z" />
@@ -49,326 +49,34 @@
 </div>
 
 
-<style>
 
-.buttonspinner {
-    width: 30px;
-    height: 30px;
-    background-color: #0e0f11;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-    .spinner {
-      width: 10px;
-      height: 10px;
-      border: 1px solid #d0ff71;
-      border-top: 1px solid red;
-      border-radius: 50%;
-      animation: none;
-      transition: transform 0.3s ease;
-    }
-
-    .buttonspinner:hover .spinner {
-      animation: spin 2s linear forwards;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .popup {
-      opacity: 0;
-      visibility: hidden;
-      position: absolute;
-      bottom: 80px;
-      left: 20px;
-      width: calc(35vw - 20px);
-      height: calc(100vh - 120px);
-      border-radius: 6px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: opacity 0.5s ease, transform 0.5s ease;
-
-    }
-
-    .buttonspinner:hover .popup {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(-10px);
-    }
-
-    .parent {
-      display: grid;
-      width: 100%;
-      height: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        gap: 10px;
-}
-
-    .parent > div {
-      color: #D1D7E0;
-      font-size: 24px;
-      text-align: center;
-      border-radius: 5px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-	  background-color: #242424;
-    }
-
-
-
-.div1 { grid-area: 1 / 1 / 2 / 2; }
-.div2 { grid-area: 1 / 2 / 2 / 3; }
-.div3 { grid-area: 2 / 1 / 3 / 2; }
-.div4 { grid-area: 2 / 2 / 3 / 3; }
-.div5 { grid-area: 3 / 1 / 5 / 2; }
-.div6 { grid-area: 3 / 2 / 4 / 3; }
-.div7 { grid-area: 4 / 2 / 5 / 3; }
-.div8 { grid-area: 5 / 1 / 6 / 2; }
-.div9 { grid-area: 5 / 2 / 6 / 3; }
-
-
-.div1 img,
-.parent div img {
-
-    object-fit: contain;
-    padding: 5px;
-    width: 45%;
-    height: auto;
-}
-
-.containerbase {  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  box-sizing: border-box;
-  align-items: flex-start;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.container {
-  width: 100%;
-  height: 100%; 
-}
-.containerbig {
-  width: 100%;
-  height: 100%;
-}
-.logobig_ext {
-  flex-grow: 2; 
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-}
-.image {
-  width: 33.33%;
-  height: auto;
-  object-fit: cover;
-  overflow: hidden; 
-}
-
-.content {
-  width: 66.66%;
-  display: flex;
-  flex-direction: column;
-}
-.contentbig {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-    font-size: 14px;
-    text-align: left;
-    color: #d0ff71;
-    margin-bottom: 15px;
-}
-
-.text {
-  font-size: 14px;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
-.div5 .logobig_ext img {
-  width: 100%;
-  height: 100%; 
-  object-fit: cover; 
-}
-
-@media (max-width: 1200px) {
-.buttonspinner, .spinner, .popup {display: none;}
-} 
-@media (min-width: 2000px){
-  #news-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, auto);
-    gap: 15px;
-    padding: 15px;
-    width: 30vw;
-    max-width: 100%;
-    height: 94vh;
-}
-}
-
-  </style>
-
-<button class="buttonspinner">
-    <div class="spinner"></div>
-    <div class="popup">
-        
-            <div class="parent">
-                <div class="div1"> 
-
-                    <div class="container containerbase"> 
-                        <div class="content">
-                          <div class="title">Javascript</div>
-                          <div class="text">Es el estándar en el desarrollo web para manejar eventos, manipular el DOM y realizar solicitudes de red.</div>
-                        </div>
-                        <img src="/wp-content/themes/zaska/resources/img/skills/javascript-1.svg" alt="Logo">
-                    </div>
-                      
-                </div>
-                <div class="div2">
-                    <div class="container containerbase"> 
-                        <div class="content">
-                          <div class="title">Vite bundler</div>
-                          <div class="text">Build tool moderno y rápido para proyectos de desarrollo web. Utiliza un enfoque de compilación en tiempo real.</div>
-                        </div>
-                        <img src="/wp-content/themes/zaska/resources/img/skills/vite_logo.svg" alt="Logo">
-					
-                    </div>
-                </div>
-                <div class="div3">
-                    <div class="container containerbase"> 
-                        <div class="content">
-                          <div class="title">Bootstrap 5.0</div>
-                          <div class="text">Framework de diseño que facilita la creación de interfaces web responsivas y modernas con componentes y utilidades predefinidos.</div>
-                        </div>
-                        <img src="/wp-content/themes/zaska/resources/img/skills/bootstrap-logo.svg" alt="Logo">
-                    </div>
-                </div>
-                <div class="div4">
-                    <div class="container containerbase"> 
-                        <div class="content">
-                          <div class="title">HTML 5</div>
-                          <div class="text">Lenguaje de marcado estándar utilizado para estructurar contenido web y mejorar el SEO con sus nuevas etiquetas semanticas.</div>
-                        </div>
-                        <img src="/wp-content/themes/zaska/resources/img/skills/html-1.svg" alt="Logo">
-                    </div>
-                </div>
-                <div class="div5">
-                    <div class="containerbase containerbig">
-                        <div class="contentbig">
-                          <div class="title">WordPress 4.4</div>
-                          <div class="text">Sistema de gestión de contenido (CMS) que permite crear y administrar sitios web de manera fácil y rápida, muy usado por su flexibilidad y facilidad de uso.</div>
-                            <div class="logobig_ext" style="width: 80%;  margin: 0 auto;filter: drop-shadow(1px 1px 20px yellow);"> <img src="/wp-content/themes/zaska/resources/img/skills/wordpress-logo.svg" alt="Logo" ></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="div6">
-                    <div class="container containerbase"> 
-                        <div class="content">
-                          <div class="title">CSS 3.0</div>
-                          <div class="text">Permite diseñar y controlar la apariencia de las páginas web de manera más avanzada y dinámica.</div>
-                        </div>
-                        <img src="/wp-content/themes/zaska/resources/img/skills/css-3.svg" alt="Logo">
-                    </div>
-                 </div>
-                <div class="div7">
-                    <div class="container containerbase"> 
-                        <div class="content">
-                          <div class="title">Tailwind 4</div>
-                          <div class="text">Framework de diseño de código abierto para la construcción de interfaces web modernas y personalizables.</div>
-                        </div>
-                        <img src="/wp-content/themes/zaska/resources/img/skills/tailwind.svg" alt="Logo">
-                    </div>
-                </div>
-                <div class="div8">
-                    <div class="container containerbase"> 
-                        <div class="content">
-                          <div class="title">Laravel 11 PHP 8.3</div>
-                          <div class="text">Framework de desarrollo web basado en PHP, diseñado para facilitar la creación de aplicaciones robustas y escalable.</div>
-                        </div>
-                        <img src="/wp-content/themes/zaska/resources/img/skills/laravel-logo.svg" alt="Logo">
-                    </div>
-                </div>
-                <div class="div9">
-                    <div class="container containerbase"> 
-                        <div class="content">
-                          <div class="title">Prestashop 8.1</div>
-                          <div class="text">Plataforma de comercio electrónico que permite a los usuarios crear tiendas online personalizables y funcionales.</div>
-                        </div>
-                        <img src="/wp-content/themes/zaska/resources/img/skills/prestashop.svg" alt="Logo">
-                    </div>
-                </div>
-                </div>
-            
-    </div>
-  </button>
-
-<footer id="colophon" class="site-footer dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-brandPrimaryDark py-8" role="contentinfo">
+<footer id="colophon" class="site-footer bg-brandPrimaryLight py-8" role="contentinfo" style="color: #111827!important">
 	
-
 	<?php do_action('tailpress_footer'); ?>
 
-	<div class="container flex flex-col mx-auto text-center  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-brandPrimaryDark text-xs mt-4">
-		<div class="flex flex-col justify-around items-center">
+	<div class="w-full flex flex-col items-center justify-center text-center text-xs space-y-4">
 
-
-
+		<div class="mt-2 p-4 sm:p-0">
+			&copy; <?php echo date_i18n('Y'); ?> gabii rese – Desarrollador web – PHP – Laravel – Prestashop – WooCommerce - WordPress – SEO
 		</div>
 
-		<div class="flex flex-col justify-around items-center  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-brandPrimaryDark mt-2">
-			&copy; <?php echo date_i18n('Y'); ?> gabii rese - Desarrollador web - PHP - Laravel - Prestashop - WordPress - SEO <br />
-		</div>
-
-		<div class="flex flex-col justify-around items-center">
-			<!-- Contenido aquí -->
-
-			<div class="text-2xl mt-2 md:text-4xl md:mt-4  dark:text-[#d0ff71] bg-[#d0ff71] dark:bg-brandPrimaryDark">
-				<a href="https://portal.vistarapida.es" target="_blank"><em class="ni ni-laravel"></em></a>
-				<em class="ni ni-css3-fill"></em>
-				<em class="ni ni-js"></em>
-				<em class="ni ni-php"></em>
-				<em class="ni ni-bootstrap"></em>
-				<em class="ni ni-mailchimp"></em>
-				<em class="ni ni-wordpress"></em>
-				<em class="ni ni-joomla"></em>
-				<em class="ni ni-github-circle"></em>
-			</div>
-
+		<div class="text-2xl md:text-4xl">
+			<a href="https://portal.vistarapida.es" target="_blank"><em class="ni ni-laravel"></em></a>
+			<em class="ni ni-css3-fill"></em>
+			<em class="ni ni-js"></em>
+			<em class="ni ni-php"></em>
+			<em class="ni ni-bootstrap"></em>
+			<em class="ni ni-mailchimp"></em>
+			<em class="ni ni-wordpress"></em>
+			<em class="ni ni-joomla"></em>
+			<em class="ni ni-github-circle"></em>
 		</div>
 
 	</div>
 
-
-
-
-
 </footer>
 
-</div>
+
 
 
 

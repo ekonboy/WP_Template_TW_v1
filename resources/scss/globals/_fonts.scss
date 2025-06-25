@@ -1,10 +1,10 @@
-/* @font-face {
+@font-face {
     font-family: 'gabii-Bold';
     src: url('../fonts/gabii-Bold.woff2') format('woff2'),
          url('../fonts/gabii-Bold.woff') format('woff');
     font-weight: bold;
     font-style: bold;
-    font-display: swap; 
+    font-display: swap; /* Importante para la carga eficiente */
 }
 @font-face {
     font-family: 'gabii';
@@ -12,7 +12,7 @@
          url('../fonts/gabii-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap; 
+    font-display: swap; /* Importante para la carga eficiente */
 }
 @font-face {
     font-family: 'Nioicon';
@@ -23,38 +23,22 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-  } 
-   @font-face {
+  }
+
+@font-face {
   font-family: 'Obviously';
   src: url('../fonts/Obviously.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-} */
-
-
-
-  /* @font-face {
-    font-family: 'Blimone';
-    src: url('../fonts/Blimone-Medium.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-} */
-
-/* @font-face {
-  font-family: 'hubot-sans';
-  src: url('../fonts/hubot-sans.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
 
-@font-face {
-  font-family: 'mona-sans';
-  src: url('../fonts/mona-sans.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
+// ==========================================================================
+// Variables de familia tipográfica
+// ==========================================================================
+
+$ff-gabii: 'gabii', Arial, sans-serif;
+$ff-gabii-bold: 'gabii-Bold', Arial, sans-serif;
+$ff-obviously: 'Obviously', Arial, sans-serif;
+$ff-nioicon: 'Nioicon';
 

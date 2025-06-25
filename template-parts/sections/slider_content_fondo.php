@@ -13,6 +13,7 @@ $activatedcontent = get_sub_field('activatedcontent');
 $heading = get_sub_field('heading');
 $heading2 = get_sub_field('heading2');
 $ancho_total_texto = get_sub_field('ancho_total_texto');
+$titulo_grande = get_sub_field('titulo_grande');
 
 $background_color_key = get_sub_field('background_color');
 $color_key = get_sub_field('background_color'); // ejemplo: 'brandPrimaryLightest'
@@ -50,10 +51,9 @@ $background_color = isset($theme_colors[$color_key]) ? $theme_colors[$color_key]
                style="background-image: url('<?php echo esc_url($icono['url']); ?>'); background-size: cover; background-position: center; position: relative;">
             <div class="overlay_fondo"></div>
             
-              <div class="galleria__item-inner_fondo " 
+              <div class="galleria__item-inner_fondo <?php echo esc_attr($titulo_grande == '0') ? 'slidertitulo' : 'textotitulgran' ;?>" 
                    style="color: <?php echo $color ? esc_attr($color) : '#fff'; ?>; position: relative; z-index: 2;">
               
-
                 <?php echo nl2br(esc_html($titulo)); ?>
                 
                 <div class="textolittel_slider_fondo">
